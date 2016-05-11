@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>bdf9127b-7e32-469b-a6ed-f57a0a80ae23</PackageIdentityName>
     <IntermediateOutputPath>C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>C882602345D6C2D2BAAA58B2E127840644887EA3ABD476A3349834C3FA2AB84A</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>E4E670E2137E0110FD999CF23E4E4EE2CB9F85EA5BF66DFD1F968189CFB21A1E</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>Microsoft.SDKSamples.Navigation.CS_1.0.0.0_x86__8wekyb3d8bbwe</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>Microsoft.SDKSamples.Navigation.CS_8wekyb3d8bbwe!App</RegisteredUserModeAppID>
     <RegisteredPackageID>Microsoft.SDKSamples.Navigation.CS</RegisteredPackageID>
@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-11T13:54:53.495</Modified>
+      <Modified>2016-05-11T13:26:32.454</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\imento.exe">
-      <PackagePath>entrypoint\imento.exe</PackagePath>
-      <Modified>2016-05-11T13:53:54.855</Modified>
+    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\NavigationMenuSample.exe">
+      <PackagePath>entrypoint\NavigationMenuSample.exe</PackagePath>
+      <Modified>2016-05-11T13:26:31.478</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -466,9 +466,9 @@
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2016-04-20T12:12:24.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\imento.xr.xml">
-      <PackagePath>imento.xr.xml</PackagePath>
-      <Modified>2016-05-11T13:39:33.576</Modified>
+    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\NavigationMenuSample.xr.xml">
+      <PackagePath>NavigationMenuSample.xr.xml</PackagePath>
+      <Modified>2016-05-11T13:26:31.210</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -476,11 +476,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-05-11T13:54:53.330</Modified>
+      <Modified>2016-05-11T13:26:32.164</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\Core\imento.exe">
-      <PackagePath>imento.exe</PackagePath>
-      <Modified>2016-05-11T13:54:53.488</Modified>
+    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\Core\NavigationMenuSample.exe">
+      <PackagePath>NavigationMenuSample.exe</PackagePath>
+      <Modified>2016-05-11T13:26:32.447</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

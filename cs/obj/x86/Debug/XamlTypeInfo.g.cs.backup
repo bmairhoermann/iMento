@@ -132,7 +132,7 @@ namespace NavigationMenuSample.NavigationMenu_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[15];
+            _typeNameTable = new string[18];
             _typeNameTable[0] = "NavigationMenuSample.Controls.PageHeader";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[2] = "Windows.UI.Xaml.UIElement";
@@ -143,13 +143,16 @@ namespace NavigationMenuSample.NavigationMenu_XamlTypeInfo
             _typeNameTable[7] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[8] = "Windows.UI.Xaml.Controls.Frame";
             _typeNameTable[9] = "Windows.Foundation.Rect";
-            _typeNameTable[10] = "NavigationMenuSample.Views.AlbumCollection";
-            _typeNameTable[11] = "NavigationMenuSample.Views.Favourites";
-            _typeNameTable[12] = "NavigationMenuSample.Views.Help";
-            _typeNameTable[13] = "NavigationMenuSample.Views.Settings";
-            _typeNameTable[14] = "NavigationMenuSample.Views.Worldmap";
+            _typeNameTable[10] = "NavigationMenuSample.Views.BasicSubPage";
+            _typeNameTable[11] = "String";
+            _typeNameTable[12] = "NavigationMenuSample.Views.LandingPage";
+            _typeNameTable[13] = "NavigationMenuSample.Views.AlbumCollection";
+            _typeNameTable[14] = "NavigationMenuSample.Views.Favourites";
+            _typeNameTable[15] = "NavigationMenuSample.Views.Help";
+            _typeNameTable[16] = "NavigationMenuSample.Views.Settings";
+            _typeNameTable[17] = "NavigationMenuSample.Views.Worldmap";
 
-            _typeTable = new global::System.Type[15];
+            _typeTable = new global::System.Type[18];
             _typeTable[0] = typeof(global::NavigationMenuSample.Controls.PageHeader);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.UIElement);
@@ -160,11 +163,14 @@ namespace NavigationMenuSample.NavigationMenu_XamlTypeInfo
             _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.Frame);
             _typeTable[9] = typeof(global::Windows.Foundation.Rect);
-            _typeTable[10] = typeof(global::NavigationMenuSample.Views.AlbumCollection);
-            _typeTable[11] = typeof(global::NavigationMenuSample.Views.Favourites);
-            _typeTable[12] = typeof(global::NavigationMenuSample.Views.Help);
-            _typeTable[13] = typeof(global::NavigationMenuSample.Views.Settings);
-            _typeTable[14] = typeof(global::NavigationMenuSample.Views.Worldmap);
+            _typeTable[10] = typeof(global::NavigationMenuSample.Views.BasicSubPage);
+            _typeTable[11] = typeof(global::System.String);
+            _typeTable[12] = typeof(global::NavigationMenuSample.Views.LandingPage);
+            _typeTable[13] = typeof(global::NavigationMenuSample.Views.AlbumCollection);
+            _typeTable[14] = typeof(global::NavigationMenuSample.Views.Favourites);
+            _typeTable[15] = typeof(global::NavigationMenuSample.Views.Help);
+            _typeTable[16] = typeof(global::NavigationMenuSample.Views.Settings);
+            _typeTable[17] = typeof(global::NavigationMenuSample.Views.Worldmap);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -202,11 +208,13 @@ namespace NavigationMenuSample.NavigationMenu_XamlTypeInfo
         private object Activate_0_PageHeader() { return new global::NavigationMenuSample.Controls.PageHeader(); }
         private object Activate_3_NavMenuListView() { return new global::NavigationMenuSample.Controls.NavMenuListView(); }
         private object Activate_6_AppShell() { return new global::NavigationMenuSample.AppShell(); }
-        private object Activate_10_AlbumCollection() { return new global::NavigationMenuSample.Views.AlbumCollection(); }
-        private object Activate_11_Favourites() { return new global::NavigationMenuSample.Views.Favourites(); }
-        private object Activate_12_Help() { return new global::NavigationMenuSample.Views.Help(); }
-        private object Activate_13_Settings() { return new global::NavigationMenuSample.Views.Settings(); }
-        private object Activate_14_Worldmap() { return new global::NavigationMenuSample.Views.Worldmap(); }
+        private object Activate_10_BasicSubPage() { return new global::NavigationMenuSample.Views.BasicSubPage(); }
+        private object Activate_12_LandingPage() { return new global::NavigationMenuSample.Views.LandingPage(); }
+        private object Activate_13_AlbumCollection() { return new global::NavigationMenuSample.Views.AlbumCollection(); }
+        private object Activate_14_Favourites() { return new global::NavigationMenuSample.Views.Favourites(); }
+        private object Activate_15_Help() { return new global::NavigationMenuSample.Views.Help(); }
+        private object Activate_16_Settings() { return new global::NavigationMenuSample.Views.Settings(); }
+        private object Activate_17_Worldmap() { return new global::NavigationMenuSample.Views.Worldmap(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -270,37 +278,56 @@ namespace NavigationMenuSample.NavigationMenu_XamlTypeInfo
                 xamlType = new global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  NavigationMenuSample.Views.AlbumCollection
+            case 10:   //  NavigationMenuSample.Views.BasicSubPage
                 userType = new global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_AlbumCollection;
+                userType.Activator = Activate_10_BasicSubPage;
+                userType.AddMemberName("Message");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  NavigationMenuSample.Views.Favourites
+            case 11:   //  String
+                xamlType = new global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 12:   //  NavigationMenuSample.Views.LandingPage
                 userType = new global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_Favourites;
+                userType.Activator = Activate_12_LandingPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  NavigationMenuSample.Views.Help
+            case 13:   //  NavigationMenuSample.Views.AlbumCollection
                 userType = new global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_Help;
+                userType.Activator = Activate_13_AlbumCollection;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 13:   //  NavigationMenuSample.Views.Settings
+            case 14:   //  NavigationMenuSample.Views.Favourites
                 userType = new global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_13_Settings;
+                userType.Activator = Activate_14_Favourites;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 14:   //  NavigationMenuSample.Views.Worldmap
+            case 15:   //  NavigationMenuSample.Views.Help
                 userType = new global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_14_Worldmap;
+                userType.Activator = Activate_15_Help;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 16:   //  NavigationMenuSample.Views.Settings
+                userType = new global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_16_Settings;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 17:   //  NavigationMenuSample.Views.Worldmap
+                userType = new global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_17_Worldmap;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -329,6 +356,16 @@ namespace NavigationMenuSample.NavigationMenu_XamlTypeInfo
             var that = (global::NavigationMenuSample.AppShell)instance;
             return that.TogglePaneButtonRect;
         }
+        private object get_3_BasicSubPage_Message(object instance)
+        {
+            var that = (global::NavigationMenuSample.Views.BasicSubPage)instance;
+            return that.Message;
+        }
+        private void set_3_BasicSubPage_Message(object instance, object Value)
+        {
+            var that = (global::NavigationMenuSample.Views.BasicSubPage)instance;
+            that.Message = (global::System.String)Value;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -355,6 +392,12 @@ namespace NavigationMenuSample.NavigationMenu_XamlTypeInfo
                 xamlMember = new global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlMember(this, "TogglePaneButtonRect", "Windows.Foundation.Rect");
                 xamlMember.Getter = get_2_AppShell_TogglePaneButtonRect;
                 xamlMember.SetIsReadOnly();
+                break;
+            case "NavigationMenuSample.Views.BasicSubPage.Message":
+                userType = (global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlUserType)GetXamlTypeByName("NavigationMenuSample.Views.BasicSubPage");
+                xamlMember = new global::NavigationMenuSample.NavigationMenu_XamlTypeInfo.XamlMember(this, "Message", "String");
+                xamlMember.Getter = get_3_BasicSubPage_Message;
+                xamlMember.Setter = set_3_BasicSubPage_Message;
                 break;
             }
             return xamlMember;

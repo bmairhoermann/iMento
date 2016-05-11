@@ -2,6 +2,9 @@ C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samp
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\Controls\PageHeader.xbf
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\Styles\Styles.xbf
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\AppShell.xbf
+C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\NavigationMenuSample.xr.xml
+C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\NavigationMenuSample.exe
+C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\NavigationMenuSample.pdb
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\resources.pri
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\AppxManifest.xml
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\Core\AppxManifest.xml
@@ -127,6 +130,8 @@ C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samp
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\Styles\Styles.xbf
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\AppShell.xbf
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\NavigationMenuSample.exe
+C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\NavigationMenuSample.pdb
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\ResourceHandlingTask.state
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\FxResources.Microsoft.CSharp.SR.resw
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\FxResources.Microsoft.VisualBasic.SR.resw
@@ -218,9 +223,3 @@ C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samp
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\Views\Settings.xbf
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\Views\Help.xbf
 C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\Views\Settings.xbf
-C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\imento.xr.xml
-C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\imento.exe
-C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\imento.pdb
-C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\Core\imento.exe
-C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\imento.exe
-C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\obj\x86\Debug\imento.pdb

@@ -18,8 +18,8 @@
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\imento.exe">
-      <PackagePath>entrypoint\imento.exe</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\NavigationMenuSample.exe">
+      <PackagePath>entrypoint\NavigationMenuSample.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -349,8 +349,8 @@
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\SharedContent\cs\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\imento.xr.xml">
-      <PackagePath>imento.xr.xml</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\NavigationMenuSample.xr.xml">
+      <PackagePath>NavigationMenuSample.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -358,8 +358,8 @@
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\Core\imento.exe">
-      <PackagePath>imento.exe</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\bin\x86\Debug\Core\NavigationMenuSample.exe">
+      <PackagePath>NavigationMenuSample.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
