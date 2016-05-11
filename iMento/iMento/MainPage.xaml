@@ -9,6 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="489,249,0,0" TextWrapping="Wrap" Text="iMento Test Projekt" VerticalAlignment="Top" Height="124" Width="213" SelectionChanged="textBlock_SelectionChanged"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Height="79" Margin="468,350,0,0" TextWrapping="Wrap" Text="Git Test" VerticalAlignment="Top" Width="113" SelectionChanged="textBlock1_SelectionChanged"/>
 
     </Grid>
 </Page>
