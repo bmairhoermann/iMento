@@ -16,6 +16,7 @@
             LandmarksVisible="False"
             IsRightTapEnabled="true"
            />
+        <TextBlock x:ConnectionId='2' x:Name="tbOutputText" HorizontalAlignment="Left" Margin="72,240,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
     </Grid>
 </Page>
 
