@@ -5,10 +5,17 @@
     xmlns:local="using:imento"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
     mc:Ignorable="d">
     
     <Grid Background="Wheat">
-
+        <Maps:MapControl x:ConnectionId='1'
+            x:Name="Map"
+            MapServiceToken="0gUEEHhtil5mG0qB0tEX~an0v4B_f0lvb13FYhED-0Q~ArFoblBENhFwIE-Ku54MJ4wMek9cKVlMM4g2HiICGTaM9hHuLaukz-Ru3JGZxlWd"
+            ZoomInteractionMode="GestureAndControl"
+            LandmarksVisible="False"
+            IsRightTapEnabled="true"
+           />
     </Grid>
 </Page>
 

@@ -1,1 +1,1 @@
-C:\Users\Philipp\Desktop\Windows-universal-samples-master\Windows-universal-samples-master\Samples\XamlNavigation\cs\NavigationMenu.csproj;x86
+C:\Users\Philipp\Desktop\iMento\cs\NavigationMenu.csproj;x86

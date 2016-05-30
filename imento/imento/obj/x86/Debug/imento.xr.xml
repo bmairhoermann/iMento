@@ -125,6 +125,12 @@
     <RootType FullName="imento.AllAlbumsView" />
     <RootType FullName="imento.FavsView" />
     <RootType FullName="imento.HelpView" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Maps.MapControl">
+      <RootProperty Name="MapServiceToken" />
+      <RootProperty Name="ZoomInteractionMode" />
+      <RootProperty Name="LandmarksVisible" />
+      <RootProperty Name="IsRightTapEnabled" />
+    </RootType>
     <RootType FullName="imento.HomeView" />
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="Background" />
