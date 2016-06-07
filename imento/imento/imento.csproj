@@ -95,6 +95,15 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\20160607082115_FirstMigration.cs" />
+    <Compile Include="Migrations\20160607082115_FirstMigration.designer.cs">
+      <DependentUpon>20160607082115_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
+    <Compile Include="Models\DataBaseContext.cs" />
+    <Compile Include="Models\Entry.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Photo.cs" />
     <Compile Include="Views\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>

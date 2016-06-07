@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace imento.Models {
-    public class Album {
+    class Album {
+        /*
         public int AlbumId { get; set; }
         public string AlbumTitle { get; set; }
         public string AlbumDescription { get; set; }
@@ -13,8 +14,21 @@ namespace imento.Models {
         public string Location { get; set; }
         public string PicSource { get; set; }
         // public int[] PictureIds;
-    }
+        */
 
+        public string AlbumId { get; set; }
+
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string Type { get; set; }
+        public DateTime Date_Start { get; set; }
+        public DateTime Date_Ende { get; set; }
+
+        public Location Location { get; set; }
+
+        public List<Entry> Entries { get; set; }
+    }
+    /*
     public class AlbumManager {
         public static List<Album> GetAlbums() {
             var albums = new List<Album>();
@@ -92,6 +106,6 @@ namespace imento.Models {
 
 
             return albums; 
-        }
+        }*/
     }
-}
+
