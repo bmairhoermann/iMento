@@ -584,7 +584,6 @@ C:\Users\Brian\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\System.Xml.Re
 C:\Users\Brian\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\System.Xml.XDocument.dll
 C:\Users\Brian\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\System.Xml.XmlDocument.dll
 C:\Users\Brian\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\System.Xml.XmlSerializer.dll
-C:\Users\Brian\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\imento.csprojResolveAssemblyReference.cache
 C:\Users\Brian\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\App.g.i.cs
 C:\Users\Brian\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\App.g.cs
 C:\Users\Brian\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\AboutView.g.i.cs
@@ -725,3 +724,4 @@ C:\Users\Brian\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.Ext
 C:\Users\Brian\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.Extensions.Options\en-us\Microsoft.Extensions.Options.Resources.resw
 C:\Users\Brian\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.Extensions.Primitives\en-us\Microsoft.Extensions.Primitives.Resources.resw
 C:\Users\Brian\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\imento.csproj.GenerateResource.Cache
+C:\Users\Brian\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\imento.csprojResolveAssemblyReference.cache
