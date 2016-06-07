@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T07:09:41.484</Modified>
+      <Modified>2016-06-06T08:35:36.963</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\imento.exe">
       <PackagePath>entrypoint\imento.exe</PackagePath>
-      <Modified>2016-05-30T07:09:41.158</Modified>
+      <Modified>2016-06-06T08:35:36.569</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -456,264 +456,264 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
-      <Modified>2016-05-30T05:43:35.139</Modified>
+      <Modified>2016-06-06T07:05:57.079</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\imento_logo.svg">
       <PackagePath>Assets\imento_logo.svg</PackagePath>
-      <Modified>2016-05-30T05:43:35.204</Modified>
+      <Modified>2016-06-06T07:05:57.117</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\NewStoreLogo.scale-100.png">
       <PackagePath>Assets\NewStoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.142</Modified>
+      <Modified>2016-06-06T07:05:57.081</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\NewStoreLogo.scale-125.png">
       <PackagePath>Assets\NewStoreLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.144</Modified>
+      <Modified>2016-06-06T07:05:57.082</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\NewStoreLogo.scale-150.png">
       <PackagePath>Assets\NewStoreLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.146</Modified>
+      <Modified>2016-06-06T07:05:57.083</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\NewStoreLogo.scale-200.png">
       <PackagePath>Assets\NewStoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.147</Modified>
+      <Modified>2016-06-06T07:05:57.083</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\NewStoreLogo.scale-400.png">
       <PackagePath>Assets\NewStoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.148</Modified>
+      <Modified>2016-06-06T07:05:57.084</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.151</Modified>
+      <Modified>2016-06-06T07:05:57.086</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.153</Modified>
+      <Modified>2016-06-06T07:05:57.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.154</Modified>
+      <Modified>2016-06-06T07:05:57.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.156</Modified>
+      <Modified>2016-06-06T07:05:57.089</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square310x310Logo.scale-100.png">
       <PackagePath>Assets\Square310x310Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.157</Modified>
+      <Modified>2016-06-06T07:05:57.090</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square310x310Logo.scale-125.png">
       <PackagePath>Assets\Square310x310Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.159</Modified>
+      <Modified>2016-06-06T07:05:57.090</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square310x310Logo.scale-150.png">
       <PackagePath>Assets\Square310x310Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.160</Modified>
+      <Modified>2016-06-06T07:05:57.091</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square310x310Logo.scale-200.png">
       <PackagePath>Assets\Square310x310Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.162</Modified>
+      <Modified>2016-06-06T07:05:57.092</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square310x310Logo.scale-400.png">
       <PackagePath>Assets\Square310x310Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.164</Modified>
+      <Modified>2016-06-06T07:05:57.093</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.165</Modified>
+      <Modified>2016-06-06T07:05:57.094</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.167</Modified>
+      <Modified>2016-06-06T07:05:57.095</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.168</Modified>
+      <Modified>2016-06-06T07:05:57.095</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.170</Modified>
+      <Modified>2016-06-06T07:05:57.097</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.171</Modified>
+      <Modified>2016-06-06T07:05:57.098</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.targetsize-16_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.172</Modified>
+      <Modified>2016-06-06T07:05:57.098</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.174</Modified>
+      <Modified>2016-06-06T07:05:57.099</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.176</Modified>
+      <Modified>2016-06-06T07:05:57.101</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.targetsize-256_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.178</Modified>
+      <Modified>2016-06-06T07:05:57.102</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.179</Modified>
+      <Modified>2016-06-06T07:05:57.102</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.targetsize-32_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.181</Modified>
+      <Modified>2016-06-06T07:05:57.103</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.182</Modified>
+      <Modified>2016-06-06T07:05:57.104</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.targetsize-48_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.183</Modified>
+      <Modified>2016-06-06T07:05:57.105</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square71x71Logo.scale-100.png">
       <PackagePath>Assets\Square71x71Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.185</Modified>
+      <Modified>2016-06-06T07:05:57.105</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square71x71Logo.scale-125.png">
       <PackagePath>Assets\Square71x71Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.186</Modified>
+      <Modified>2016-06-06T07:05:57.106</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square71x71Logo.scale-150.png">
       <PackagePath>Assets\Square71x71Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.187</Modified>
+      <Modified>2016-06-06T07:05:57.107</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square71x71Logo.scale-200.png">
       <PackagePath>Assets\Square71x71Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.189</Modified>
+      <Modified>2016-06-06T07:05:57.107</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square71x71Logo.scale-400.png">
       <PackagePath>Assets\Square71x71Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.190</Modified>
+      <Modified>2016-06-06T07:05:57.108</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.193</Modified>
+      <Modified>2016-06-06T07:05:57.110</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.194</Modified>
+      <Modified>2016-06-06T07:05:57.111</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.196</Modified>
+      <Modified>2016-06-06T07:05:57.112</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.199</Modified>
+      <Modified>2016-06-06T07:05:57.113</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2016-05-30T05:43:35.141</Modified>
+      <Modified>2016-06-06T07:05:57.080</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.150</Modified>
+      <Modified>2016-06-06T07:05:57.085</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.155</Modified>
+      <Modified>2016-06-06T07:05:57.088</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.169</Modified>
+      <Modified>2016-06-06T07:05:57.096</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.175</Modified>
+      <Modified>2016-06-06T07:05:57.100</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <Modified>2016-05-30T05:43:35.191</Modified>
+      <Modified>2016-06-06T07:05:57.109</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-05-30T05:43:35.198</Modified>
+      <Modified>2016-06-06T07:05:57.113</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Pictures\pic01.jpg">
       <PackagePath>Pictures\pic01.jpg</PackagePath>
-      <Modified>2016-05-30T05:43:35.251</Modified>
+      <Modified>2016-06-06T07:05:57.140</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Pictures\pic02.jpg">
       <PackagePath>Pictures\pic02.jpg</PackagePath>
-      <Modified>2016-05-30T05:43:35.258</Modified>
+      <Modified>2016-06-06T07:05:57.145</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Pictures\pic03.jpg">
       <PackagePath>Pictures\pic03.jpg</PackagePath>
-      <Modified>2016-05-30T05:43:35.274</Modified>
+      <Modified>2016-06-06T07:05:57.154</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Pictures\pic04.jpg">
       <PackagePath>Pictures\pic04.jpg</PackagePath>
-      <Modified>2016-05-30T05:43:35.285</Modified>
+      <Modified>2016-06-06T07:05:57.161</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Pictures\pic05.jpg">
       <PackagePath>Pictures\pic05.jpg</PackagePath>
-      <Modified>2016-05-30T05:43:35.300</Modified>
+      <Modified>2016-06-06T07:05:57.169</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Pictures\pic06.jpg">
       <PackagePath>Pictures\pic06.jpg</PackagePath>
-      <Modified>2016-05-30T05:43:35.308</Modified>
+      <Modified>2016-06-06T07:05:57.174</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Pictures\pic07.jpg">
       <PackagePath>Pictures\pic07.jpg</PackagePath>
-      <Modified>2016-05-30T05:43:35.317</Modified>
+      <Modified>2016-06-06T07:05:57.179</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Pictures\pic08.jpg">
       <PackagePath>Pictures\pic08.jpg</PackagePath>
-      <Modified>2016-05-30T05:43:35.324</Modified>
+      <Modified>2016-06-06T07:05:57.184</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2016-05-30T05:43:35.334</Modified>
+      <Modified>2016-06-06T07:05:57.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\imento.xr.xml">
       <PackagePath>imento.xr.xml</PackagePath>
-      <Modified>2016-05-30T06:37:25.502</Modified>
+      <Modified>2016-06-06T08:34:51.362</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -721,11 +721,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-05-30T06:37:26.168</Modified>
+      <Modified>2016-06-06T08:34:52.061</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\Core\imento.exe">
       <PackagePath>imento.exe</PackagePath>
-      <Modified>2016-05-30T07:09:41.477</Modified>
+      <Modified>2016-06-06T08:35:36.959</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

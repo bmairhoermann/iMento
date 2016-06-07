@@ -1,21 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Devices.Geolocation;
 using Windows.UI.Xaml.Controls.Maps;
 using Windows.Services.Maps;
-
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,10 +20,10 @@ namespace imento
             this.InitializeComponent();
             MapIcon test = new MapIcon();
             MapIcon test1 = new MapIcon();
-            MapIcon test2 = new MapIcon();
+            
             add(48.604, -122.349, "Fotoalbum123", test);
             add(48.604, -222.349, "Fotoalbum 2", test1);
-            add(50.31633, 11.91658, "Fotoalbum 2", test2);
+            
 
             Map.MapServiceToken = "0gUEEHhtil5mG0qB0tEX~an0v4B_f0lvb13FYhED-0Q~ArFoblBENhFwIE-Ku54MJ4wMek9cKVlMM4g2HiICGTaM9hHuLaukz-Ru3JGZxlWd";
             
@@ -129,6 +118,35 @@ namespace imento
                     result.Locations[0].Point.Position.Longitude.ToString() + ")";
             }
         }
-      
+
+
+        private async void Map_MapHolding(MapControl sender, MapInputEventArgs e)
+        {
+            MapIcon MapIcon1 = new MapIcon();
+            MapIcon1.Location = new Geopoint(new BasicGeoposition()
+            {
+                Latitude = e.Location.Position.Latitude,
+                Longitude = e.Location.Position.Longitude
+            });
+            MapIcon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
+          
+
+            BasicGeoposition location = new BasicGeoposition();
+            location.Latitude = e.Location.Position.Latitude;
+            location.Longitude = e.Location.Position.Longitude;
+            Geopoint pointToReverseGeocode = new Geopoint(location);
+
+            // Reverse geocode the specified geographic location.
+            MapLocationFinderResult result = await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
+
+            // If the query returns results, display the name of the town
+            // contained in the address of the first result.
+            if (result.Status == MapLocationFinderStatus.Success)
+            {
+                //  tbOutputText.Text = "Stadt = " + result.Locations[0].Address.Town;
+                MapIcon1.Title = "Neues Fotoalbum aus " + result.Locations[0].Address.Town;
+            }
+            Map.MapElements.Add(MapIcon1);
+        }
     }
 }
