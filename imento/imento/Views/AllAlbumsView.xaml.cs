@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using imento.Models;
+using System.Diagnostics;
+
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -36,16 +38,22 @@ namespace imento
             // Albums = AlbumManager.GetAlbums();
             
             Albums = mc.getAlbums();
+
+            // mc.dostuff();
+            // mc.saveNewAlbum(Album);
         }
+
 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
+           var entry = (Album)e.ClickedItem;
+            Debug.WriteLine("--------------------------");
+            Debug.WriteLine("Album id: " + entry.AlbumId);
+            Debug.WriteLine("--------------------------");
+
+            this.Frame.Navigate(typeof(Views.EntryView), entry.AlbumId);
 
         }
-        /*
-private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
-   var entry = (Album)e.ClickedItem;
-   h1.Text = "You clicked on: " + entry.AlbumTitle;
-}
-*/
+
+
     }
 }

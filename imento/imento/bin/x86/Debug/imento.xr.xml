@@ -122,6 +122,12 @@
       <RootProperty Name="Children" />
     </RootType>
     <RootType FullName="imento.AllAlbumsView" />
+    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="ItemTemplate" />
+      <RootEvent Name="ItemClick" />
+    </RootType>
     <RootType FullName="imento.Views.EntryView" />
     <RootType FullName="imento.FavsView" />
     <RootType FullName="imento.HelpView" />

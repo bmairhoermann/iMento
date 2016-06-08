@@ -1,0 +1,12 @@
+App.xbf
+MainPage.xbf
+Views\AboutView.xbf
+Views\AlbumView.xbf
+Views\AllAlbumsView.xbf
+Views\EntryView.xbf
+Views\FavsView.xbf
+Views\HelpView.xbf
+Views\HomeView.xbf
+Views\NewAlbumView.xbf
+Views\PhotoView.xbf
+Views\SettingsView.xbf
