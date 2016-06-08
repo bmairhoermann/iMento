@@ -33,6 +33,7 @@ namespace imento.Models
             using (var db = new DataBaseContext())
             {
                 albums = db.Albums.ToList();
+                
 
                 // Get Location via AlbumId
                 foreach(Album album in albums)
@@ -436,8 +437,8 @@ namespace imento.Models
                         Debug.WriteLine("Foreign Key ALBUM_ID: " + item.AlbumId);
                     }
                 }
-            }
-            */
+            }*/
+            
         }
     }
 }

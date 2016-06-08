@@ -22,20 +22,30 @@ namespace imento
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class AllAlbumsView : Page {
-        /*
+        
         private List<Album> Albums;
-        public string ViewTitle = "Alle Alben xx";
-        */public AllAlbumsView() {
+        // public string ViewTitle = "Alle Alben xx";
+
+        ModelController mc = new ModelController();
+
+        public AllAlbumsView() {
+
             this.InitializeComponent();
-            /*
+
             // Data binding for albums
-            Albums = AlbumManager.GetAlbums();*/
+            // Albums = AlbumManager.GetAlbums();
+            
+            Albums = mc.getAlbums();
+        }
+
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
+
         }
         /*
-        private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
-            var entry = (Album)e.ClickedItem;
-            h1.Text = "You clicked on: " + entry.AlbumTitle;
-        }
-        */
+private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
+   var entry = (Album)e.ClickedItem;
+   h1.Text = "You clicked on: " + entry.AlbumTitle;
+}
+*/
     }
 }

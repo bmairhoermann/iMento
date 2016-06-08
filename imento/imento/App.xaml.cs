@@ -36,7 +36,9 @@ namespace imento
             this.InitializeComponent();
             this.Suspending += OnSuspending;
 
-            
+            using (var db = new DataBaseContext()) {
+                db.Database.Migrate();
+            }
 
         }
 
