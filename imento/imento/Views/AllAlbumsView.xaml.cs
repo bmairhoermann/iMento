@@ -31,11 +31,7 @@ namespace imento
         ModelController mc = new ModelController();
 
         public AllAlbumsView() {
-
             this.InitializeComponent();
-
-            // Data binding for albums
-            // Albums = AlbumManager.GetAlbums();
             
             Albums = mc.getAlbums();
 
@@ -43,17 +39,19 @@ namespace imento
             // mc.saveNewAlbum(Album);
         }
 
-
+        // Load EntryView an pass album data to load matching entries 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
-           var entry = (Album)e.ClickedItem;
+            var album = (Album)e.ClickedItem;
             Debug.WriteLine("--------------------------");
-            Debug.WriteLine("Album id: " + entry.AlbumId);
+            Debug.WriteLine("Album id: " + album.AlbumId);
             Debug.WriteLine("--------------------------");
 
-            this.Frame.Navigate(typeof(Views.EntryView), entry.AlbumId);
-
+            this.Frame.Navigate(typeof(Views.AlbumView), new AlbumParams() { AlbumId = album.AlbumId, AlbumTitle = album.Title });
         }
 
-
+    }
+    public class AlbumParams {
+        public String AlbumId { get; set; }
+        public String AlbumTitle { get; set; }
     }
 }
