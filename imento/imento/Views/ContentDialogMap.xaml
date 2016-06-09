@@ -1,0 +1,45 @@
+﻿<ContentDialog
+    x:Class="imento.Views.ContentDialogMap"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:imento.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Neues Album erstellen"
+    PrimaryButtonText="Speichern"
+    SecondaryButtonText="Abbrechen"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+    >
+
+    <Grid Height="158" Width="291">
+        <TextBlock x:Name="textBlockName" Margin="0,5,0,0" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Top" HorizontalAlignment="Left" Width="43"/>
+        <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Margin="122,0,0,0" TextWrapping="Wrap" PlaceholderText="Name des Albums" VerticalAlignment="Top" Height="32" Width="169"/>
+        <TextBox x:Name="textBoxDescription" HorizontalAlignment="Left" Margin="122,37,0,0" TextWrapping="Wrap" PlaceholderText="Beschreibung des Albums" VerticalAlignment="Top" Width="169"/>
+        <TextBlock x:Name="textBlockDescription" HorizontalAlignment="Left" Margin="0,43,0,0" TextWrapping="Wrap" Text="Beschreibung:" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlockLocation" HorizontalAlignment="Left" Margin="0,84,0,0" TextWrapping="Wrap" Text="Ort:" VerticalAlignment="Top" Width="93"/>
+        <TextBlock x:Name="textBlockLocation1" HorizontalAlignment="Left" Margin="122,84,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="169"/>
+        <TextBlock x:Name="textBlockType" HorizontalAlignment="Left" Margin="0,124,0,0" TextWrapping="Wrap" Text="Art:" VerticalAlignment="Top"/>
+
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="122,116,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/WpfTutorialSamples;component/Images/bullet_red.png" />
+                    <TextBlock Foreground="Red">Red</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Foreground="Green">Green</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/WpfTutorialSamples;component/Images/bullet_blue.png" />
+                    <TextBlock Foreground="Blue">Blue</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+        </ComboBox>
+    </Grid>
+</ContentDialog>
