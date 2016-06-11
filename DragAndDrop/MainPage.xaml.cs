@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -30,8 +32,15 @@ namespace DragAndDrop
             this.InitializeComponent();
         }
 
+        private void Grid_DragOver(object sender, DragEventArgs e)
+        {
+            // Prepare for Drop
+            e.AcceptedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+        }
+
         private async void Grid_Drop(object sender, DragEventArgs e)
         {
+            // Routine for getting the stuff dropped into the grid
             if (e.DataView.Contains(StandardDataFormats.StorageItems))
             {
                 var items = await e.DataView.GetStorageItemsAsync();
@@ -39,18 +48,37 @@ namespace DragAndDrop
                 if (items.Any())
                 {
                     var storageFile = items[0] as StorageFile;
-                    var bitmapImage = new BitmapImage();
 
-                    bitmapImage.SetSource(await storageFile.OpenAsync(FileAccessMode.Read));
+                    // Check if given data is valide
+                    if(storageFile.ContentType == "image/jpeg" || storageFile.ContentType == "image/bmp" || storageFile.ContentType == "image/gif" || storageFile.ContentType == "image/png")
+                    {
+                        // Write Inputstream to buffer and write buffer to byte-Array
+                        var buffer = await FileIO.ReadBufferAsync(storageFile);
+                        var byteArray = buffer.ToArray(); // 
 
-                    DroppedImage.Source = bitmapImage;
+
+                        // BELOW: FOR FURTHER USAGE:
+                        // parse byte[] in Bitmap
+                        var mypicture = await ToBitmapImage(byteArray);
+
+                        // Set Bitmap as Picture Source for Image in View
+                        ImageSource imageSource = mypicture; // put the bitmapImage into a ImageSource
+                        DroppedImage.Source = imageSource; // Set source of windows.UI.xaml.Control.Image to this imageSource
+                        
+                    }
                 }
             }
         }
 
-        private void Grid_DragOver(object sender, DragEventArgs e)
+        // Method for Parsing a byte-Array to a BitmapImage
+        public async Task<BitmapImage> ToBitmapImage(byte[] array)
         {
-            e.AcceptedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+            using (var ms = new MemoryStream(array))
+            {
+                var bitmapImage = new BitmapImage();
+                await bitmapImage.SetSourceAsync(ms.AsRandomAccessStream());
+                return bitmapImage;
+            }
         }
     }
 }
