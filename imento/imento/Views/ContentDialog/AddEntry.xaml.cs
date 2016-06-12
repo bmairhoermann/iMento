@@ -21,10 +21,18 @@ namespace imento.Views {
             this.InitializeComponent();
         }
 
+        public string Title { get; set; }
+        public string Desc { get; set; }
+
+        // Ok 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
+            Title = textBoxTitle.Text;
+            Desc = textBoxDescription.Text;
         }
 
+        // Cancel 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
+
         }
     }
 }

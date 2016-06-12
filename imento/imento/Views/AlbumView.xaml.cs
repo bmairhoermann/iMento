@@ -31,12 +31,10 @@ namespace imento.Views {
 
         public AlbumView() {
             this.InitializeComponent();
-            // mc.dostuff();
         }
 
         // If AlbumId is passed, it will be set to the String albumId
         protected override void OnNavigatedTo(NavigationEventArgs e) {
-            // String result = (String)e.Parameter;
             AlbumParams result = (AlbumParams)e.Parameter;
 
             albumId = result.AlbumId;
@@ -47,29 +45,29 @@ namespace imento.Views {
             Entrys = mc.getEntriesOverview(albumId);
         }
 
+        // Click on an entry opens it in a new view
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
             var entry = (Entry)e.ClickedItem;
             this.Frame.Navigate(typeof(Views.EntryView), new EntryParams() { EntryId = entry.EntryId, EntryTitle = entry.Title });
         }
-
         public class EntryParams {
             public int EntryId { get; set; }
             public String EntryTitle { get; set; }
         }
 
+
+        // Open a new dialog to create a new entry an save them to the databse according to the album id
         private async void NewEntry_Click(object sender, RoutedEventArgs e) {
             AddEntry dialog = new AddEntry();
             var dialogResult = await dialog.ShowAsync();
-            // Debug.WriteLine("xxxxxx new Entry");
-            /*
-           
-            if (dialogResult == ContentDialogResult.Primary) {
-                MapIcon1.Title = dialog.Name;
 
-                Map.MapElements.Add(MapIcon1);
+            var Entry = new Entry();
 
-            }
-            */
+            Entry.Title = dialog.Title;
+            Entry.Description = dialog.Desc;
+
+            mc.saveNewEntry(Entry, albumId);
+
         }
     }
 }

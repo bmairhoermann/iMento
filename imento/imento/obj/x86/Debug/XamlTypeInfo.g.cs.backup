@@ -140,10 +140,10 @@ namespace imento.imento_XamlTypeInfo
             _typeNameTable[4] = "Windows.UI.Xaml.Controls.ContentDialog";
             _typeNameTable[5] = "Windows.UI.Xaml.Controls.ContentControl";
             _typeNameTable[6] = "imento.Views.AddEntry";
-            _typeNameTable[7] = "String";
-            _typeNameTable[8] = "imento.Views.AlbumView";
-            _typeNameTable[9] = "imento.AllAlbumsView";
-            _typeNameTable[10] = "imento.Views.ContentDialogMap";
+            _typeNameTable[7] = "imento.Views.AlbumView";
+            _typeNameTable[8] = "imento.AllAlbumsView";
+            _typeNameTable[9] = "imento.Views.ContentDialogMap";
+            _typeNameTable[10] = "String";
             _typeNameTable[11] = "imento.Views.EntryView";
             _typeNameTable[12] = "imento.FavsView";
             _typeNameTable[13] = "imento.HelpView";
@@ -161,10 +161,10 @@ namespace imento.imento_XamlTypeInfo
             _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.ContentDialog);
             _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
             _typeTable[6] = typeof(global::imento.Views.AddEntry);
-            _typeTable[7] = typeof(global::System.String);
-            _typeTable[8] = typeof(global::imento.Views.AlbumView);
-            _typeTable[9] = typeof(global::imento.AllAlbumsView);
-            _typeTable[10] = typeof(global::imento.Views.ContentDialogMap);
+            _typeTable[7] = typeof(global::imento.Views.AlbumView);
+            _typeTable[8] = typeof(global::imento.AllAlbumsView);
+            _typeTable[9] = typeof(global::imento.Views.ContentDialogMap);
+            _typeTable[10] = typeof(global::System.String);
             _typeTable[11] = typeof(global::imento.Views.EntryView);
             _typeTable[12] = typeof(global::imento.FavsView);
             _typeTable[13] = typeof(global::imento.HelpView);
@@ -210,8 +210,8 @@ namespace imento.imento_XamlTypeInfo
         private object Activate_0_AboutView() { return new global::imento.AboutView(); }
         private object Activate_3_AddPhoto() { return new global::imento.Views.AddPhoto(); }
         private object Activate_6_AddEntry() { return new global::imento.Views.AddEntry(); }
-        private object Activate_8_AlbumView() { return new global::imento.Views.AlbumView(); }
-        private object Activate_9_AllAlbumsView() { return new global::imento.AllAlbumsView(); }
+        private object Activate_7_AlbumView() { return new global::imento.Views.AlbumView(); }
+        private object Activate_8_AllAlbumsView() { return new global::imento.AllAlbumsView(); }
         private object Activate_11_EntryView() { return new global::imento.Views.EntryView(); }
         private object Activate_12_FavsView() { return new global::imento.FavsView(); }
         private object Activate_13_HelpView() { return new global::imento.HelpView(); }
@@ -264,37 +264,35 @@ namespace imento.imento_XamlTypeInfo
             case 6:   //  imento.Views.AddEntry
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
                 userType.Activator = Activate_6_AddEntry;
-                userType.AddMemberName("Title");
-                userType.AddMemberName("Desc");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 7:   //  String
-                xamlType = new global::imento.imento_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 8:   //  imento.Views.AlbumView
+            case 7:   //  imento.Views.AlbumView
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_AlbumView;
+                userType.Activator = Activate_7_AlbumView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 9:   //  imento.AllAlbumsView
+            case 8:   //  imento.AllAlbumsView
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_AllAlbumsView;
+                userType.Activator = Activate_8_AllAlbumsView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  imento.Views.ContentDialogMap
+            case 9:   //  imento.Views.ContentDialogMap
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
                 userType.AddMemberName("Name");
                 userType.AddMemberName("Desc");
                 userType.AddMemberName("Type");
                 userType.SetIsLocalType();
                 xamlType = userType;
+                break;
+
+            case 10:   //  String
+                xamlType = new global::imento.imento_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 11:   //  imento.Views.EntryView
@@ -357,52 +355,32 @@ namespace imento.imento_XamlTypeInfo
         }
 
 
-        private object get_0_AddEntry_Title(object instance)
-        {
-            var that = (global::imento.Views.AddEntry)instance;
-            return that.Title;
-        }
-        private void set_0_AddEntry_Title(object instance, object Value)
-        {
-            var that = (global::imento.Views.AddEntry)instance;
-            that.Title = (global::System.String)Value;
-        }
-        private object get_1_AddEntry_Desc(object instance)
-        {
-            var that = (global::imento.Views.AddEntry)instance;
-            return that.Desc;
-        }
-        private void set_1_AddEntry_Desc(object instance, object Value)
-        {
-            var that = (global::imento.Views.AddEntry)instance;
-            that.Desc = (global::System.String)Value;
-        }
-        private object get_2_ContentDialogMap_Name(object instance)
+        private object get_0_ContentDialogMap_Name(object instance)
         {
             var that = (global::imento.Views.ContentDialogMap)instance;
             return that.Name;
         }
-        private void set_2_ContentDialogMap_Name(object instance, object Value)
+        private void set_0_ContentDialogMap_Name(object instance, object Value)
         {
             var that = (global::imento.Views.ContentDialogMap)instance;
             that.Name = (global::System.String)Value;
         }
-        private object get_3_ContentDialogMap_Desc(object instance)
+        private object get_1_ContentDialogMap_Desc(object instance)
         {
             var that = (global::imento.Views.ContentDialogMap)instance;
             return that.Desc;
         }
-        private void set_3_ContentDialogMap_Desc(object instance, object Value)
+        private void set_1_ContentDialogMap_Desc(object instance, object Value)
         {
             var that = (global::imento.Views.ContentDialogMap)instance;
             that.Desc = (global::System.String)Value;
         }
-        private object get_4_ContentDialogMap_Type(object instance)
+        private object get_2_ContentDialogMap_Type(object instance)
         {
             var that = (global::imento.Views.ContentDialogMap)instance;
             return that.Type;
         }
-        private void set_4_ContentDialogMap_Type(object instance, object Value)
+        private void set_2_ContentDialogMap_Type(object instance, object Value)
         {
             var that = (global::imento.Views.ContentDialogMap)instance;
             that.Type = (global::System.String)Value;
@@ -415,36 +393,23 @@ namespace imento.imento_XamlTypeInfo
 
             switch (longMemberName)
             {
-            case "imento.Views.AddEntry.Title":
-                userType = (global::imento.imento_XamlTypeInfo.XamlUserType)GetXamlTypeByName("imento.Views.AddEntry");
-                xamlMember = new global::imento.imento_XamlTypeInfo.XamlMember(this, "Title", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_0_AddEntry_Title;
-                xamlMember.Setter = set_0_AddEntry_Title;
-                break;
-            case "imento.Views.AddEntry.Desc":
-                userType = (global::imento.imento_XamlTypeInfo.XamlUserType)GetXamlTypeByName("imento.Views.AddEntry");
-                xamlMember = new global::imento.imento_XamlTypeInfo.XamlMember(this, "Desc", "String");
-                xamlMember.Getter = get_1_AddEntry_Desc;
-                xamlMember.Setter = set_1_AddEntry_Desc;
-                break;
             case "imento.Views.ContentDialogMap.Name":
                 userType = (global::imento.imento_XamlTypeInfo.XamlUserType)GetXamlTypeByName("imento.Views.ContentDialogMap");
                 xamlMember = new global::imento.imento_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_2_ContentDialogMap_Name;
-                xamlMember.Setter = set_2_ContentDialogMap_Name;
+                xamlMember.Getter = get_0_ContentDialogMap_Name;
+                xamlMember.Setter = set_0_ContentDialogMap_Name;
                 break;
             case "imento.Views.ContentDialogMap.Desc":
                 userType = (global::imento.imento_XamlTypeInfo.XamlUserType)GetXamlTypeByName("imento.Views.ContentDialogMap");
                 xamlMember = new global::imento.imento_XamlTypeInfo.XamlMember(this, "Desc", "String");
-                xamlMember.Getter = get_3_ContentDialogMap_Desc;
-                xamlMember.Setter = set_3_ContentDialogMap_Desc;
+                xamlMember.Getter = get_1_ContentDialogMap_Desc;
+                xamlMember.Setter = set_1_ContentDialogMap_Desc;
                 break;
             case "imento.Views.ContentDialogMap.Type":
                 userType = (global::imento.imento_XamlTypeInfo.XamlUserType)GetXamlTypeByName("imento.Views.ContentDialogMap");
                 xamlMember = new global::imento.imento_XamlTypeInfo.XamlMember(this, "Type", "String");
-                xamlMember.Getter = get_4_ContentDialogMap_Type;
-                xamlMember.Setter = set_4_ContentDialogMap_Type;
+                xamlMember.Getter = get_2_ContentDialogMap_Type;
+                xamlMember.Setter = set_2_ContentDialogMap_Type;
                 break;
             }
             return xamlMember;
