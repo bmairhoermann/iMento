@@ -208,7 +208,6 @@ namespace imento.imento_XamlTypeInfo
         }
 
         private object Activate_0_AboutView() { return new global::imento.AboutView(); }
-        private object Activate_3_AddPhoto() { return new global::imento.Views.AddPhoto(); }
         private object Activate_6_AddEntry() { return new global::imento.Views.AddEntry(); }
         private object Activate_8_AlbumView() { return new global::imento.Views.AlbumView(); }
         private object Activate_9_AllAlbumsView() { return new global::imento.AllAlbumsView(); }
@@ -248,7 +247,6 @@ namespace imento.imento_XamlTypeInfo
 
             case 3:   //  imento.Views.AddPhoto
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentDialog"));
-                userType.Activator = Activate_3_AddPhoto;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

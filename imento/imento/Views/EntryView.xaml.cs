@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using imento.Models;
 using System.Diagnostics;
+using static imento.Views.AlbumView;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -24,8 +25,13 @@ namespace imento.Views {
     /// </summary>
     public sealed partial class EntryView : Page {
 
-        // private List<Entry> Entrys;
+        private List<Photo> Photos;
+        private Entry currentEntry = new Entry();
+
+        private List<ImageSource> PicSource;
+
         public String albumId;
+        public int entryId;
         ModelController mc = new ModelController();
 
         public EntryView() {
@@ -34,16 +40,26 @@ namespace imento.Views {
         }
 
         // If AlbumId is passed, it will be set to the String albumId
-        protected override void OnNavigatedTo(NavigationEventArgs e) {
-            // String result = (String)e.Parameter;
-            // AlbumParams result = (AlbumParams)e.Parameter;
-            
-            //albumId = result.AlbumId;
+        protected override async void OnNavigatedTo(NavigationEventArgs e) {
+            EntryParams result = (EntryParams)e.Parameter;
+
+            entryId = result.EntryId;
             // EntryTitle.Text = result.AlbumTitle;
 
             base.OnNavigatedTo(e);
 
-            // Entrys = mc.getEntriesOverview(albumId);
+            currentEntry = mc.getEntryDetails(entryId);
+
+            Photos = currentEntry.Photos;
+            /*
+            foreach(var item in Photos) {
+                var bitMapImage = await mc.ToBitmapImage(item.ImageByteArray);
+                ImageSource imageSource = bitMapImage;
+                PicSource.Add(imageSource);
+            }
+             */  
+
+            
         }
 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
@@ -51,18 +67,8 @@ namespace imento.Views {
         }
 
         private async void NewPhoto_Click(object sender, RoutedEventArgs e) {
-            AddPhoto dialog = new AddPhoto();
+            AddPhoto dialog = new AddPhoto(entryId);
             var dialogResult = await dialog.ShowAsync();
-
-            /*
-           
-            if (dialogResult == ContentDialogResult.Primary) {
-                MapIcon1.Title = dialog.Name;
-
-                Map.MapElements.Add(MapIcon1);
-
-            }
-            */
         }
 
     }

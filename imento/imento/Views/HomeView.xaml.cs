@@ -142,14 +142,23 @@ namespace imento
 
 
         private void Map_MapElementClick(MapControl sender, MapElementClickEventArgs args) {
-           
             foreach (var e in args.MapElements) {
                 if (e is MapIcon) {
                     var icon = e as MapIcon;
-                    
+
+                    // this.Frame.Navigate(typeof(Views.AlbumView), new AlbumParams() { AlbumId = album.AlbumId, AlbumTitle = album.Title });
+                    // this.Frame.Navigate(typeof(Views.AlbumView));
+
                     System.Diagnostics.Debug.WriteLine("Mapicon wurde gedrückt " + icon.Title);
                 }
             }
+
+
+        }
+
+        public class AlbumParams {
+            public String AlbumId { get; set; }
+            public String AlbumTitle { get; set; }
         }
 
     }
