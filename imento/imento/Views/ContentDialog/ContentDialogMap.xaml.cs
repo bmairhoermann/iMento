@@ -29,10 +29,14 @@ namespace imento.Views
         }
 
         public string Name { get; set; }
+        public string Desc { get; set; }
+        public string Type { get; set; }
 
         // Ok 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             Name = textBoxName.Text;
+            Desc = textBoxDescription.Text;
+            // Type = (String)comboBox.SelectedValue;
             //   System.Diagnostics.Debug.WriteLine("Speichern"+ textBoxName.Text + textBoxDescription.Text + ComboBox.SelectedItemProperty);
 
 
