@@ -11,15 +11,15 @@
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="FontSize" />
       <RootProperty Name="Foreground" />
-      <RootProperty Name="Name" />
-      <RootProperty Name="Style" />
-      <RootProperty Name="Inlines" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="TextWrapping" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Text" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="Inlines" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="SelectionHighlightColor" />
@@ -69,15 +69,18 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
-      <RootProperty Name="Padding" />
+      <RootProperty Name="AllowDrop" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Padding" />
       <RootProperty Name="Name" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootEvent Name="Drop" />
+      <RootEvent Name="DragOver" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
@@ -97,6 +100,10 @@
       <RootEvent Name="PrimaryButtonClick" />
       <RootEvent Name="SecondaryButtonClick" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Source" />
+    </RootType>
+    <RootType FullName="imento.Views.AddPhoto" />
     <RootType FullName="imento.Views.AddEntry" />
     <RootType FullName="Windows.UI.Xaml.VisualStateManager">
       <RootMethod Name="GetVisualStateGroups" />
@@ -153,9 +160,6 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
       <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="Source" />
     </RootType>
     <RootType FullName="imento.Views.ContentDialogMap" />
     <RootType FullName="imento.Views.EntryView" />

@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <!-- You have to allow the Drop, Drop="Grid_Drop" sets the methodname, DragOver="Grid_DragOver" sets the Methodname-->
     <Grid x:ConnectionId='1' Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" AllowDrop="True"                                          >
         <Image x:ConnectionId='2' x:Name="DroppedImage"/>
     </Grid>

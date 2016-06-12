@@ -30,15 +30,17 @@ namespace imento.Views
 
         public string Name { get; set; }
 
-        private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
-        {
+        // Ok 
+        private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             Name = textBoxName.Text;
             //   System.Diagnostics.Debug.WriteLine("Speichern"+ textBoxName.Text + textBoxDescription.Text + ComboBox.SelectedItemProperty);
 
+
         }
 
-        private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args)
-        {
+
+        // Cancel 
+        private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             System.Diagnostics.Debug.WriteLine("Abbrechen");
         }
 

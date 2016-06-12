@@ -50,20 +50,20 @@ namespace imento.Views {
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) {
+        private async void NewPhoto_Click(object sender, RoutedEventArgs e) {
+            AddPhoto dialog = new AddPhoto();
+            var dialogResult = await dialog.ShowAsync();
 
-        }
+            /*
+           
+            if (dialogResult == ContentDialogResult.Primary) {
+                MapIcon1.Title = dialog.Name;
 
+                Map.MapElements.Add(MapIcon1);
 
-        /*
-        // Convert Image to byte array 
-        public byte[] imageToByteArray(System.Drawing.Image imageIn) {
-            using (var ms = new MemoryStream()) {
-                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
-                return ms.ToArray();
             }
+            */
         }
-        */
 
     }
 }

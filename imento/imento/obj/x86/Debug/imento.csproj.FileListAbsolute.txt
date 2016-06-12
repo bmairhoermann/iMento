@@ -1069,3 +1069,8 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDia
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\ContentDialogMap.xaml
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddEntry.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\ContentDialogMap.xbf
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Views\ContentDialog\AddPhoto.xbf
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddPhoto.g.i.cs
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddPhoto.g.cs
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddPhoto.xaml
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddPhoto.xbf
