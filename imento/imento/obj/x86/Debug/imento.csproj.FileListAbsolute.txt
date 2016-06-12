@@ -1059,3 +1059,13 @@ C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Microsoft.Extensions
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Microsoft.Extensions.Options\en-us\Microsoft.Extensions.Options.Resources.resw
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Microsoft.Extensions.Primitives\en-us\Microsoft.Extensions.Primitives.Resources.resw
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\imento.csproj.GenerateResource.Cache
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Views\ContentDialog\AddEntry.xbf
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Views\ContentDialog\ContentDialogMap.xbf
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddEntry.g.i.cs
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddEntry.g.cs
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\ContentDialogMap.g.i.cs
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\ContentDialogMap.g.cs
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddEntry.xaml
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\ContentDialogMap.xaml
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddEntry.xbf
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\ContentDialogMap.xbf

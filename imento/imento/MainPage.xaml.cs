@@ -69,6 +69,7 @@ namespace imento
         private void GoBack_Click(object sender, RoutedEventArgs e) {
             if (MainFrame.CanGoBack) {
                 MainFrame.GoBack();
+                Title.Text = "Zurück gegangen";
             } else {
                 GoBack.Visibility = Visibility.Collapsed;
             }

@@ -27,6 +27,8 @@ namespace imento.Views {
         public String albumId;
         ModelController mc = new ModelController();
 
+        public String Title = "Album";
+
         public AlbumView() {
             this.InitializeComponent();
             // mc.dostuff();
@@ -53,6 +55,21 @@ namespace imento.Views {
         public class EntryParams {
             public int EntryId { get; set; }
             public String EntryTitle { get; set; }
+        }
+
+        private async void NewEntry_Click(object sender, RoutedEventArgs e) {
+            AddEntry dialog = new AddEntry();
+            var dialogResult = await dialog.ShowAsync();
+            // Debug.WriteLine("xxxxxx new Entry");
+            /*
+           
+            if (dialogResult == ContentDialogResult.Primary) {
+                MapIcon1.Title = dialog.Name;
+
+                Map.MapElements.Add(MapIcon1);
+
+            }
+            */
         }
     }
 }
