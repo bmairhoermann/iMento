@@ -23,19 +23,24 @@ namespace imento
     public sealed partial class HomeView : Page
     {
         MapIcon current = new MapIcon();
+        ModelController mc = new ModelController();
+
 
         public HomeView() {
-            MapIcon current = new MapIcon();
+
+          //  mc.getAlbums();
+            foreach (var e in mc.getAlbums())
+            {
+                MapIcon startIcons = new MapIcon();
+                add(e.Location.Latitude, e.Location.Longitude, e.Title, startIcons);
+
+                }   
             this.InitializeComponent();
-            MapIcon test = new MapIcon();
-            MapIcon test1 = new MapIcon();
-
-            add(48.604, -122.349, "Fotoalbum123", test);
-            add(48.604, -222.349, "Fotoalbum 2", test1);
-
+ 
             Map.MapServiceToken = "0gUEEHhtil5mG0qB0tEX~an0v4B_f0lvb13FYhED-0Q~ArFoblBENhFwIE-Ku54MJ4wMek9cKVlMM4g2HiICGTaM9hHuLaukz-Ru3JGZxlWd";
         }
 
+        //Zoom-Level 
 
         protected override void OnNavigatedTo(NavigationEventArgs e) {
             Map.ZoomLevel = 2;
@@ -43,16 +48,13 @@ namespace imento
         }
 
 
-        private async void add(double latitude, double longitude, string description, MapIcon x) {
-            string neu2 = description;
-            //MapIcon x = new MapIcon();
-
+        private async void add(double latitude, double longitude, string title, MapIcon x) {
             x.Location = new Geopoint(new BasicGeoposition() {
                 Latitude = latitude,
                 Longitude = longitude
             });
             x.NormalizedAnchorPoint = new Point(0.5, 1.0);
-            x.Title = description;
+            x.Title = title;
 
 
             BasicGeoposition location = new BasicGeoposition();
@@ -69,7 +71,7 @@ namespace imento
             if (result.Status == MapLocationFinderStatus.Success)
             {
                 //  tbOutputText.Text = "Stadt = " + result.Locations[0].Address.Town;
-                x.Title = description + " aus " + result.Locations[0].Address.Town;
+                x.Title = title + " aus " + result.Locations[0].Address.Town;
             }
             Map.MapElements.Add(x);
         }
@@ -110,7 +112,7 @@ namespace imento
 
 
                     // Create new Album and Location and save in the database
-                    var mc = new ModelController(); 
+                    
                     
                     // Create Loaction
                     var Location = new Location();
@@ -140,14 +142,15 @@ namespace imento
 
 
         private void Map_MapElementClick(MapControl sender, MapElementClickEventArgs args) {
+           
             foreach (var e in args.MapElements) {
                 if (e is MapIcon) {
                     var icon = e as MapIcon;
+                    
                     System.Diagnostics.Debug.WriteLine("Mapicon wurde gedrückt " + icon.Title);
                 }
             }
         }
-
 
     }
 }

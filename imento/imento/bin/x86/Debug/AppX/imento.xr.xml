@@ -170,6 +170,7 @@
       <RootProperty Name="ZoomInteractionMode" />
       <RootProperty Name="LandmarksVisible" />
       <RootProperty Name="IsRightTapEnabled" />
+      <RootEvent Name="MapElementClick" />
       <RootEvent Name="MapHolding" />
     </RootType>
     <RootType FullName="imento.HomeView" />

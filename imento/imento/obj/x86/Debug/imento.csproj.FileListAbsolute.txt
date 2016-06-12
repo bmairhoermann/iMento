@@ -1006,7 +1006,6 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\EntryView.
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\PhotoView.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\AlbumView.xbf
 C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\Views\AlbumView.xbf
-C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\Views\ContentDialogMap.xbf
 C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\Views\EntryView.xbf
 C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\Views\PhotoView.xbf
 C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\System.Interactive.Async.dll
@@ -1032,8 +1031,6 @@ C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\System.Diagnostics.D
 C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\sqlite3.dll
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\AlbumView.g.i.cs
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\AlbumView.g.cs
-C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialogMap.g.i.cs
-C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialogMap.g.cs
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\EntryView.g.i.cs
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\EntryView.g.cs
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\PhotoView.g.i.cs
@@ -1041,11 +1038,9 @@ C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\PhotoView.g.cs
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\AlbumView.xaml
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\EntryView.xaml
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\PhotoView.xaml
-C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialogMap.xaml
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\AlbumView.xbf
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\EntryView.xbf
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\PhotoView.xbf
-C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialogMap.xbf
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\FxResources.System.Runtime.InteropServices.RuntimeInformation.SR.resw
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Microsoft.Data.Sqlite\en-US\Microsoft.Data.Sqlite.Strings.resw
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Microsoft.EntityFrameworkCore\en-US\Microsoft.EntityFrameworkCore.Properties.CoreStrings.resw
@@ -1074,3 +1069,18 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDia
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddPhoto.g.cs
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddPhoto.xaml
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddPhoto.xbf
+C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\Views\ContentDialog\AddPhoto.xbf
+C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\Views\ContentDialog\AddEntry.xbf
+C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\Views\ContentDialog\ContentDialogMap.xbf
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddPhoto.g.i.cs
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddPhoto.g.cs
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddEntry.g.i.cs
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddEntry.g.cs
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\ContentDialogMap.g.i.cs
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\ContentDialogMap.g.cs
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddPhoto.xaml
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddEntry.xaml
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\ContentDialogMap.xaml
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddPhoto.xbf
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\AddEntry.xbf
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\ContentDialog\ContentDialogMap.xbf
