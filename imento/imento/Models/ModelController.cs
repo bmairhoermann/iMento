@@ -8,12 +8,23 @@ using Windows.Storage;
 using Windows.Storage.Streams;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Diagnostics;
+using Windows.UI.Xaml.Media.Imaging;
+using System.IO;
 
 namespace imento.Models {
     class ModelController {
         // Method for creating a TimeStamp
         public static String GetTimeStamp(DateTime value) {
             return value.ToString("yyyyMMddHHmmssffff");
+        }
+
+        // Method for Parsing a byte-Array to a BitmapImage
+        public async Task<BitmapImage> ToBitmapImage(byte[] array) {
+            using (var ms = new MemoryStream(array)) {
+                var bitmapImage = new BitmapImage();
+                await bitmapImage.SetSourceAsync(ms.AsRandomAccessStream());
+                return bitmapImage;
+            }
         }
 
         //################################################################################################################################

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using imento.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,11 +22,29 @@ using Windows.UI.Xaml.Navigation;
 
 namespace imento.Views {
     public sealed partial class AddPhoto : ContentDialog {
-        public AddPhoto() {
+
+        private byte[] byteArray;
+
+        ModelController mc = new ModelController();
+
+        private int entryId;
+
+        public AddPhoto(int entryId) {
+            this.entryId = entryId;
             this.InitializeComponent();
         }
-
+        // ok
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
+
+            Entry oldEntry = mc.getEntryDetails(entryId);
+
+            Photo newPhoto = new Photo();
+            newPhoto.EntryId = oldEntry.EntryId;
+            newPhoto.ImageByteArray = byteArray;
+
+            oldEntry.Photos.Add(newPhoto);
+
+            mc.updateEntry(oldEntry);
         }
 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
@@ -48,8 +67,7 @@ namespace imento.Views {
                     if (storageFile.ContentType == "image/jpeg" || storageFile.ContentType == "image/bmp" || storageFile.ContentType == "image/gif" || storageFile.ContentType == "image/png") {
                         // Write Inputstream to buffer and write buffer to byte-Array
                         var buffer = await FileIO.ReadBufferAsync(storageFile);
-                        var byteArray = buffer.ToArray(); // 
-
+                        byteArray = buffer.ToArray(); // 
 
                         // BELOW: FOR FURTHER USAGE:
                         // parse byte[] in Bitmap
