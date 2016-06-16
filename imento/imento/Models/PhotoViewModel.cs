@@ -10,9 +10,11 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace imento.Models {
 
+
     class PhotoViewModel : INotifyPropertyChanged {
 
         private BitmapImage photo;
+        public int PhotoId;
 
         public BitmapImage Photo {
             get { return photo; }

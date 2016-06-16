@@ -121,6 +121,20 @@ namespace imento.Models {
             return entry;
         }
 
+        // Get Photo with PhotoId
+        public Photo getPhoto(int PhotoId) {
+            Photo photo = new Photo();
+
+            using (var db = new DataBaseContext()) {
+                try {
+                    photo = db.Photos.First(p => p.PhotoId == PhotoId);
+                } catch {
+                    Debug.WriteLine("MODELCONTROLLER: getPhoto: No Photo found!");
+                }
+            }
+            return photo;
+        }
+
         //################################################################################################################################
         //###########################################################ADD_METHODS##########################################################
         //################################################################################################################################
@@ -151,12 +165,25 @@ namespace imento.Models {
             }
         }
 
+        // Add Photo with EntryId to Database
+        public void saveNewPhoto(Photo Photo, int EntryId) {
+            using (var db = new DataBaseContext()) {
+                try {
+                    Photo.EntryId = EntryId;
+                    db.Photos.Add(Photo);
+                    db.SaveChanges();
+                } catch {
+                    Debug.WriteLine("MODELCONTROLLER: saveNewPhoto(): Not able to add Photo to Database!");
+                }
+            }
+        }
+
         //################################################################################################################################
         //###########################################################UPDATE_METHODS#######################################################
         //################################################################################################################################
 
         // Update Album in Database
-        public void updateAlbum(Album Album) {
+        public void updateAlbumInfo(Album Album) {
             using (var db = new DataBaseContext()) {
                 try {
                     Album.Location = db.Locations.First(l => l.AlbumId == Album.AlbumId);
@@ -184,11 +211,6 @@ namespace imento.Models {
         // Update Entry in Database
         public void updateEntry(Entry Entry) {
             using (var db = new DataBaseContext()) {
-                try {
-                    Entry.Photos = db.Photos.Where(p => p.EntryId == Entry.EntryId).ToList();
-                } catch {
-                    Debug.WriteLine("MODELCONTROLLER: updateEntry(): Not able to find Photos in Database!");
-                }
                 try {
                     db.Entries.Update(Entry);
                     db.SaveChanges();
@@ -253,6 +275,24 @@ namespace imento.Models {
                     db.SaveChanges();
                 } catch {
                     Debug.WriteLine("MODELCONTROLLER: deleteAlbum(): Not able to delete Entry in Database!");
+                }
+            }
+        }
+
+        // Delete Photo in Database
+        public void deletePhoto(int PhotoId) {
+            var Photo = new Photo();
+            using (var db = new DataBaseContext()) {
+                try {
+                    Photo = db.Photos.First(p => p.PhotoId == PhotoId);
+                } catch {
+                    Debug.WriteLine("MODELCONTROLLER: deletePhoto(): Not able to find Photo in Database!");
+                }
+                try {
+                    db.Remove(Photo);
+                    db.SaveChanges();
+                } catch {
+                    Debug.WriteLine("MODELCONTROLLER: deletePhoto(): Not able to delete Photo in Database!");
                 }
             }
         }

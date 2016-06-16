@@ -5,9 +5,12 @@
     xmlns:local="using:imento.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:imento.Models"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Image Width="500" x:Name="DisplayPhoto" />
 
     </Grid>
 </Page>

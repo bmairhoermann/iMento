@@ -53,12 +53,17 @@ namespace imento.Views {
             foreach (Photo photo in currentEntry.Photos) {
                 var photoViewModel = new PhotoViewModel();
                 photoViewModel.Photo = await photo.ToBitmapImage();
+                photoViewModel.PhotoId = photo.PhotoId;
                 Photos.Add(photoViewModel);
             }
         }
 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
-
+            var photo = (PhotoViewModel)e.ClickedItem; 
+            this.Frame.Navigate(typeof(Views.PhotoView), new PhotoParams() { PhotoId = photo.PhotoId });
+        }
+        public class PhotoParams {
+            public int PhotoId { get; set; }
         }
 
         private async void NewPhoto_Click(object sender, RoutedEventArgs e) {
