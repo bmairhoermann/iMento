@@ -46,9 +46,11 @@ namespace imento
                 MainFrame.Navigate(typeof(HomeView));
                 Title.Text = "Startseite";
                 GoBack.Visibility = Visibility.Collapsed;
-            } else if (NewAlbum.IsSelected) {
-                MainFrame.Navigate(typeof(Views.EntryView)); // wtf...
-                Title.Text = "Neues Album anlegen";
+                /*
+                }else if (NewAlbum.IsSelected) {
+                    MainFrame.Navigate(typeof(Views.EntryView)); // wtf...
+                    Title.Text = "Neues Album anlegen";
+                    */
             } else if (AllAlbums.IsSelected) {
                 MainFrame.Navigate(typeof(AllAlbumsView));
                 Title.Text = "Alle Alben";

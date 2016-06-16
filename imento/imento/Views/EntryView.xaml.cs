@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using imento.Models;
 using System.Diagnostics;
 using static imento.Views.AlbumView;
+using System.Collections.ObjectModel;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -25,10 +26,10 @@ namespace imento.Views {
     /// </summary>
     public sealed partial class EntryView : Page {
 
-        private List<Photo> Photos;
+        private ObservableCollection<PhotoViewModel> Photos;
         private Entry currentEntry = new Entry();
 
-        private List<ImageSource> PicSource;
+        //private List<ImageSource> PicSource;
 
         public String albumId;
         public int entryId;
@@ -41,25 +42,19 @@ namespace imento.Views {
 
         // If AlbumId is passed, it will be set to the String albumId
         protected override async void OnNavigatedTo(NavigationEventArgs e) {
-            EntryParams result = (EntryParams)e.Parameter;
-
-            entryId = result.EntryId;
-            // EntryTitle.Text = result.AlbumTitle;
-
             base.OnNavigatedTo(e);
 
+            EntryParams result = (EntryParams)e.Parameter;
+            entryId = result.EntryId;
+
             currentEntry = mc.getEntryDetails(entryId);
+            Photos = new ObservableCollection<PhotoViewModel>();
 
-            Photos = currentEntry.Photos;
-            /*
-            foreach(var item in Photos) {
-                var bitMapImage = await mc.ToBitmapImage(item.ImageByteArray);
-                ImageSource imageSource = bitMapImage;
-                PicSource.Add(imageSource);
+            foreach (Photo photo in currentEntry.Photos) {
+                var photoViewModel = new PhotoViewModel();
+                photoViewModel.Photo = await photo.ToBitmapImage();
+                Photos.Add(photoViewModel);
             }
-             */  
-
-            
         }
 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {

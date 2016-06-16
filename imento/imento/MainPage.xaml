@@ -45,14 +45,14 @@
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Startseite</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-
+<!-- 
                     <ListBoxItem Name="NewAlbum">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontSize="24" TextAlignment="Center" Name="NewAlbumButton" FontFamily="Segoe MDL2 Assets" Text="&#xEB49;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Neues Album</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-
+-->
                     <ListBoxItem Name="AllAlbums">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontSize="24" TextAlignment="Center" Name="AllAlbumsButton" FontFamily="Segoe MDL2 Assets" Text="&#xE81E;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />

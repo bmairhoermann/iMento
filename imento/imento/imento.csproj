@@ -109,6 +109,7 @@
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ModelController.cs" />
     <Compile Include="Models\Photo.cs" />
+    <Compile Include="Models\PhotoViewModel.cs" />
     <Compile Include="Views\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>
