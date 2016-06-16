@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using imento.Views;
 using imento.Models;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,6 +25,7 @@ namespace imento
     {
         MapIcon current = new MapIcon();
         ModelController mc = new ModelController();
+        Dictionary<MapIcon, string> mapIconDictionary = new Dictionary<MapIcon, string>();
 
 
         public HomeView() {
@@ -33,7 +35,7 @@ namespace imento
             {
                 MapIcon startIcons = new MapIcon();
                 add(e.Location.Latitude, e.Location.Longitude, e.Title, startIcons);
-
+                mapIconDictionary.Add(startIcons, e.AlbumId);
                 }   
             this.InitializeComponent();
  
@@ -142,24 +144,24 @@ namespace imento
 
 
         private void Map_MapElementClick(MapControl sender, MapElementClickEventArgs args) {
-            foreach (var e in args.MapElements) {
-                if (e is MapIcon) {
+            string albumID;
+
+            foreach (var e in args.MapElements)
+            {
+                if (e is MapIcon)
+                {
                     var icon = e as MapIcon;
 
-                    // this.Frame.Navigate(typeof(Views.AlbumView), new AlbumParams() { AlbumId = album.AlbumId, AlbumTitle = album.Title });
-                    // this.Frame.Navigate(typeof(Views.AlbumView));
-
-                    System.Diagnostics.Debug.WriteLine("Mapicon wurde gedrückt " + icon.Title);
+                    if (mapIconDictionary.ContainsKey(icon))
+                    {
+                        if (mapIconDictionary.TryGetValue(icon, out albumID))
+                        {
+                            System.Diagnostics.Debug.WriteLine("Mapicon wurde gedrückt " + albumID);
+                            this.Frame.Navigate(typeof(Views.AlbumView), new AlbumParams() { AlbumId = albumID, AlbumTitle = icon.Title });
+                        }
+                    }
                 }
             }
-
-
         }
-
-        public class AlbumParams {
-            public String AlbumId { get; set; }
-            public String AlbumTitle { get; set; }
-        }
-
     }
 }
