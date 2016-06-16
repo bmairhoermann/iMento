@@ -1,1 +1,0 @@
-C:\Users\Brian\Documents\Visual Studio 2015\Projects\SQLiteTestOutFinal\SQLiteTestOutFinal\SQLiteTestOutFinal.csproj;x86
