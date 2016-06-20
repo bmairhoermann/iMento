@@ -5,6 +5,7 @@
     xmlns:local="using:imento.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="using:System"
     mc:Ignorable="d"
     Title="Neues Album erstellen"
     PrimaryButtonText="Speichern"
@@ -19,27 +20,18 @@
         <TextBox x:Name="textBoxDescription" HorizontalAlignment="Left" Margin="122,37,0,0" TextWrapping="Wrap" PlaceholderText="Beschreibung des Albums" VerticalAlignment="Top" Width="169"/>
         <TextBlock x:Name="textBlockDescription" HorizontalAlignment="Left" Margin="0,43,0,0" TextWrapping="Wrap" Text="Beschreibung:" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlockLocation" HorizontalAlignment="Left" Margin="0,84,0,0" TextWrapping="Wrap" Text="Ort:" VerticalAlignment="Top" Width="93"/>
+        
         <TextBlock x:Name="textBlockLocation1" HorizontalAlignment="Left" Margin="122,84,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="169"/>
-        <TextBlock x:Name="textBlockType" HorizontalAlignment="Left" Margin="0,124,0,0" TextWrapping="Wrap" Text="Art:" VerticalAlignment="Top"/>
 
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="122,116,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/WpfTutorialSamples;component/Images/bullet_red.png" />
-                    <TextBlock Foreground="Red">Red</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Foreground="Green">Green</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/WpfTutorialSamples;component/Images/bullet_blue.png" />
-                    <TextBlock Foreground="Blue">Blue</TextBlock>
-                </StackPanel>
-            </ComboBoxItem>
+        <TextBlock x:Name="textBlockType" HorizontalAlignment="Left" Margin="0,124,0,0" TextWrapping="Wrap" Text="Art:" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox" 
+                  ItemsSource="{x:Bind TypeList}"
+                  HorizontalAlignment="Left" Margin="122,116,0,0" VerticalAlignment="Top" Width="20" FontFamily="Assets/fonts/imentofont.ttf#imentofont">
+            <ComboBox.ItemTemplate>
+                <DataTemplate x:DataType="system:String">
+                    <TextBlock Text="{x:Bind }"></TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
     </Grid>
 </ContentDialog>

@@ -26,18 +26,22 @@ namespace imento.Views
             this.InitializeComponent();
 
             textBlockLocation1.Text = location;
+            TypeList = new List<string> { "a", "b", "c", "d", "e", "f", "g", "h","i","j" };
         }
 
         public string Name { get; set; }
         public string Desc { get; set; }
         public string Type { get; set; }
 
+        public List<string> TypeList { get; set; }
+
         // Ok 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             Name = textBoxName.Text;
             Desc = textBoxDescription.Text;
-            // Type = (String)comboBox.SelectedValue;
-            //   System.Diagnostics.Debug.WriteLine("Speichern"+ textBoxName.Text + textBoxDescription.Text + ComboBox.SelectedItemProperty);
+            Type = (String)comboBox.SelectedItem;
+
+            System.Diagnostics.Debug.WriteLine("Speichern"+ textBoxName.Text + textBoxDescription.Text + Type);
 
 
         }

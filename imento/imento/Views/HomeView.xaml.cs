@@ -13,6 +13,7 @@ using imento.Views;
 using imento.Models;
 using System.Diagnostics;
 using System.Collections.Generic;
+using Windows.Storage.Streams;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -82,35 +83,38 @@ namespace imento
 
         private async void Map_MapHolding(MapControl sender, MapInputEventArgs e)
         {
-            MapIcon MapIcon1 = new MapIcon();
-            MapIcon1.Location = new Geopoint(new BasicGeoposition()
+            MapIcon tempMapIcon = new MapIcon();
+            tempMapIcon.Location = new Geopoint(new BasicGeoposition()
             {
                 Latitude = e.Location.Position.Latitude,
                 Longitude = e.Location.Position.Longitude
             });
-            MapIcon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
+            tempMapIcon.NormalizedAnchorPoint = new Point(0.5, 1.0);
 
 
-            BasicGeoposition location = new BasicGeoposition();
-            location.Latitude = e.Location.Position.Latitude;
-            location.Longitude = e.Location.Position.Longitude;
-            Geopoint pointToReverseGeocode = new Geopoint(location);
+            BasicGeoposition geoPosition = new BasicGeoposition();
+            geoPosition.Latitude = e.Location.Position.Latitude;
+            geoPosition.Longitude = e.Location.Position.Longitude;
 
             // Reverse geocode the specified geographic location.
+            Geopoint pointToReverseGeocode = new Geopoint(geoPosition);
+
+            
             MapLocationFinderResult result = await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
 
             // If the query returns results, display the name of the town
             // contained in the address of the first result.
             if (result.Status == MapLocationFinderStatus.Success) {
-                current = MapIcon1;
+                current = tempMapIcon;
 
                 ContentDialogMap dialog = new ContentDialogMap(result.Locations[0].Address.Town);
                 var dialogResult = await dialog.ShowAsync();
                 if (dialogResult == ContentDialogResult.Primary) {
 
                     // zum testen
-                    MapIcon1.Title = dialog.Name;
-                    Map.MapElements.Add(MapIcon1);
+                    tempMapIcon.Title = dialog.Name;
+                    tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/NewStoreLogo.scale-100.png"));
+                    Map.MapElements.Add(tempMapIcon);
 
 
                     // Create new Album and Location and save in the database
@@ -119,8 +123,8 @@ namespace imento
                     // Create Loaction
                     var Location = new Location();
                     Location.Description = result.Locations[0].Address.Town;
-                    Location.Longitude = MapIcon1.Location.Position.Longitude;
-                    Location.Latitude = MapIcon1.Location.Position.Latitude;
+                    Location.Longitude = tempMapIcon.Location.Position.Longitude;
+                    Location.Latitude = tempMapIcon.Location.Position.Latitude;
 
                     // Create Album
                     var Album = new Album();
@@ -145,7 +149,8 @@ namespace imento
 
         private void Map_MapElementClick(MapControl sender, MapElementClickEventArgs args) {
             string albumID;
-
+            
+            
             foreach (var e in args.MapElements)
             {
                 if (e is MapIcon)
@@ -156,6 +161,7 @@ namespace imento
                     {
                         if (mapIconDictionary.TryGetValue(icon, out albumID))
                         {
+                            
                             System.Diagnostics.Debug.WriteLine("Mapicon wurde gedrückt " + albumID);
                             this.Frame.Navigate(typeof(Views.AlbumView), new AlbumParams() { AlbumId = albumID, AlbumTitle = icon.Title });
                         }

@@ -132,7 +132,7 @@ namespace imento.imento_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[21];
+            _typeNameTable = new string[19];
             _typeNameTable[0] = "imento.AboutView";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
@@ -144,18 +144,16 @@ namespace imento.imento_XamlTypeInfo
             _typeNameTable[8] = "imento.Views.AlbumView";
             _typeNameTable[9] = "imento.AllAlbumsView";
             _typeNameTable[10] = "imento.Views.ContentDialogMap";
-            _typeNameTable[11] = "System.Collections.Generic.List`1<String>";
-            _typeNameTable[12] = "Object";
-            _typeNameTable[13] = "imento.Views.EntryView";
-            _typeNameTable[14] = "imento.FavsView";
-            _typeNameTable[15] = "imento.HelpView";
-            _typeNameTable[16] = "imento.HomeView";
-            _typeNameTable[17] = "imento.MainPage";
-            _typeNameTable[18] = "imento.NewAlbumView";
-            _typeNameTable[19] = "imento.Views.PhotoView";
-            _typeNameTable[20] = "imento.SettingsView";
+            _typeNameTable[11] = "imento.Views.EntryView";
+            _typeNameTable[12] = "imento.FavsView";
+            _typeNameTable[13] = "imento.HelpView";
+            _typeNameTable[14] = "imento.HomeView";
+            _typeNameTable[15] = "imento.MainPage";
+            _typeNameTable[16] = "imento.NewAlbumView";
+            _typeNameTable[17] = "imento.Views.PhotoView";
+            _typeNameTable[18] = "imento.SettingsView";
 
-            _typeTable = new global::System.Type[21];
+            _typeTable = new global::System.Type[19];
             _typeTable[0] = typeof(global::imento.AboutView);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
@@ -167,16 +165,14 @@ namespace imento.imento_XamlTypeInfo
             _typeTable[8] = typeof(global::imento.Views.AlbumView);
             _typeTable[9] = typeof(global::imento.AllAlbumsView);
             _typeTable[10] = typeof(global::imento.Views.ContentDialogMap);
-            _typeTable[11] = typeof(global::System.Collections.Generic.List<global::System.String>);
-            _typeTable[12] = typeof(global::System.Object);
-            _typeTable[13] = typeof(global::imento.Views.EntryView);
-            _typeTable[14] = typeof(global::imento.FavsView);
-            _typeTable[15] = typeof(global::imento.HelpView);
-            _typeTable[16] = typeof(global::imento.HomeView);
-            _typeTable[17] = typeof(global::imento.MainPage);
-            _typeTable[18] = typeof(global::imento.NewAlbumView);
-            _typeTable[19] = typeof(global::imento.Views.PhotoView);
-            _typeTable[20] = typeof(global::imento.SettingsView);
+            _typeTable[11] = typeof(global::imento.Views.EntryView);
+            _typeTable[12] = typeof(global::imento.FavsView);
+            _typeTable[13] = typeof(global::imento.HelpView);
+            _typeTable[14] = typeof(global::imento.HomeView);
+            _typeTable[15] = typeof(global::imento.MainPage);
+            _typeTable[16] = typeof(global::imento.NewAlbumView);
+            _typeTable[17] = typeof(global::imento.Views.PhotoView);
+            _typeTable[18] = typeof(global::imento.SettingsView);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -215,21 +211,14 @@ namespace imento.imento_XamlTypeInfo
         private object Activate_6_AddEntry() { return new global::imento.Views.AddEntry(); }
         private object Activate_8_AlbumView() { return new global::imento.Views.AlbumView(); }
         private object Activate_9_AllAlbumsView() { return new global::imento.AllAlbumsView(); }
-        private object Activate_11_List() { return new global::System.Collections.Generic.List<global::System.String>(); }
-        private object Activate_13_EntryView() { return new global::imento.Views.EntryView(); }
-        private object Activate_14_FavsView() { return new global::imento.FavsView(); }
-        private object Activate_15_HelpView() { return new global::imento.HelpView(); }
-        private object Activate_16_HomeView() { return new global::imento.HomeView(); }
-        private object Activate_17_MainPage() { return new global::imento.MainPage(); }
-        private object Activate_18_NewAlbumView() { return new global::imento.NewAlbumView(); }
-        private object Activate_19_PhotoView() { return new global::imento.Views.PhotoView(); }
-        private object Activate_20_SettingsView() { return new global::imento.SettingsView(); }
-        private void VectorAdd_11_List(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::System.String>)instance;
-            var newItem = (global::System.String)item;
-            collection.Add(newItem);
-        }
+        private object Activate_11_EntryView() { return new global::imento.Views.EntryView(); }
+        private object Activate_12_FavsView() { return new global::imento.FavsView(); }
+        private object Activate_13_HelpView() { return new global::imento.HelpView(); }
+        private object Activate_14_HomeView() { return new global::imento.HomeView(); }
+        private object Activate_15_MainPage() { return new global::imento.MainPage(); }
+        private object Activate_16_NewAlbumView() { return new global::imento.NewAlbumView(); }
+        private object Activate_17_PhotoView() { return new global::imento.Views.PhotoView(); }
+        private object Activate_18_SettingsView() { return new global::imento.SettingsView(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -302,74 +291,62 @@ namespace imento.imento_XamlTypeInfo
                 userType.AddMemberName("Name");
                 userType.AddMemberName("Desc");
                 userType.AddMemberName("Type");
-                userType.AddMemberName("TypeList");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  System.Collections.Generic.List`1<String>
-                userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_11_List;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 12:   //  Object
-                xamlType = new global::imento.imento_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 13:   //  imento.Views.EntryView
+            case 11:   //  imento.Views.EntryView
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_13_EntryView;
+                userType.Activator = Activate_11_EntryView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 14:   //  imento.FavsView
+            case 12:   //  imento.FavsView
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_14_FavsView;
+                userType.Activator = Activate_12_FavsView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 15:   //  imento.HelpView
+            case 13:   //  imento.HelpView
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_15_HelpView;
+                userType.Activator = Activate_13_HelpView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 16:   //  imento.HomeView
+            case 14:   //  imento.HomeView
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_16_HomeView;
+                userType.Activator = Activate_14_HomeView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 17:   //  imento.MainPage
+            case 15:   //  imento.MainPage
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_17_MainPage;
+                userType.Activator = Activate_15_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 18:   //  imento.NewAlbumView
+            case 16:   //  imento.NewAlbumView
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_18_NewAlbumView;
+                userType.Activator = Activate_16_NewAlbumView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 19:   //  imento.Views.PhotoView
+            case 17:   //  imento.Views.PhotoView
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_19_PhotoView;
+                userType.Activator = Activate_17_PhotoView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 20:   //  imento.SettingsView
+            case 18:   //  imento.SettingsView
                 userType = new global::imento.imento_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_20_SettingsView;
+                userType.Activator = Activate_18_SettingsView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -428,16 +405,6 @@ namespace imento.imento_XamlTypeInfo
             var that = (global::imento.Views.ContentDialogMap)instance;
             that.Type = (global::System.String)Value;
         }
-        private object get_5_ContentDialogMap_TypeList(object instance)
-        {
-            var that = (global::imento.Views.ContentDialogMap)instance;
-            return that.TypeList;
-        }
-        private void set_5_ContentDialogMap_TypeList(object instance, object Value)
-        {
-            var that = (global::imento.Views.ContentDialogMap)instance;
-            that.TypeList = (global::System.Collections.Generic.List<global::System.String>)Value;
-        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -476,12 +443,6 @@ namespace imento.imento_XamlTypeInfo
                 xamlMember = new global::imento.imento_XamlTypeInfo.XamlMember(this, "Type", "String");
                 xamlMember.Getter = get_4_ContentDialogMap_Type;
                 xamlMember.Setter = set_4_ContentDialogMap_Type;
-                break;
-            case "imento.Views.ContentDialogMap.TypeList":
-                userType = (global::imento.imento_XamlTypeInfo.XamlUserType)GetXamlTypeByName("imento.Views.ContentDialogMap");
-                xamlMember = new global::imento.imento_XamlTypeInfo.XamlMember(this, "TypeList", "System.Collections.Generic.List`1<String>");
-                xamlMember.Getter = get_5_ContentDialogMap_TypeList;
-                xamlMember.Setter = set_5_ContentDialogMap_TypeList;
                 break;
             }
             return xamlMember;
