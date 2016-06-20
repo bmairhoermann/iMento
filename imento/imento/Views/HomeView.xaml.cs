@@ -35,7 +35,7 @@ namespace imento
             foreach (var e in mc.getAlbums())
             {
                 MapIcon startIcons = new MapIcon();
-                add(e.Location.Latitude, e.Location.Longitude, e.Title, startIcons);
+                add(e.Location.Latitude, e.Location.Longitude, e.Title, startIcons, e.Type);
                 mapIconDictionary.Add(startIcons, e.AlbumId);
                 }   
             this.InitializeComponent();
@@ -51,14 +51,14 @@ namespace imento
         }
 
 
-        private async void add(double latitude, double longitude, string title, MapIcon x) {
+        private async void add(double latitude, double longitude, string title, MapIcon x, string type) {
             x.Location = new Geopoint(new BasicGeoposition() {
                 Latitude = latitude,
                 Longitude = longitude
             });
             x.NormalizedAnchorPoint = new Point(0.5, 1.0);
             x.Title = title;
-
+            
 
             BasicGeoposition location = new BasicGeoposition();
             location.Latitude = latitude;
@@ -76,6 +76,9 @@ namespace imento
                 //  tbOutputText.Text = "Stadt = " + result.Locations[0].Address.Town;
                 x.Title = title + " aus " + result.Locations[0].Address.Town;
             }
+            System.Diagnostics.Debug.WriteLine("Mapicon LOADING " + type);
+            x.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_"+ type +".png"));
+           
             Map.MapElements.Add(x);
         }
 
@@ -113,7 +116,8 @@ namespace imento
 
                     // zum testen
                     tempMapIcon.Title = dialog.Name;
-                    tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/NewStoreLogo.scale-100.png"));
+
+                    tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_" + dialog.Type + ".png"));
                     Map.MapElements.Add(tempMapIcon);
 
 
@@ -134,7 +138,7 @@ namespace imento
 
                     Album.Title = dialog.Name;
                     Album.Description = dialog.Desc;
-                    Album.Type = "Rundreise"; // ??? 
+                    Album.Type = dialog.Type;  
                     Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
                     Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
                     Album.Location = Location;

@@ -167,6 +167,15 @@
     <None Include="imento_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\icons\icon_a.png" />
+    <Content Include="Assets\icons\icon_b.png" />
+    <Content Include="Assets\icons\icon_c.png" />
+    <Content Include="Assets\icons\icon_d.png" />
+    <Content Include="Assets\icons\icon_e.png" />
+    <Content Include="Assets\icons\icon_f.png" />
+    <Content Include="Assets\icons\icon_i.png" />
+    <Content Include="Assets\icons\icon_j.png" />
+    <Content Include="Assets\icons\icon_k.png" />
     <Content Include="Assets\imento_logo.svg" />
     <Content Include="Assets\NewStoreLogo.scale-100.png" />
     <Content Include="Assets\NewStoreLogo.scale-125.png" />
