@@ -36,15 +36,19 @@ namespace imento.Views {
         // ok
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
 
-            Entry oldEntry = mc.getEntryDetails(entryId);
+            if (byteArray != null && byteArray.Length > 0)
+            {
+                Entry oldEntry = mc.getEntryDetails(entryId);
 
-            Photo newPhoto = new Photo();
-            newPhoto.EntryId = oldEntry.EntryId;
-            newPhoto.ImageByteArray = byteArray;
+                Photo newPhoto = new Photo();
+                newPhoto.EntryId = oldEntry.EntryId;
+                newPhoto.ImageByteArray = byteArray;
 
-            oldEntry.Photos.Add(newPhoto);
+                oldEntry.Photos.Add(newPhoto);
 
-            mc.updateEntry(oldEntry);
+                mc.updateEntry(oldEntry);
+            }
+            
         }
 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
