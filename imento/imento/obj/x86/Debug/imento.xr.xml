@@ -20,8 +20,8 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Style" />
       <RootProperty Name="Inlines" />
-      <RootProperty Name="TextAlignment" />
       <RootProperty Name="FontFamily" />
+      <RootProperty Name="TextAlignment" />
       <RootProperty Name="SelectionHighlightColor" />
       <RootProperty Name="FontWeight" />
     </RootType>

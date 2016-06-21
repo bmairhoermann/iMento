@@ -23,11 +23,18 @@
         <ListView x:ConnectionId='2' Grid.Row="1" Grid.Column="1"                               IsItemClickEnabled="True"                               >
             <ListView.ItemTemplate>
                 <DataTemplate                        >
-                    <StackPanel x:ConnectionId='3' Orientation="Vertical" Height="100" Width="800"  Background="{StaticResource LightOrange}" Padding="5,5,5,5" Margin="0,15,30,15">
-                        <!-- <Image Width="200" Source="{x:Bind PicSource}"/> -->
-                        <TextBlock x:ConnectionId='4' FontSize="38"                       TextWrapping="Wrap" />
-                        <TextBlock x:ConnectionId='5' FontSize="18"                             TextWrapping="Wrap" />
+                    <StackPanel x:ConnectionId='3' Orientation="Horizontal">
+                        <TextBlock x:ConnectionId='4' FontSize="60" FontFamily="Assets/fonts/imentofont.ttf#imentofont"                      TextWrapping="Wrap" />
+
+                        <StackPanel Orientation="Vertical" Height="120" Width="600"  Background="{StaticResource LightOrange}" Padding="5,5,5,5" Margin="0,15,30,15">
+                            <TextBlock x:ConnectionId='5' FontSize="38"                       TextWrapping="Wrap" />
+                            <TextBlock x:ConnectionId='6' FontSize="18"                             TextWrapping="Wrap" />
+                            
+                        </StackPanel>
+                        <Button Name="editAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}"  />
+                        <Button Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" />
                     </StackPanel>
+
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
