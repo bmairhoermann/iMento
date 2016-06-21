@@ -20,7 +20,7 @@
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
 
-        <ListView Grid.Row="1" Grid.Column="1" ItemsSource="{x:Bind Albums}" IsItemClickEnabled="True" ItemClick="GridView_ItemClick">
+        <ListView Grid.Row="1" Grid.Column="1" ItemsSource="{x:Bind Albums}" IsItemClickEnabled="True" ItemClick="GridView_ItemClick" SelectionChanged="ListView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Album">
                     <StackPanel Orientation="Horizontal">
@@ -31,8 +31,8 @@
                             <TextBlock FontSize="18" Text="{x:Bind Description}" TextWrapping="Wrap" />
                             
                         </StackPanel>
-                        <Button Name="editAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}"  />
-                        <Button Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" />
+                        <Button Name="editAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}" Click="editAlbum_Click" />
+                        <Button Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" Click="deleteAlbum_Click" />
                     </StackPanel>
 
                 </DataTemplate>

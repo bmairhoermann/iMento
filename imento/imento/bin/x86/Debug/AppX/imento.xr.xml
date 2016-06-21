@@ -153,6 +153,7 @@
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
       <RootEvent Name="ItemClick" />
+      <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="imento.AllAlbumsView" />
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">

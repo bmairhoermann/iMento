@@ -22,13 +22,13 @@
     <AppXManifest Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-06-21T08:20:55.335</Modified>
+      <Modified>2016-06-21T09:18:18.059</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\imento.exe">
       <PackagePath>entrypoint\imento.exe</PackagePath>
-      <Modified>2016-06-21T08:20:54.866</Modified>
+      <Modified>2016-06-21T09:18:17.833</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\CB\.nuget\packages\Ix-Async\1.2.5\lib\portable-windows8+net45+wp8\System.Interactive.Async.dll">
       <PackagePath>System.Interactive.Async.dll</PackagePath>
@@ -857,7 +857,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\imento.xr.xml">
       <PackagePath>imento.xr.xml</PackagePath>
-      <Modified>2016-06-21T08:14:56.370</Modified>
+      <Modified>2016-06-21T09:12:11.301</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -865,11 +865,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-06-21T08:20:55.210</Modified>
+      <Modified>2016-06-21T09:16:54.859</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Core\imento.exe">
       <PackagePath>imento.exe</PackagePath>
-      <Modified>2016-06-21T08:20:55.332</Modified>
+      <Modified>2016-06-21T09:18:18.058</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

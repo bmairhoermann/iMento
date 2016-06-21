@@ -69,5 +69,11 @@ namespace imento.Views {
             mc.saveNewEntry(Entry, albumId);
 
         }
+
+        // Deletes an album by id and changes view to AllAlbumsView
+        private void deleteAlbum_Click(object sender, RoutedEventArgs e) {
+            mc.deleteAlbum(albumId);
+            this.Frame.Navigate(typeof(AllAlbumsView));
+        }
     }
 }

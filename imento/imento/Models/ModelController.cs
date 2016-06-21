@@ -236,16 +236,22 @@ namespace imento.Models {
         //###########################################################DELETE_METHODS#######################################################
         //################################################################################################################################
 
-        // Delete Album in Database
-        public void deleteAlbum(Album Album) {
+        // Delete Album with AlbumId in Database
+        public void deleteAlbum(string AlbumId) {
+            Album Album = new Album();
             using (var db = new DataBaseContext()) {
                 try {
-                    Album.Location = db.Locations.First(l => l.AlbumId == Album.AlbumId);
+                    Album = db.Albums.First(a => a.AlbumId == AlbumId);
+                } catch {
+                    Debug.WriteLine("MODELCONTROLLER: deleteAlbum(): Not able to find Album in Database!");
+                }
+                try {
+                    Album.Location = db.Locations.First(l => l.AlbumId == AlbumId);
                 } catch {
                     Debug.WriteLine("MODELCONTROLLER: deleteAlbum(): Not able to find Location in Database!");
                 }
                 try {
-                    var Entries = db.Entries.Where(e => e.AlbumId == Album.AlbumId).ToList();
+                    var Entries = db.Entries.Where(e => e.AlbumId == AlbumId).ToList();
                     foreach (Entry entry in Entries) {
                         entry.Photos = db.Photos.Where(p => p.EntryId == entry.EntryId).ToList();
                     }

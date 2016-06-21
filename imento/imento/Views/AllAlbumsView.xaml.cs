@@ -27,6 +27,7 @@ namespace imento
         
         private List<Album> Albums;
         // public string ViewTitle = "Alle Alben xx";
+        private Album album;
 
         ModelController mc = new ModelController();
 
@@ -41,14 +42,25 @@ namespace imento
 
         // Load EntryView an pass album data to load matching entries 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
-            var album = (Album)e.ClickedItem;
-            Debug.WriteLine("--------------------------");
-            Debug.WriteLine("Album id: " + album.AlbumId);
-            Debug.WriteLine("--------------------------");
-
+            album = (Album)e.ClickedItem;
             this.Frame.Navigate(typeof(Views.AlbumView), new AlbumParams() { AlbumId = album.AlbumId, AlbumTitle = album.Title });
         }
 
+        private void editAlbum_Click(object sender, RoutedEventArgs e) {
+            
+        }
+
+        private void deleteAlbum_Click(object sender, RoutedEventArgs e) {
+            
+            Debug.WriteLine("-------------------");
+            // Debug.WriteLine("Title: " + album.Title);
+            Debug.WriteLine("-------------------");
+            //mc.deleteAlbum();
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+
+        }
     }
     public class AlbumParams {
         public String AlbumId { get; set; }
