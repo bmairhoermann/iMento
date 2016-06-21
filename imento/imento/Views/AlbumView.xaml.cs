@@ -24,7 +24,16 @@ namespace imento.Views {
     public sealed partial class AlbumView : Page {
 
         private List<Entry> Entrys;
-        public String albumId;
+        public String AlbumId;
+        public String AlbumTitle;
+        public String AlbumDescription;
+        public String AlbumType;
+        public DateTime AlbumDate_Start;
+        public DateTime AlbumDate_Ende;
+
+
+
+
         ModelController mc = new ModelController();
 
         public String Title = "Album";
@@ -37,12 +46,17 @@ namespace imento.Views {
         protected override void OnNavigatedTo(NavigationEventArgs e) {
             AlbumParams result = (AlbumParams)e.Parameter;
 
-            albumId = result.AlbumId;
-            AlbumTitle.Text = result.AlbumTitle;
+            AlbumId = result.AlbumId;
+            AlbumTitle = result.AlbumTitle;
+            AlbumDescription = result.AlbumDescription;
+            AlbumType = result.AlbumType;
+            AlbumDate_Start = result.AlbumDate_Start;
+            AlbumDate_Ende = result.AlbumDate_Ende;
+
+            AlbumTitleHeadline.Text = result.AlbumTitle;
 
             base.OnNavigatedTo(e);
-
-            Entrys = mc.getEntriesOverview(albumId);
+            Entrys = mc.getEntriesOverview(AlbumId);
         }
 
         // Click on an entry opens it in a new view
@@ -66,14 +80,36 @@ namespace imento.Views {
             Entry.Title = dialog.Title;
             Entry.Description = dialog.Desc;
 
-            mc.saveNewEntry(Entry, albumId);
+            mc.saveNewEntry(Entry, AlbumId);
 
         }
 
         // Deletes an album by id and changes view to AllAlbumsView
         private void deleteAlbum_Click(object sender, RoutedEventArgs e) {
-            mc.deleteAlbum(albumId);
+            mc.deleteAlbum(AlbumId);
             this.Frame.Navigate(typeof(AllAlbumsView));
+        }
+        // Edit the album
+        private async void editAlbum_Click(object sender, RoutedEventArgs e) {
+            ContentDialogMap dialog = new ContentDialogMap(AlbumId, AlbumTitle, AlbumDescription, AlbumType, AlbumDate_Start, AlbumDate_Ende);
+            var dialogResult = await dialog.ShowAsync();
+
+            // Create Album
+            var Album = new Album();
+
+            // IMPORTANT: SET ALBUMID WHEN CREATING NEW ALBUM
+            Album.AlbumId = ModelController.GetTimeStamp(DateTime.Now);
+
+            Album.Title = dialog.AlbumTitle;
+            Album.Description = dialog.AlbumDescription;
+            Album.Type = dialog.AlbumType;
+            Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
+            Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
+            
+            // Album.Entries = EntryList;
+
+            mc.updateAlbumInfo(Album);
+            
         }
     }
 }

@@ -34,18 +34,19 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock x:ConnectionId='4' Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="AlbumTitle" Style="{StaticResource h1}">[ALBUM TITLE]</TextBlock>
+            <Button x:ConnectionId='4' Name="editAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}"                         Margin="0,14,0,0" />
+            <TextBlock x:ConnectionId='5' Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="AlbumTitleHeadline" Style="{StaticResource h1}" Margin="45,0,0,0">[ALBUM TITLE]</TextBlock>
 
-            <Button x:ConnectionId='5' Grid.Row="1" Grid.Column="0" Height="500" Width="200" Content="Neuer Eintrag" Padding="5,5,5,5" Margin="0,15,30,15" Background="{StaticResource Orange}" Foreground="White" FontSize="22"                        />
-            <Button x:ConnectionId='6' Grid.Row="2" Width="200" Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}"                           />
+            <Button x:ConnectionId='6' Grid.Row="1" Grid.Column="0" Height="500" Width="200" Content="Neuer Eintrag" Padding="5,5,5,5" Margin="0,15,30,15" Background="{StaticResource Orange}" Foreground="White" FontSize="22"                        />
+            <Button x:ConnectionId='7' Grid.Row="2" Width="200" Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}"                           />
             
-            <GridView x:ConnectionId='7' Grid.Row="1" Grid.Column="1"                               IsItemClickEnabled="True"                               >
+            <GridView x:ConnectionId='8' Grid.Row="1" Grid.Column="1"                               IsItemClickEnabled="True"                               >
                 <GridView.ItemTemplate>
                     <DataTemplate                        >
-                        <StackPanel x:ConnectionId='8' Height="500" Width="200" Orientation="Vertical" Background="{StaticResource LightOrange}" Padding="5,5,5,5" Margin="0,15,30,15">
+                        <StackPanel x:ConnectionId='9' Height="500" Width="200" Orientation="Vertical" Background="{StaticResource LightOrange}" Padding="5,5,5,5" Margin="0,15,30,15">
                             <!-- <Image Width="200" Source="{x:Bind PicSource}"/> -->
-                            <TextBlock x:ConnectionId='9' FontSize="38"                       TextWrapping="Wrap" />
-                            <TextBlock x:ConnectionId='10' FontSize="18"                             TextWrapping="Wrap" />
+                            <TextBlock x:ConnectionId='10' FontSize="38"                       TextWrapping="Wrap" />
+                            <TextBlock x:ConnectionId='11' FontSize="18"                             TextWrapping="Wrap" />
                         </StackPanel>
                     </DataTemplate>
                 </GridView.ItemTemplate>

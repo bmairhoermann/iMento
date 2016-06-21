@@ -1,4 +1,5 @@
-﻿using System;
+﻿using imento.Models;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -18,34 +19,42 @@ using Windows.UI.Xaml.Navigation;
 
 namespace imento.Views
 {
-    public sealed partial class ContentDialogMap : ContentDialog
-    {
-        public ContentDialogMap(String location)
-        {
+    public sealed partial class ContentDialogMap : ContentDialog {
+        public string AlbumId { get; set; }
+        public string AlbumTitle { get; set; }
+        public string AlbumDescription { get; set; }
+        public string AlbumType { get; set; }
+        DateTime AlbumDate_Start { get; set; }
+        DateTime AlbumDate_Ende { get; set; }
 
+        public List<string> TypeList = new List<string> { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
+
+        // private bool IsNewAlbum = true;
+
+        public ContentDialogMap(String location) {
             this.InitializeComponent();
 
             textBlockLocation1.Text = location;
-            TypeList = new List<string> { "a", "b", "c", "d", "e", "f", "g", "h","i","j" };
+        }
+        public ContentDialogMap(String AlbumId, String AlbumTitle, String AlbumDescription, String AlbumType, DateTime AlbumDate_Start, DateTime AlbumDate_Ende) {
+            this.InitializeComponent();
+
+            textBoxName.Text = AlbumTitle;
+            textBoxDescription.Text = AlbumDescription;
+
+            // IsNewAlbum = false;
+            this.AlbumId = AlbumId;
         }
 
-        public string Name { get; set; }
-        public string Desc { get; set; }
-        public string Type { get; set; }
-
-        public List<string> TypeList { get; set; }
 
         // Ok 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
-            Name = textBoxName.Text;
-            Desc = textBoxDescription.Text;
-            Type = (String)comboBox.SelectedItem;
+            AlbumTitle = textBoxName.Text;
+            AlbumDescription = textBoxDescription.Text;
+            AlbumType = (String)comboBox.SelectedItem;
 
-            System.Diagnostics.Debug.WriteLine("Speichern"+ textBoxName.Text + textBoxDescription.Text + Type);
-
-
+            System.Diagnostics.Debug.WriteLine("Speichern" + textBoxName.Text + textBoxDescription.Text + AlbumType);
         }
-
 
         // Cancel 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {

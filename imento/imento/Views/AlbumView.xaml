@@ -34,7 +34,8 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="AlbumTitle" Style="{StaticResource h1}">[ALBUM TITLE]</TextBlock>
+            <Button Name="editAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}" Click="editAlbum_Click" Margin="0,14,0,0" />
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="AlbumTitleHeadline" Style="{StaticResource h1}" Margin="45,0,0,0">[ALBUM TITLE]</TextBlock>
 
             <Button Grid.Row="1" Grid.Column="0" Height="500" Width="200" Content="Neuer Eintrag" Padding="5,5,5,5" Margin="0,15,30,15" Background="{StaticResource Orange}" Foreground="White" FontSize="22" Click="NewEntry_Click" />
             <Button Grid.Row="2" Width="200" Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" Click="deleteAlbum_Click" />

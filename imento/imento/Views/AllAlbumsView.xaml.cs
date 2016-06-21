@@ -33,17 +33,13 @@ namespace imento
 
         public AllAlbumsView() {
             this.InitializeComponent();
-            
             Albums = mc.getAlbums();
-
-            // mc.dostuff();
-            // mc.saveNewAlbum(Album);
         }
 
         // Load EntryView an pass album data to load matching entries 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
             album = (Album)e.ClickedItem;
-            this.Frame.Navigate(typeof(Views.AlbumView), new AlbumParams() { AlbumId = album.AlbumId, AlbumTitle = album.Title });
+            this.Frame.Navigate(typeof(Views.AlbumView), new AlbumParams() { AlbumId = album.AlbumId, AlbumTitle = album.Title, AlbumDescription = album.Description, AlbumType = album.Type, AlbumDate_Ende = album.Date_Ende, AlbumDate_Start = album.Date_Start });
         }
 
         private void editAlbum_Click(object sender, RoutedEventArgs e) {
@@ -51,9 +47,6 @@ namespace imento
         }
 
         private void deleteAlbum_Click(object sender, RoutedEventArgs e) {
-            
-            Debug.WriteLine("-------------------");
-            // Debug.WriteLine("Title: " + album.Title);
             Debug.WriteLine("-------------------");
             //mc.deleteAlbum();
         }
@@ -65,5 +58,11 @@ namespace imento
     public class AlbumParams {
         public String AlbumId { get; set; }
         public String AlbumTitle { get; set; }
+        public String AlbumDescription { get; set; }
+        public String AlbumType { get; set; }
+
+        public DateTime AlbumDate_Start { get; set; }
+        public DateTime AlbumDate_Ende { get; set; }
+
     }
 }

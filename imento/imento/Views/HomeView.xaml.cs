@@ -115,9 +115,9 @@ namespace imento
                 if (dialogResult == ContentDialogResult.Primary) {
 
                     // zum testen
-                    tempMapIcon.Title = dialog.Name;
+                    tempMapIcon.Title = dialog.AlbumTitle;
 
-                    tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_" + dialog.Type + ".png"));
+                    tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_" + dialog.AlbumType + ".png"));
                     Map.MapElements.Add(tempMapIcon);
 
 
@@ -136,16 +136,15 @@ namespace imento
                     // IMPORTANT: SET ALBUMID WHEN CREATING NEW ALBUM
                     Album.AlbumId = ModelController.GetTimeStamp(DateTime.Now);
 
-                    Album.Title = dialog.Name;
-                    Album.Description = dialog.Desc;
-                    Album.Type = dialog.Type;  
+                    Album.Title = dialog.AlbumTitle;
+                    Album.Description = dialog.AlbumDescription;
+                    Album.Type = dialog.AlbumType;  
                     Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
                     Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
                     Album.Location = Location;
                     // Album.Entries = EntryList;
 
                     mc.saveNewAlbum(Album);
-                    
                 }
             }
         }
