@@ -85,9 +85,26 @@ namespace imento.Views {
         }
 
         // Deletes an album by id and changes view to AllAlbumsView
-        private void deleteAlbum_Click(object sender, RoutedEventArgs e) {
-            mc.deleteAlbum(AlbumId);
-            this.Frame.Navigate(typeof(AllAlbumsView));
+        private async void deleteAlbum_Click(object sender, RoutedEventArgs e) {
+            // MessageDialog
+            var dialog = new Windows.UI.Popups.MessageDialog("Wollen Sie wirklich dieses Album löschen?");
+
+            dialog.Commands.Add(new Windows.UI.Popups.UICommand("Ja") { Id = 0 });
+            dialog.Commands.Add(new Windows.UI.Popups.UICommand("Abbrechen") { Id = 1 });
+
+            dialog.DefaultCommandIndex = 0;
+            dialog.CancelCommandIndex = 1;
+
+            var result = await dialog.ShowAsync();
+
+            var btn = sender as Button;
+            // btn.Content = $"Result: {result.Label} ({result.Id})";
+
+            if ((int)result.Id == 0) {
+                mc.deleteAlbum(AlbumId);
+                this.Frame.Navigate(typeof(AllAlbumsView));
+            } 
+ 
         }
         // Edit the album
         private async void editAlbum_Click(object sender, RoutedEventArgs e) {
