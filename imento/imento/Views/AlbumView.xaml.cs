@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using imento.Models;
 using System.Diagnostics;
+using System.Collections.ObjectModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -23,7 +24,7 @@ namespace imento.Views {
     /// </summary>
     public sealed partial class AlbumView : Page {
 
-        private List<Entry> Entrys;
+        private ObservableCollection<Entry> Entrys;
         public String AlbumId;
         public String AlbumTitle;
         public String AlbumDescription;
@@ -56,7 +57,8 @@ namespace imento.Views {
             AlbumTitleHeadline.Text = result.AlbumTitle;
 
             base.OnNavigatedTo(e);
-            Entrys = mc.getEntriesOverview(AlbumId);
+            
+            Entrys = new ObservableCollection<Entry>(mc.getEntriesOverview(AlbumId));
         }
 
         // Click on an entry opens it in a new view
@@ -82,6 +84,7 @@ namespace imento.Views {
 
             mc.saveNewEntry(Entry, AlbumId);
 
+            Entrys.Add(Entry);
         }
 
         // Deletes an album by id and changes view to AllAlbumsView
