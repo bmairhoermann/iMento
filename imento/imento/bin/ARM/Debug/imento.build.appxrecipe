@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>CB-PC</Machine>
+    <Machine>DESKTOP-9E8T9VN</Machine>
     <WindowsUser>CB</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
@@ -405,8 +405,35 @@
     <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\imento_logo.svg">
-      <PackagePath>Assets\imento_logo.svg</PackagePath>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\fonts\imentofont.ttf">
+      <PackagePath>Assets\fonts\imentofont.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\icons\icon_a.png">
+      <PackagePath>Assets\icons\icon_a.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\icons\icon_b.png">
+      <PackagePath>Assets\icons\icon_b.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\icons\icon_c.png">
+      <PackagePath>Assets\icons\icon_c.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\icons\icon_d.png">
+      <PackagePath>Assets\icons\icon_d.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\icons\icon_e.png">
+      <PackagePath>Assets\icons\icon_e.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\icons\icon_f.png">
+      <PackagePath>Assets\icons\icon_f.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\icons\icon_i.png">
+      <PackagePath>Assets\icons\icon_i.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\icons\icon_j.png">
+      <PackagePath>Assets\icons\icon_j.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\icons\icon_k.png">
+      <PackagePath>Assets\icons\icon_k.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\NewStoreLogo.scale-100.png">
       <PackagePath>Assets\NewStoreLogo.scale-100.png</PackagePath>
@@ -426,6 +453,22 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\NewStoreLogo.scale-400.png">
       <PackagePath>Assets\NewStoreLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\SplashScreen.scale-125.png">
+      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\SplashScreen.scale-150.png">
+      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\SplashScreen.scale-400.png">
+      <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\Square150x150Logo.scale-100.png">
@@ -577,6 +620,9 @@
     <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Assets\imento_logo.svg">
+      <PackagePath>Assets\imento_logo.svg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\CB\Documents\GitHub\iMento\imento\imento\Pictures\pic01.jpg">
       <PackagePath>Pictures\pic01.jpg</PackagePath>

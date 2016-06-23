@@ -54,7 +54,7 @@ namespace imento.Views {
             AlbumDate_Start = result.AlbumDate_Start;
             AlbumDate_Ende = result.AlbumDate_Ende;
 
-            AlbumTitleHeadline.Text = result.AlbumTitle;
+            AlbumTitleHeadline.Text = result.AlbumTitle;            
 
             base.OnNavigatedTo(e);
             
@@ -64,11 +64,15 @@ namespace imento.Views {
         // Click on an entry opens it in a new view
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
             var entry = (Entry)e.ClickedItem;
-            this.Frame.Navigate(typeof(Views.EntryView), new EntryParams() { EntryId = entry.EntryId, EntryTitle = entry.Title });
+            this.Frame.Navigate(typeof(Views.EntryView), new EntryParams() { EntryId = entry.EntryId, EntryTitle = entry.Title, EntryDescription = entry.Description });
         }
         public class EntryParams {
+
             public int EntryId { get; set; }
-            public String EntryTitle { get; set; }
+            public string EntryTitle { get; set; }
+            public string EntryDescription { get; set; }
+
+            public DateTime Date { get; set; }
         }
 
 
@@ -76,15 +80,21 @@ namespace imento.Views {
         private async void NewEntry_Click(object sender, RoutedEventArgs e) {
             AddEntry dialog = new AddEntry();
             var dialogResult = await dialog.ShowAsync();
+            try {
+                if (dialog.Title != "" && dialog.hasChanged == true) {
+                    var Entry = new Entry();
 
-            var Entry = new Entry();
+                    Entry.Title = dialog.Title;
+                    Entry.Description = dialog.Desc;
 
-            Entry.Title = dialog.Title;
-            Entry.Description = dialog.Desc;
+                    mc.saveNewEntry(Entry, AlbumId);
 
-            mc.saveNewEntry(Entry, AlbumId);
+                    Entrys.Add(Entry);
+                }
+            } catch {
+                System.Diagnostics.Debug.WriteLine("ALBUMVIEW: edit_Album_Click(): Not able to update Album!");
+            }
 
-            Entrys.Add(Entry);
         }
 
         // Deletes an album by id and changes view to AllAlbumsView
@@ -101,7 +111,6 @@ namespace imento.Views {
             var result = await dialog.ShowAsync();
 
             var btn = sender as Button;
-            // btn.Content = $"Result: {result.Label} ({result.Id})";
 
             if ((int)result.Id == 0) {
                 mc.deleteAlbum(AlbumId);

@@ -31,8 +31,10 @@
                             <TextBlock FontSize="18" Text="{x:Bind Description}" TextWrapping="Wrap" />
                             
                         </StackPanel>
+                        <!--
                         <Button Name="editAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}" Click="editAlbum_Click" />
                         <Button Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" Click="deleteAlbum_Click" />
+                        -->
                     </StackPanel>
 
                 </DataTemplate>

@@ -269,10 +269,16 @@ namespace imento.Models {
         }
 
         // Delete Entry in Database
-        public void deleteEntry(Entry Entry) {
+        public void deleteEntry(int EntryId) {
             using (var db = new DataBaseContext()) {
+                Entry Entry = new Entry();
                 try {
-                    Entry.Photos = db.Photos.Where(p => p.EntryId == Entry.EntryId).ToList();
+                    Entry = db.Entries.First(e => e.EntryId == EntryId);
+                }catch {
+                    Debug.WriteLine("MODELCONTROLLER: deleteEntry(): Not able to find Entry in Database!");
+                }
+                try {
+                    Entry.Photos = db.Photos.Where(p => p.EntryId == EntryId).ToList();
                 } catch {
                     Debug.WriteLine("MODELCONTROLLER: deleteEntry(): Not able to find Photos in Database!");
                 }

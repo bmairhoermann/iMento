@@ -1,5 +1,15 @@
 WinMetadata\Windows.winmd
 ApplicationInsights.config
+Assets\fonts\imentofont.ttf
+Assets\icons\icon_a.png
+Assets\icons\icon_b.png
+Assets\icons\icon_c.png
+Assets\icons\icon_d.png
+Assets\icons\icon_e.png
+Assets\icons\icon_f.png
+Assets\icons\icon_i.png
+Assets\icons\icon_j.png
+Assets\icons\icon_k.png
 Assets\imento_logo.svg
 Assets\LockScreenLogo.scale-200.png
 Assets\NewStoreLogo.scale-100.png
@@ -7,7 +17,11 @@ Assets\NewStoreLogo.scale-125.png
 Assets\NewStoreLogo.scale-150.png
 Assets\NewStoreLogo.scale-200.png
 Assets\NewStoreLogo.scale-400.png
+Assets\SplashScreen.scale-100.png
+Assets\SplashScreen.scale-125.png
+Assets\SplashScreen.scale-150.png
 Assets\SplashScreen.scale-200.png
+Assets\SplashScreen.scale-400.png
 Assets\Square150x150Logo.scale-100.png
 Assets\Square150x150Logo.scale-125.png
 Assets\Square150x150Logo.scale-150.png

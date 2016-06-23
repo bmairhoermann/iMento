@@ -3,6 +3,9 @@ MainPage.xbf
 Views\AboutView.xbf
 Views\AlbumView.xbf
 Views\AllAlbumsView.xbf
+Views\ContentDialog\AddEntry.xbf
+Views\ContentDialog\AddPhoto.xbf
+Views\ContentDialog\ContentDialogMap.xbf
 Views\EntryView.xbf
 Views\FavsView.xbf
 Views\HelpView.xbf

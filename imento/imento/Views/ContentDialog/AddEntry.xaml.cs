@@ -17,22 +17,35 @@ using Windows.UI.Xaml.Navigation;
 
 namespace imento.Views {
     public sealed partial class AddEntry : ContentDialog {
-        public AddEntry() {
-            this.InitializeComponent();
-        }
 
         public string Title { get; set; }
         public string Desc { get; set; }
+        public int Id { get; set; }
+
+        public bool hasChanged { get; set; }
+
+        public AddEntry() {
+            this.InitializeComponent();
+        }
+        public AddEntry(string Title, string Desc, int Id) {
+            this.InitializeComponent();
+            this.Title = Title;
+            this.Desc = Desc;
+            this.Id = Id;
+        }
+
 
         // Ok 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             Title = textBoxTitle.Text;
             Desc = textBoxDescription.Text;
+
+            hasChanged = true;
         }
 
         // Cancel 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
-
+            hasChanged = false;
         }
     }
 }

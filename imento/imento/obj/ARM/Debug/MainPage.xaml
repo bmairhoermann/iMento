@@ -26,9 +26,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <RelativePanel Background="Gray">
-            <Button x:ConnectionId='19' Name="OpenMenu" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="24" RelativePanel.AlignLeftWithPanel="True"                      Background="{StaticResource Orange}" Foreground="White" />
-            <Button x:ConnectionId='20' Name="GoBack" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE0C4;" FontSize="24" RelativePanel.RightOf="OpenMenu"                      Background="Gray" Foreground="White" />
-            <TextBlock x:ConnectionId='21' Name="Title" Text="Startseite" Foreground="White" RelativePanel.AlignVerticalCenterWith="OpenMenu" RelativePanel.RightOf="GoBack" Margin="15,0,0,0" FontWeight="Bold" />
+            <Button x:ConnectionId='17' Name="OpenMenu" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="24" RelativePanel.AlignLeftWithPanel="True"                      Background="{StaticResource Orange}" Foreground="White" />
+            <Button x:ConnectionId='18' Name="GoBack" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE0C4;" FontSize="24" RelativePanel.RightOf="OpenMenu"                      Background="Gray" Foreground="White" />
+            <TextBlock x:ConnectionId='19' Name="Title" Text="Startseite" Foreground="White" RelativePanel.AlignVerticalCenterWith="OpenMenu" RelativePanel.RightOf="GoBack" Margin="15,0,0,0" FontWeight="Bold" />
         </RelativePanel>
 
         <SplitView x:ConnectionId='2' Grid.Row="1" 
@@ -41,49 +41,49 @@
 
                     <ListBoxItem x:ConnectionId='4' Name="Home">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock x:ConnectionId='17' FontSize="24" TextAlignment="Center" Name="HomeButton" FontFamily="Segoe MDL2 Assets" Text="&#xE128;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
+                            <TextBlock x:ConnectionId='15' FontSize="24" TextAlignment="Center" Name="HomeButton" FontFamily="Segoe MDL2 Assets" Text="&#xE128;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Startseite</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-
-                    <ListBoxItem x:ConnectionId='5' Name="NewAlbum">
+<!-- 
+                    <ListBoxItem Name="NewAlbum">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock x:ConnectionId='16' FontSize="24" TextAlignment="Center" Name="NewAlbumButton" FontFamily="Segoe MDL2 Assets" Text="&#xEB49;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
+                            <TextBlock FontSize="24" TextAlignment="Center" Name="NewAlbumButton" FontFamily="Segoe MDL2 Assets" Text="&#xEB49;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Neues Album</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-
-                    <ListBoxItem x:ConnectionId='6' Name="AllAlbums">
+-->
+                    <ListBoxItem x:ConnectionId='5' Name="AllAlbums">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock x:ConnectionId='15' FontSize="24" TextAlignment="Center" Name="AllAlbumsButton" FontFamily="Segoe MDL2 Assets" Text="&#xE81E;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
+                            <TextBlock x:ConnectionId='14' FontSize="24" TextAlignment="Center" Name="AllAlbumsButton" FontFamily="Segoe MDL2 Assets" Text="&#xE81E;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Alle Alben</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
 
-                    <ListBoxItem x:ConnectionId='7' Name="Favs">
+                    <ListBoxItem x:ConnectionId='6' Name="Favs">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock x:ConnectionId='14' FontSize="24" TextAlignment="Center" Name="FavsButton" FontFamily="Segoe MDL2 Assets" Text="&#xE0B4;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
+                            <TextBlock x:ConnectionId='13' FontSize="24" TextAlignment="Center" Name="FavsButton" FontFamily="Segoe MDL2 Assets" Text="&#xE0B4;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Favoriten</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
 
-                    <ListBoxItem x:ConnectionId='8' Name="Settings">
+                    <ListBoxItem x:ConnectionId='7' Name="Settings">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock x:ConnectionId='13' FontSize="24" TextAlignment="Center" Name="SettingsButton" FontFamily="Segoe MDL2 Assets" Text="&#xE115;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
+                            <TextBlock x:ConnectionId='12' FontSize="24" TextAlignment="Center" Name="SettingsButton" FontFamily="Segoe MDL2 Assets" Text="&#xE115;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Einstellungen</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
 
-                    <ListBoxItem x:ConnectionId='9' Name="Help">
+                    <ListBoxItem x:ConnectionId='8' Name="Help">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock x:ConnectionId='12' FontSize="24" TextAlignment="Center" Name="HelpButton" FontFamily="Segoe MDL2 Assets" Text="&#xE700;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
+                            <TextBlock x:ConnectionId='11' FontSize="24" TextAlignment="Center" Name="HelpButton" FontFamily="Segoe MDL2 Assets" Text="&#xE700;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Hilfe/Anleitung</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
 
-                    <ListBoxItem x:ConnectionId='10' Name="About">
+                    <ListBoxItem x:ConnectionId='9' Name="About">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock x:ConnectionId='11' FontSize="24" TextAlignment="Center" Name="AboutButton" FontFamily="Segoe MDL2 Assets" Text="&#xE25C;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
+                            <TextBlock x:ConnectionId='10' FontSize="24" TextAlignment="Center" Name="AboutButton" FontFamily="Segoe MDL2 Assets" Text="&#xE25C;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Über</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
@@ -93,7 +93,7 @@
 
             <SplitView.Content>
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                    <Frame x:ConnectionId='18' Name="MainFrame"></Frame>
+                    <Frame x:ConnectionId='16' Name="MainFrame"></Frame>
                 </ScrollViewer>
             </SplitView.Content>
         </SplitView>
