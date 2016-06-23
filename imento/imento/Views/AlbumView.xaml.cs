@@ -158,9 +158,13 @@ namespace imento.Views {
                     Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
                     Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
 
+                    AlbumTitle = dialog.AlbumTitle;
                     AlbumTitleHeadline.Text = dialog.AlbumTitle;
 
-                    // Album.Entries = EntryList;
+                    AlbumDescription = dialog.AlbumDescription;
+                    // AlbumDescriptionTextbox = dialog.AlbumDescription
+                    
+                    
 
                     mc.updateAlbumInfo(Album);
                 }
