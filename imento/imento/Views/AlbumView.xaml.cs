@@ -118,7 +118,7 @@ namespace imento.Views {
             var Album = new Album();
 
             // IMPORTANT: SET ALBUMID WHEN CREATING NEW ALBUM
-            Album.AlbumId = ModelController.GetTimeStamp(DateTime.Now);
+            Album.AlbumId = dialog.AlbumId;
 
             Album.Title = dialog.AlbumTitle;
             Album.Description = dialog.AlbumDescription;

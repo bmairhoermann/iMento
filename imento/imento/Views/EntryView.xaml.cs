@@ -47,15 +47,7 @@ namespace imento.Views {
             EntryParams result = (EntryParams)e.Parameter;
             entryId = result.EntryId;
 
-            currentEntry = mc.getEntryDetails(entryId);
-            Photos = new ObservableCollection<PhotoViewModel>();
-
-            foreach (Photo photo in currentEntry.Photos) {
-                var photoViewModel = new PhotoViewModel();
-                photoViewModel.Photo = await photo.ToBitmapImage();
-                photoViewModel.PhotoId = photo.PhotoId;
-                Photos.Add(photoViewModel);
-            }
+            fillObservableListWithPhotos();
         }
 
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
@@ -69,6 +61,28 @@ namespace imento.Views {
         private async void NewPhoto_Click(object sender, RoutedEventArgs e) {
             AddPhoto dialog = new AddPhoto(entryId);
             var dialogResult = await dialog.ShowAsync();
+            if (dialog.photoWasAdded)
+            {
+                currentEntry = mc.getEntryDetails(entryId);
+                PhotoViewModel newPhotoViewModel = new PhotoViewModel();
+                newPhotoViewModel.Photo = await currentEntry.Photos.Last().ToBitmapImage();
+                newPhotoViewModel.PhotoId = currentEntry.Photos.Last().PhotoId;
+                Photos.Add(newPhotoViewModel);
+            }
+        }
+
+        private async void fillObservableListWithPhotos()
+        {
+            currentEntry = mc.getEntryDetails(entryId);
+            Photos = new ObservableCollection<PhotoViewModel>();
+
+            foreach (Photo photo in currentEntry.Photos)
+            {
+                var photoViewModel = new PhotoViewModel();
+                photoViewModel.Photo = await photo.ToBitmapImage();
+                photoViewModel.PhotoId = photo.PhotoId;
+                Photos.Add(photoViewModel);
+            }
         }
 
     }

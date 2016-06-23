@@ -23,6 +23,8 @@ using Windows.UI.Xaml.Navigation;
 namespace imento.Views {
     public sealed partial class AddPhoto : ContentDialog {
 
+        public bool photoWasAdded { get; set; }
+
         private byte[] byteArray;
 
         ModelController mc = new ModelController();
@@ -33,11 +35,13 @@ namespace imento.Views {
             this.entryId = entryId;
             this.InitializeComponent();
         }
-        // ok
+
+
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
 
             if (byteArray != null && byteArray.Length > 0)
             {
+                // Save new Photo to Database
                 Entry oldEntry = mc.getEntryDetails(entryId);
 
                 Photo newPhoto = new Photo();
@@ -47,11 +51,21 @@ namespace imento.Views {
                 oldEntry.Photos.Add(newPhoto);
 
                 mc.updateEntry(oldEntry);
+
+                photoWasAdded = true;
+
             }
+            else
+            {
+                photoWasAdded = false;
+            }
+
+            
             
         }
 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
+            photoWasAdded = false;
         }
 
         private void Grid_DragOver(object sender, DragEventArgs e) {
