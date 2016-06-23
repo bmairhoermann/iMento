@@ -25,12 +25,7 @@ namespace imento.Views {
     public sealed partial class AlbumView : Page {
 
         private ObservableCollection<EntryViewModel> Entrys;
-        public String AlbumId;
-        public String AlbumTitle;
-        public String AlbumDescription;
-        public String AlbumType;
-        public DateTime AlbumDate_Start;
-        public DateTime AlbumDate_Ende;
+        private Album album;
 
         ModelController mc = new ModelController();
 
@@ -46,18 +41,12 @@ namespace imento.Views {
         protected async override void OnNavigatedTo(NavigationEventArgs e) {
             AlbumParams result = (AlbumParams)e.Parameter;
 
-            AlbumId = result.AlbumId;
-            AlbumTitle = result.AlbumTitle;
-            AlbumDescription = result.AlbumDescription;
-            AlbumType = result.AlbumType;
-            AlbumDate_Start = result.AlbumDate_Start;
-            AlbumDate_Ende = result.AlbumDate_Ende;
-
+            album = mc.getAlbum(result.AlbumId);
             AlbumTitleHeadline.Text = result.AlbumTitle;            
 
             base.OnNavigatedTo(e);
 
-            var dbEntries = mc.getEntriesOverview(AlbumId);
+            var dbEntries = mc.getEntriesOverview(album.AlbumId);
             
             Entrys = new ObservableCollection<EntryViewModel>();
             foreach (Entry item in dbEntries) {
@@ -100,9 +89,9 @@ namespace imento.Views {
                     Entry.Title = dialog.Title;
                     Entry.Description = dialog.Desc;
 
-                    mc.saveNewEntry(Entry, AlbumId);
+                    mc.saveNewEntry(Entry, album.AlbumId);
 
-                    var dbEntry = mc.getEntriesOverview(AlbumId).Last();
+                    var dbEntry = mc.getEntriesOverview(album.AlbumId).Last();
 
                     EntryViewModel entryViewModel = new EntryViewModel();
                     entryViewModel.EntryId = dbEntry.EntryId;
@@ -132,14 +121,14 @@ namespace imento.Views {
             var btn = sender as Button;
 
             if ((int)result.Id == 0) {
-                mc.deleteAlbum(AlbumId);
+                mc.deleteAlbum(album.AlbumId);
                 this.Frame.Navigate(typeof(AllAlbumsView));
             } 
  
         }
         // Edit the album
         private async void editAlbum_Click(object sender, RoutedEventArgs e) {
-            ContentDialogMap dialog = new ContentDialogMap(AlbumId, AlbumTitle, AlbumDescription, AlbumType, AlbumDate_Start, AlbumDate_Ende);
+            ContentDialogMap dialog = new ContentDialogMap(album.AlbumId, album.Title, album.Description, album.Type, album.Date_Start, album.Date_Ende);
             var dialogResult = await dialog.ShowAsync();
 
             // Create Album
@@ -158,10 +147,10 @@ namespace imento.Views {
                     Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
                     Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
 
-                    AlbumTitle = dialog.AlbumTitle;
+                    album.Title = dialog.AlbumTitle;
                     AlbumTitleHeadline.Text = dialog.AlbumTitle;
 
-                    AlbumDescription = dialog.AlbumDescription;
+                    album.Description = dialog.AlbumDescription;
                     // AlbumDescriptionTextbox = dialog.AlbumDescription
                     
                     

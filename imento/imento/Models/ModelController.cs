@@ -58,7 +58,24 @@ namespace imento.Models {
             return albums;
         }
 
-        //Get 
+        //Get Album with AlbumId -> Returns a Album including Location and excluding Entries
+        public Album getAlbum(String AlbumId) {
+            Album Album = new Album();
+         
+            using (var db = new DataBaseContext()) {
+                try {
+                    Album = db.Albums.First(a => a.AlbumId == AlbumId);
+                } catch {
+                    Debug.WriteLine("MODELCONTROLLER: getAlbum(): Can not find Album!");
+                }
+                try {
+                    Album.Location = db.Locations.First(l => l.AlbumId == AlbumId);
+                } catch {
+                    Debug.WriteLine("MODELCONTROLLER: getAlbum(): Can not find Location!");
+                }
+            }
+            return Album;
+        }
 
         // Get Entries with one Photo using the current AlbumId -> Returns all Entries associated with the AlbumId but holds no photos
         public List<Entry> getEntriesOverview(string AlbumId) {
