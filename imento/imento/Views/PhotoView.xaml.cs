@@ -25,7 +25,7 @@ namespace imento.Views {
 
         ModelController mc = new ModelController();
         Photo photo = new Photo();
-
+        private int PhotoId;
 
         public PhotoView() {
             this.InitializeComponent();
@@ -40,12 +40,31 @@ namespace imento.Views {
 
             photo = mc.getPhoto(result.PhotoId);
 
+            PhotoId = result.PhotoId;
+
             ImageSource imageSource = await photo.ToBitmapImage();
             DisplayPhoto.Source = imageSource;
 
         }
 
+        private async void deletePhoto_Click(object sender, RoutedEventArgs e) {
+            // MessageDialog
+            var dialog = new Windows.UI.Popups.MessageDialog("Wollen Sie wirklich dieses Foto löschen?");
 
+            dialog.Commands.Add(new Windows.UI.Popups.UICommand("Ja") { Id = 0 });
+            dialog.Commands.Add(new Windows.UI.Popups.UICommand("Abbrechen") { Id = 1 });
 
+            dialog.DefaultCommandIndex = 0;
+            dialog.CancelCommandIndex = 1;
+
+            var result = await dialog.ShowAsync();
+
+            var btn = sender as Button;
+
+            if ((int)result.Id == 0) {
+                mc.deletePhoto(PhotoId);
+                this.Frame.Navigate(typeof(AllAlbumsView));
+            }
+        }
     }
 }

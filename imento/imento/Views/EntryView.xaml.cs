@@ -126,10 +126,7 @@ namespace imento.Views {
                     Entry.Title = dialog.Title;
                     Entry.Description = dialog.Desc;
 
-
                     EntryTitleHeadline.Text = dialog.Title;
-
-                    // Album.Entries = EntryList;
 
                     mc.updateEntry(Entry);
                 }

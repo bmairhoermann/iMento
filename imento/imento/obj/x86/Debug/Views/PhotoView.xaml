@@ -9,8 +9,16 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <Image x:ConnectionId='1' Width="500" x:Name="DisplayPhoto" />
+        <Button x:ConnectionId='1' Grid.Row="0" Width="200" Height="80" Name="deletePhoto" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}"                           />
+        <Image x:ConnectionId='2' Grid.Row="1" x:Name="DisplayPhoto" />
 
     </Grid>
 </Page>
