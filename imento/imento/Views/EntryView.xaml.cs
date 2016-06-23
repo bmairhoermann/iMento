@@ -52,7 +52,7 @@ namespace imento.Views {
             EntryTitle = result.EntryTitle;
             EntryDescription = result.EntryDescription;
 
-        EntryTitleHeadline.Text = result.EntryTitle;
+            EntryTitleHeadline.Text = result.EntryTitle;
 
             fillObservableListWithPhotos();
         }

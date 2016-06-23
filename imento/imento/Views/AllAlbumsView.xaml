@@ -24,7 +24,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Album">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock FontSize="60" FontFamily="Assets/fonts/imentofont.ttf#imentofont" Text="{x:Bind Type}" TextWrapping="Wrap" />
+                        <TextBlock FontSize="60" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont" Text="{x:Bind Type}" TextWrapping="Wrap" />
 
                         <StackPanel Orientation="Vertical" Height="120" Width="600"  Background="{StaticResource LightOrange}" Padding="5,5,5,5" Margin="0,15,30,15">
                             <TextBlock FontSize="38" Text="{x:Bind Title}" TextWrapping="Wrap" />

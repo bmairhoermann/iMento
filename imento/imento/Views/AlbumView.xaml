@@ -42,9 +42,9 @@
 
             <GridView Grid.Row="1" Grid.Column="1" ItemsSource="{x:Bind Entrys}" IsItemClickEnabled="True" ItemClick="GridView_ItemClick">
                 <GridView.ItemTemplate>
-                    <DataTemplate x:DataType="data:Entry">
+                    <DataTemplate x:DataType="data:EntryViewModel">
                         <StackPanel Height="500" Width="200" Orientation="Vertical" Background="{StaticResource LightOrange}" Padding="5,5,5,5" Margin="0,15,30,15">
-                            <!-- <Image Width="200" Source="{x:Bind PicSource}"/> -->
+                            <Image Width="200" Height="200" x:Name="DisplayPhoto" Source="{x:Bind Photo}" />
                             <TextBlock FontSize="38" Text="{x:Bind Title}" TextWrapping="Wrap" />
                             <TextBlock FontSize="18" Text="{x:Bind Description}" TextWrapping="Wrap" />
                         </StackPanel>

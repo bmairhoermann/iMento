@@ -24,7 +24,7 @@ namespace imento.Views {
     /// </summary>
     public sealed partial class AlbumView : Page {
 
-        private ObservableCollection<Entry> Entrys;
+        private ObservableCollection<EntryViewModel> Entrys;
         public String AlbumId;
         public String AlbumTitle;
         public String AlbumDescription;
@@ -32,10 +32,9 @@ namespace imento.Views {
         public DateTime AlbumDate_Start;
         public DateTime AlbumDate_Ende;
 
-
-
-
         ModelController mc = new ModelController();
+
+        Photo photo = new Photo();
 
         public String Title = "Album";
 
@@ -44,7 +43,7 @@ namespace imento.Views {
         }
 
         // If AlbumId is passed, it will be set to the String albumId
-        protected override void OnNavigatedTo(NavigationEventArgs e) {
+        protected async override void OnNavigatedTo(NavigationEventArgs e) {
             AlbumParams result = (AlbumParams)e.Parameter;
 
             AlbumId = result.AlbumId;
@@ -57,13 +56,27 @@ namespace imento.Views {
             AlbumTitleHeadline.Text = result.AlbumTitle;            
 
             base.OnNavigatedTo(e);
+
+            var dbEntries = mc.getEntriesOverview(AlbumId);
             
-            Entrys = new ObservableCollection<Entry>(mc.getEntriesOverview(AlbumId));
+            Entrys = new ObservableCollection<EntryViewModel>();
+            foreach (Entry item in dbEntries) {
+                EntryViewModel entryViewModel = new EntryViewModel();
+                entryViewModel.EntryId = item.EntryId;
+                entryViewModel.Title = item.Title;
+                entryViewModel.Description = item.Description;
+                if (item.Photos != null) {
+                    entryViewModel.Photo = await item.Photos[0].ToBitmapImage();
+                }
+                Entrys.Add(entryViewModel);
+            }
+
+            
         }
 
         // Click on an entry opens it in a new view
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
-            var entry = (Entry)e.ClickedItem;
+            var entry = (EntryViewModel)e.ClickedItem;
             this.Frame.Navigate(typeof(Views.EntryView), new EntryParams() { EntryId = entry.EntryId, EntryTitle = entry.Title, EntryDescription = entry.Description });
         }
         public class EntryParams {
@@ -89,7 +102,13 @@ namespace imento.Views {
 
                     mc.saveNewEntry(Entry, AlbumId);
 
-                    Entrys.Add(Entry);
+                    var dbEntry = mc.getEntriesOverview(AlbumId).Last();
+
+                    EntryViewModel entryViewModel = new EntryViewModel();
+                    entryViewModel.EntryId = dbEntry.EntryId;
+                    entryViewModel.Title = dbEntry.Title;
+                    entryViewModel.Description = dbEntry.Description;
+                    Entrys.Add(entryViewModel);
                 }
             } catch {
                 System.Diagnostics.Debug.WriteLine("ALBUMVIEW: edit_Album_Click(): Not able to update Album!");

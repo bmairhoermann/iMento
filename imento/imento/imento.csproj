@@ -107,6 +107,7 @@
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Models\DataBaseContext.cs" />
     <Compile Include="Models\Entry.cs" />
+    <Compile Include="Models\EntryViewModel.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ModelController.cs" />
     <Compile Include="Models\Photo.cs" />

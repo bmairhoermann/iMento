@@ -24,7 +24,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate                        >
                     <StackPanel x:ConnectionId='3' Orientation="Horizontal">
-                        <TextBlock x:ConnectionId='4' FontSize="60" FontFamily="Assets/fonts/imentofont.ttf#imentofont"                      TextWrapping="Wrap" />
+                        <TextBlock x:ConnectionId='4' FontSize="60" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont"                      TextWrapping="Wrap" />
 
                         <StackPanel Orientation="Vertical" Height="120" Width="600"  Background="{StaticResource LightOrange}" Padding="5,5,5,5" Margin="0,15,30,15">
                             <TextBlock x:ConnectionId='5' FontSize="38"                       TextWrapping="Wrap" />
