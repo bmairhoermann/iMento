@@ -58,6 +58,8 @@ namespace imento.Models {
             return albums;
         }
 
+        //Get 
+
         // Get Entries with one Photo using the current AlbumId -> Returns all Entries associated with the AlbumId but holds no photos
         public List<Entry> getEntriesOverview(string AlbumId) {
             // Create empty EntryList

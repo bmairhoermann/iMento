@@ -37,6 +37,7 @@ namespace imento.Views
             this.InitializeComponent();
 
             textBlockLocation1.Text = location;
+            comboBox.PlaceholderText = "a";
         }
         public ContentDialogMap(String AlbumId, String AlbumTitle, String AlbumDescription, String AlbumType, DateTime AlbumDate_Start, DateTime AlbumDate_Ende) {
             this.InitializeComponent();
@@ -53,9 +54,15 @@ namespace imento.Views
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             AlbumTitle = textBoxName.Text;
             AlbumDescription = textBoxDescription.Text;
-            AlbumType = (String)comboBox.SelectedItem;
 
-            System.Diagnostics.Debug.WriteLine("Speichern" + textBoxName.Text + textBoxDescription.Text + AlbumType);
+            if (comboBox.SelectedIndex > -1) {
+                AlbumType = (String)comboBox.SelectedItem;
+            } else {
+                comboBox.SelectedIndex = 0;
+                AlbumType = (String)comboBox.SelectedItem;
+            }
+
+                System.Diagnostics.Debug.WriteLine("Speichern" + textBoxName.Text + textBoxDescription.Text + AlbumType);
             hasChanged = true;
         }
 
