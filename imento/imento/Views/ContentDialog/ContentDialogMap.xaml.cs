@@ -27,6 +27,8 @@ namespace imento.Views
         DateTime AlbumDate_Start { get; set; }
         DateTime AlbumDate_Ende { get; set; }
 
+        public bool hasChanged { get; set; }
+
         public List<string> TypeList = new List<string> { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
 
         // private bool IsNewAlbum = true;
@@ -54,11 +56,14 @@ namespace imento.Views
             AlbumType = (String)comboBox.SelectedItem;
 
             System.Diagnostics.Debug.WriteLine("Speichern" + textBoxName.Text + textBoxDescription.Text + AlbumType);
+            hasChanged = true;
         }
 
         // Cancel 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             System.Diagnostics.Debug.WriteLine("Abbrechen");
+            hasChanged = false;
+
         }
 
     }

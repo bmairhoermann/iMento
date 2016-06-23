@@ -120,15 +120,26 @@ namespace imento.Views {
             // IMPORTANT: SET ALBUMID WHEN CREATING NEW ALBUM
             Album.AlbumId = dialog.AlbumId;
 
-            Album.Title = dialog.AlbumTitle;
-            Album.Description = dialog.AlbumDescription;
-            Album.Type = dialog.AlbumType;
-            Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
-            Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
-            
-            // Album.Entries = EntryList;
+            try
+            {
+               if (dialog.AlbumTitle != "" && dialog.hasChanged == true)
+                {
+                    Album.Title = dialog.AlbumTitle;
+                    Album.Description = dialog.AlbumDescription;
+                    Album.Type = dialog.AlbumType;
+                    Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
+                    Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
 
-            mc.updateAlbumInfo(Album);
+                    AlbumTitleHeadline.Text = dialog.AlbumTitle;
+
+                    // Album.Entries = EntryList;
+
+                    mc.updateAlbumInfo(Album);
+                }
+            }catch
+            {
+                System.Diagnostics.Debug.WriteLine("ALBUMVIEW: edit_Album_Click(): Not able to update Album!");
+            }
             
         }
     }
