@@ -18,6 +18,5 @@
             MapHolding="Map_MapHolding"
             IsRightTapEnabled="true"
            />
-        <TextBlock x:Name="tbOutputText" HorizontalAlignment="Left" Margin="72,240,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
     </Grid>
 </Page>

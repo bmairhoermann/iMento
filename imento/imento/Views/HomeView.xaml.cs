@@ -14,6 +14,7 @@ using imento.Models;
 using System.Diagnostics;
 using System.Collections.Generic;
 using Windows.Storage.Streams;
+using Windows.UI.Notifications;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -110,47 +111,77 @@ namespace imento
             if (result.Status == MapLocationFinderStatus.Success) {
                 current = tempMapIcon;
 
-                ContentDialogMap dialog = new ContentDialogMap(result.Locations[0].Address.Town);
-                var dialogResult = await dialog.ShowAsync();
-                if (dialogResult == ContentDialogResult.Primary) {
-
-                    // zum testen
-                    tempMapIcon.Title = dialog.AlbumTitle;
-
-                    tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_" + dialog.AlbumType + ".png"));
-                    Map.MapElements.Add(tempMapIcon);
-
-
-                    // Create new Album and Location and save in the database
-                    
-                    
-                    // Create Loaction
-                    var Location = new Location();
-                    Location.Description = result.Locations[0].Address.Town;
-                    Location.Longitude = tempMapIcon.Location.Position.Longitude;
-                    Location.Latitude = tempMapIcon.Location.Position.Latitude;
-
-                    // Create Album
-                    var Album = new Album();
-
-                    // IMPORTANT: SET ALBUMID WHEN CREATING NEW ALBUM
-                    Album.AlbumId = ModelController.GetTimeStamp(DateTime.Now);
-
-                    Album.Title = dialog.AlbumTitle;
-                    Album.Description = dialog.AlbumDescription;
-                    Album.Type = dialog.AlbumType;  
-                    Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
-                    Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
-                    Album.Location = Location;
-                    // Album.Entries = EntryList;
-
-                    mc.saveNewAlbum(Album);
+              if(result.Locations.Count == 0)
+                {
+                    error("Standort konnte nicht hinzugefügt werden");
                 }
+                else
+                {
+                    if (result.Locations[0].Address.Town != "")
+                    {
+                        
+                    ContentDialogMap dialog = new ContentDialogMap(result.Locations[0].Address.Town);
+                    var dialogResult = await dialog.ShowAsync();
+
+                        if (dialogResult == ContentDialogResult.Primary)
+                        {
+
+                            // zum testen
+                            tempMapIcon.Title = dialog.AlbumTitle;
+
+                            tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_" + dialog.AlbumType + ".png"));
+                            Map.MapElements.Add(tempMapIcon);
+
+
+                            // Create new Album and Location and save in the database
+
+
+                            // Create Loaction
+                            var Location = new Location();
+                            Location.Description = result.Locations[0].Address.Town;
+                            Location.Longitude = tempMapIcon.Location.Position.Longitude;
+                            Location.Latitude = tempMapIcon.Location.Position.Latitude;
+
+                            // Create Album
+                            var Album = new Album();
+
+                            // IMPORTANT: SET ALBUMID WHEN CREATING NEW ALBUM
+                            Album.AlbumId = ModelController.GetTimeStamp(DateTime.Now);
+
+                            Album.Title = dialog.AlbumTitle;
+                            Album.Description = dialog.AlbumDescription;
+                            Album.Type = dialog.AlbumType;
+                            Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
+                            Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
+                            Album.Location = Location;
+                            // Album.Entries = EntryList;
+
+                            mc.saveNewAlbum(Album);
+                        }
+
+                    }
+                    else
+                        {
+                        error("Standort konnte nicht hinzugefügt werden");
+                        }
+                    }
+                
+
             }
+
+        }
+ private void error(String message)
+        {
+            const ToastTemplateType toastTemplate = ToastTemplateType.ToastText01;
+            var toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
+
+            var toastTextElements = toastXml.GetElementsByTagName("text");
+            toastTextElements[0].AppendChild(toastXml.CreateTextNode(message));
+            var toast = new ToastNotification(toastXml);
+            ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
 
-
-        private void Map_MapElementClick(MapControl sender, MapElementClickEventArgs args) {
+private void Map_MapElementClick(MapControl sender, MapElementClickEventArgs args) {
             string albumID;
             
             
