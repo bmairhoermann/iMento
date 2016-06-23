@@ -47,8 +47,9 @@ namespace imento
         //Zoom-Level 
 
         protected override void OnNavigatedTo(NavigationEventArgs e) {
-            Map.ZoomLevel = 2;
-            Map.LandmarksVisible = true;
+          //  Map.ZoomLevel = 2;
+          //  Map.LandmarksVisible = true;
+           
         }
 
 
@@ -203,5 +204,7 @@ private void Map_MapElementClick(MapControl sender, MapElementClickEventArgs arg
                 }
             }
         }
+
+
     }
 }
