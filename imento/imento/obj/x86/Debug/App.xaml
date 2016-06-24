@@ -11,9 +11,11 @@
         <!-- Color: Orange -->
         <SolidColorBrush x:Key="Orange" Color="#FFEA5B0C" />
         <!-- Color: Light Orange -->
-        <SolidColorBrush x:Key="LightOrange" Color="#fbdece" />
+        <SolidColorBrush x:Key="LightOrange" Color="#fed2b9" />
         <!-- Color: Dark Grey -->
         <SolidColorBrush x:Key="DarkGrey" Color="#FF2A2C2A" />
+        <!-- Background-Color  -->
+        <SolidColorBrush x:Key="Background" Color="#fed2b9" />
 
         <!-- h1: Headline 1 -->
         <Style TargetType="TextBlock" x:Key="h1">
@@ -25,20 +27,18 @@
         <!-- h2: Headline 2 -->
         <Style TargetType="TextBlock" x:Key="h2">
             <Setter Property="FontSize" Value="36" />
-            <Setter Property="Margin" Value="0,0,0,28" />
             <Setter Property="Foreground" Value="#FF2A2C2A" />
         </Style>
 
         <!-- h3: Headline 3 -->
         <Style TargetType="TextBlock" x:Key="h3">
             <Setter Property="FontSize" Value="28" />
-            <Setter Property="Margin" Value="0,0,0,22" />
             <Setter Property="Foreground" Value="#FF2A2C2A" />
         </Style>
 
         <!-- p: Paragraph -->
         <Style TargetType="TextBlock" x:Key="p">
-            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontSize" Value="14" />
             <Setter Property="Foreground" Value="#FF2A2C2A" />
         </Style>
         
@@ -54,8 +54,7 @@
         <Style TargetType="Button" x:Key="button">
             <Setter Property="Background" Value="{StaticResource Orange}" />
             <Setter Property="Foreground" Value="White" />
-            <Setter Property="Margin" Value="0,0,48,48" />
-            <Setter Property="Height" Value="48" />
+            <Setter Property="FontSize" Value="18" />
         </Style>
 
     </Application.Resources>

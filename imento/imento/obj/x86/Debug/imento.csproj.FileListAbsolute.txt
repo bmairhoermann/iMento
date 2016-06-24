@@ -1083,3 +1083,4 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\qualifiers.txt
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\imento.csprojResolveAssemblyReference.cache

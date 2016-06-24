@@ -20,6 +20,8 @@
       <RootProperty Name="Name" />
       <RootProperty Name="Style" />
       <RootProperty Name="Inlines" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="Height" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="SelectionHighlightColor" />
@@ -43,20 +45,23 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="Background" />
       <RootProperty Name="Foreground" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="HorizontalContentAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Name" />
+      <RootProperty Name="Height" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="Content" />
       <RootProperty Name="Style" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="Height" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Padding" />
       <RootProperty Name="Background" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="FontSize" />
-      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="VerticalContentAlignment" />
+      <RootProperty Name="Padding" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Setter">
@@ -79,6 +84,7 @@
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
       <RootEvent Name="Drop" />
       <RootEvent Name="DragOver" />
@@ -103,8 +109,8 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
       <RootProperty Name="Source" />
+      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="imento.Views.AddPhoto" />
     <RootType FullName="imento.Views.AddEntry" />
@@ -130,6 +136,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="Padding" />
       <RootProperty Name="ItemTemplate" />
       <RootEvent Name="ItemClick" />
     </RootType>
@@ -140,23 +147,34 @@
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Height" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Border">
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Orientation" />
-      <RootProperty Name="Background" />
+      <RootProperty Name="Height" />
       <RootProperty Name="Padding" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Children" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Child" />
     </RootType>
     <RootType FullName="imento.Views.AlbumView" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="ItemContainerStyle" />
       <RootEvent Name="ItemClick" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ListViewItem" />
     <RootType FullName="imento.AllAlbumsView" />
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="ItemsSource" />
@@ -175,6 +193,8 @@
       <RootProperty Name="MapServiceToken" />
       <RootProperty Name="ZoomInteractionMode" />
       <RootProperty Name="LandmarksVisible" />
+      <RootProperty Name="ZoomLevel" />
+      <RootProperty Name="RotateInteractionMode" />
       <RootProperty Name="IsRightTapEnabled" />
       <RootEvent Name="MapElementClick" />
       <RootEvent Name="MapHolding" />

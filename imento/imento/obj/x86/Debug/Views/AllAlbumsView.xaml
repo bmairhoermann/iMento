@@ -8,41 +8,44 @@
     xmlns:data="using:imento.Models"
     mc:Ignorable="d">
 
-    <Grid Padding="60,0,0,0"  Background="White">
+    <Grid Background="{StaticResource Background}" Padding="0,8,0,0">
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-
-        <ListView x:ConnectionId='2' Grid.Row="1" Grid.Column="1"                               IsItemClickEnabled="True"                                                                            >
+        <ListView x:ConnectionId='2' Grid.Row="0" Grid.Column="0"                               IsItemClickEnabled="True"                                                                            >
             <ListView.ItemTemplate>
                 <DataTemplate                        >
-                    <StackPanel x:ConnectionId='3' Orientation="Horizontal">
-                        <TextBlock x:ConnectionId='4' FontSize="60" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont"                      TextWrapping="Wrap" />
 
-                        <StackPanel Orientation="Vertical" Height="120" Width="600"  Background="{StaticResource LightOrange}" Padding="5,5,5,5" Margin="0,15,30,15">
-                            <TextBlock x:ConnectionId='5' FontSize="38"                       TextWrapping="Wrap" />
-                            <TextBlock x:ConnectionId='6' FontSize="18"                             TextWrapping="Wrap" />
-                            
-                        </StackPanel>
-                        <!--
-                        <Button Name="editAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}" Click="editAlbum_Click" />
-                        <Button Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" Click="deleteAlbum_Click" />
-                        -->
-                    </StackPanel>
-
+                    <Grid x:ConnectionId='3' Margin="4,8,8,8" Background="{StaticResource Orange}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:ConnectionId='4' Grid.Column="0" Grid.Row="0" FontSize="60" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont"                       TextWrapping="Wrap" HorizontalAlignment="center" VerticalAlignment="Center"  Padding="8,8,8,8" Foreground="#fff" />
+                        <Grid Grid.Column="1" Grid.Row="0" Height="80" Padding="5,5,5,5" Margin="0,15,30,15">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock x:ConnectionId='5' Grid.Row="0" Style="{StaticResource h2}" Foreground="#fff"                       TextWrapping="Wrap" />
+                            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource p}" Foreground="{StaticResource LightOrange}" Text="Reisebeginn: " />
+                                <TextBlock x:ConnectionId='6' Style="{StaticResource p}" Foreground="#fff"                             />
+                                <TextBlock Style="{StaticResource p}" Foreground="{StaticResource LightOrange}" Text=" – Reiseende: " />
+                                <TextBlock x:ConnectionId='7' Style="{StaticResource p}" Foreground="#fff"                            />
+                            </StackPanel>
+                            <!-- <TextBlock Grid.Row="2" FontSize="18" Foreground="#fff" Text="{x:Bind Description}" TextWrapping="Wrap" /> -->
+                        </Grid>
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
-
-
     </Grid>
-
 </Page>
 

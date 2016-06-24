@@ -14,7 +14,11 @@
             MapServiceToken="0gUEEHhtil5mG0qB0tEX~an0v4B_f0lvb13FYhED-0Q~ArFoblBENhFwIE-Ku54MJ4wMek9cKVlMM4g2HiICGTaM9hHuLaukz-Ru3JGZxlWd"
             ZoomInteractionMode="GestureAndControl"
             LandmarksVisible="False"
-                                                
+            ZoomLevel="2"
+                                                 
+            
+            RotateInteractionMode="Disabled"
+           
                                        
             IsRightTapEnabled="true"
            />

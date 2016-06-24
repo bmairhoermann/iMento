@@ -8,40 +8,43 @@
     xmlns:data="using:imento.Models"
     mc:Ignorable="d">
 
-    <Grid Padding="60,0,0,0"  Background="White">
+    <Grid Background="{StaticResource Background}" Padding="0,8,0,0">
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-
-        <ListView Grid.Row="1" Grid.Column="1" ItemsSource="{x:Bind Albums}" IsItemClickEnabled="True" ItemClick="GridView_ItemClick" SelectionChanged="ListView_SelectionChanged">
+        <ListView Grid.Row="0" Grid.Column="0" ItemsSource="{x:Bind Albums}" IsItemClickEnabled="True" ItemClick="GridView_ItemClick" SelectionChanged="ListView_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Album">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock FontSize="60" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont" Text="{x:Bind Type}" TextWrapping="Wrap" />
 
-                        <StackPanel Orientation="Vertical" Height="120" Width="600"  Background="{StaticResource LightOrange}" Padding="5,5,5,5" Margin="0,15,30,15">
-                            <TextBlock FontSize="38" Text="{x:Bind Title}" TextWrapping="Wrap" />
-                            <TextBlock FontSize="18" Text="{x:Bind Description}" TextWrapping="Wrap" />
-                            
-                        </StackPanel>
-                        <!--
-                        <Button Name="editAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}" Click="editAlbum_Click" />
-                        <Button Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" Click="deleteAlbum_Click" />
-                        -->
-                    </StackPanel>
-
+                    <Grid Margin="4,8,8,8" Background="{StaticResource Orange}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0" FontSize="60" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont" Text="{x:Bind Type}"  TextWrapping="Wrap" HorizontalAlignment="center" VerticalAlignment="Center"  Padding="8,8,8,8" Foreground="#fff" />
+                        <Grid Grid.Column="1" Grid.Row="0" Height="80" Padding="5,5,5,5" Margin="0,15,30,15">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Style="{StaticResource h2}" Foreground="#fff" Text="{x:Bind Title}" TextWrapping="Wrap" />
+                            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                <TextBlock Style="{StaticResource p}" Foreground="{StaticResource LightOrange}" Text="Reisebeginn: " />
+                                <TextBlock Style="{StaticResource p}" Foreground="#fff" Text="{x:Bind Date_Start}"  />
+                                <TextBlock Style="{StaticResource p}" Foreground="{StaticResource LightOrange}" Text=" – Reiseende: " />
+                                <TextBlock Style="{StaticResource p}" Foreground="#fff" Text="{x:Bind Date_Ende}"  />
+                            </StackPanel>
+                            <!-- <TextBlock Grid.Row="2" FontSize="18" Foreground="#fff" Text="{x:Bind Description}" TextWrapping="Wrap" /> -->
+                        </Grid>
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
-
-
     </Grid>
-
 </Page>
