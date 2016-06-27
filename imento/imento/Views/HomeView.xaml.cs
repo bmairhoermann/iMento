@@ -68,16 +68,19 @@ namespace imento
             Geopoint pointToReverseGeocode = new Geopoint(location);
 
             // Reverse geocode the specified geographic location.
+            
             MapLocationFinderResult result =
                 await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
 
             // If the query returns results, display the name of the town
+       /*
             // contained in the address of the first result.
             if (result.Status == MapLocationFinderStatus.Success)
             {
                 //  tbOutputText.Text = "Stadt = " + result.Locations[0].Address.Town;
                 x.Title = title + " aus " + result.Locations[0].Address.Town;
             }
+            */
             System.Diagnostics.Debug.WriteLine("Mapicon LOADING " + type);
             x.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_"+ type +".png"));
            
@@ -127,11 +130,8 @@ namespace imento
                         if (dialogResult == ContentDialogResult.Primary)
                         {
 
-                            // zum testen
-                            tempMapIcon.Title = dialog.AlbumTitle;
-
-                            tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_" + dialog.AlbumType + ".png"));
-                            Map.MapElements.Add(tempMapIcon);
+                            
+                            
 
 
                             // Create new Album and Location and save in the database
@@ -158,6 +158,12 @@ namespace imento
                             // Album.Entries = EntryList;
 
                             mc.saveNewAlbum(Album);
+
+                            tempMapIcon.Title = dialog.AlbumTitle;
+
+                            tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_" + dialog.AlbumType + ".png"));
+                            Map.MapElements.Add(tempMapIcon);
+                            mapIconDictionary.Add(tempMapIcon, Album.AlbumId);
                         }
 
                     }

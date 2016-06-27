@@ -43,8 +43,16 @@ namespace imento.Views {
 
             album = mc.getAlbum(result.AlbumId);
             AlbumTitleHeadline.Text = result.AlbumTitle;
-            AlbumDescriptionParagraph.Text = result.AlbumDescription;
-            AlbumTypeIcon.Text = result.AlbumType;
+            try
+            {
+                AlbumDescriptionParagraph.Text = result.AlbumDescription;
+                AlbumTypeIcon.Text = result.AlbumType;
+            }
+            catch
+            {
+
+            }
+            
 
             base.OnNavigatedTo(e);
 

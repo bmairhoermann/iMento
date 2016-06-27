@@ -29,7 +29,7 @@ namespace imento.Views
 
         public bool hasChanged { get; set; }
 
-        public List<string> TypeList = new List<string> { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
+        public ObservableCollection<string> TypeList = new ObservableCollection<string> { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
 
         // private bool IsNewAlbum = true;
 
@@ -37,13 +37,17 @@ namespace imento.Views
             this.InitializeComponent();
 
             textBlockLocation1.Text = location;
-            comboBox.PlaceholderText = "a";
+            //  comboBox.PlaceholderText = "a";
+            comboBox.ItemsSource = TypeList;
+            comboBox.SelectedIndex = 0;
         }
-        public ContentDialogMap(String AlbumId, String AlbumTitle, String AlbumDescription, String AlbumType, DateTime AlbumDate_Start, DateTime AlbumDate_Ende) {
+        public ContentDialogMap(String AlbumId, String AlbumTitle, String AlbumDescription, String albumType, DateTime AlbumDate_Start, DateTime AlbumDate_Ende) {
             this.InitializeComponent();
 
             textBoxName.Text = AlbumTitle;
             textBoxDescription.Text = AlbumDescription;
+            AlbumType = albumType;
+
 
             // IsNewAlbum = false;
             this.AlbumId = AlbumId;
@@ -54,15 +58,10 @@ namespace imento.Views
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             AlbumTitle = textBoxName.Text;
             AlbumDescription = textBoxDescription.Text;
-
-            if (comboBox.SelectedIndex > -1) {
-                AlbumType = (String)comboBox.SelectedItem;
-            } else {
-                comboBox.SelectedIndex = 0;
-                AlbumType = (String)comboBox.SelectedItem;
-            }
-
-                System.Diagnostics.Debug.WriteLine("Speichern" + textBoxName.Text + textBoxDescription.Text + AlbumType);
+            
+            AlbumType = (String)comboBox.SelectedItem;
+            
+            System.Diagnostics.Debug.WriteLine("Speichern" + textBoxName.Text + textBoxDescription.Text + AlbumType);
             hasChanged = true;
         }
 

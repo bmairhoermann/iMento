@@ -25,7 +25,7 @@
 
         <TextBlock x:Name="textBlockType" HorizontalAlignment="Left" Margin="0,124,0,0" TextWrapping="Wrap" Text="Art:" VerticalAlignment="Top"/>
         <ComboBox x:Name="comboBox" 
-                  ItemsSource="{x:Bind TypeList}"
+                  ItemsSource="{x:Bind TypeList , Mode=OneWay}" 
                   HorizontalAlignment="Left" Margin="122,116,0,0" VerticalAlignment="Top" Width="20" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont">
             <ComboBox.ItemTemplate>
                 <DataTemplate x:DataType="system:String">
