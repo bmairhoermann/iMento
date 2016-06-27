@@ -16,6 +16,7 @@ namespace imento.Models {
         [ForeignKey("EntryId")]
         public Entry Entry { get; set; }
 
+        public bool isFavourite { get; set; }
         public byte[] ImageByteArray { get; set; }
 
 

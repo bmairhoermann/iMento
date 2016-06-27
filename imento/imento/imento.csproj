@@ -104,6 +104,10 @@
     <Compile Include="Migrations\20160607090238_SecondMigration.designer.cs">
       <DependentUpon>20160607090238_SecondMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20160627111548_UpdatePhotoModel.cs" />
+    <Compile Include="Migrations\20160627111548_UpdatePhotoModel.designer.cs">
+      <DependentUpon>20160627111548_UpdatePhotoModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DataBaseContextModelSnapshot.cs" />
     <Compile Include="Models\DataBaseContext.cs" />
     <Compile Include="Models\Entry.cs" />
