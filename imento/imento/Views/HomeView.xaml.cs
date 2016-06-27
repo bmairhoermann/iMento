@@ -149,9 +149,9 @@ namespace imento
                             // IMPORTANT: SET ALBUMID WHEN CREATING NEW ALBUM
                             Album.AlbumId = ModelController.GetTimeStamp(DateTime.Now);
 
-                            Album.Title = dialog.AlbumTitle;
-                            Album.Description = dialog.AlbumDescription;
-                            Album.Type = dialog.AlbumType;
+                            Album.Title = dialog.album.Title;
+                            Album.Description = dialog.album.Description;
+                            Album.Type = dialog.album.Type;
                             Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
                             Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
                             Album.Location = Location;
@@ -159,9 +159,9 @@ namespace imento
 
                             mc.saveNewAlbum(Album);
 
-                            tempMapIcon.Title = dialog.AlbumTitle;
+                            tempMapIcon.Title = dialog.album.Title;
 
-                            tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_" + dialog.AlbumType + ".png"));
+                            tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_" + dialog.album.Type + ".png"));
                             Map.MapElements.Add(tempMapIcon);
                             mapIconDictionary.Add(tempMapIcon, Album.AlbumId);
                         }

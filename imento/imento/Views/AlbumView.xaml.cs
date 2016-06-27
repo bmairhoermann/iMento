@@ -48,12 +48,8 @@ namespace imento.Views {
                 AlbumDescriptionParagraph.Text = result.AlbumDescription;
                 AlbumTypeIcon.Text = result.AlbumType;
             }
-            catch
-            {
-
-            }
+            catch {  }
             
-
             base.OnNavigatedTo(e);
 
             var dbEntries = mc.getEntriesOverview(album.AlbumId);
@@ -136,34 +132,19 @@ namespace imento.Views {
         }
         // Edit the album
         private async void editAlbum_Click(object sender, RoutedEventArgs e) {
-            ContentDialogMap dialog = new ContentDialogMap(album.AlbumId, album.Title, album.Description, album.Type, album.Date_Start, album.Date_Ende);
+            ContentDialogMap dialog = new ContentDialogMap(album);
             var dialogResult = await dialog.ShowAsync();
-
-            // Create Album
-            var Album = new Album();
-
-            // IMPORTANT: SET ALBUMID WHEN CREATING NEW ALBUM
-            Album.AlbumId = dialog.AlbumId;
 
             try
             {
-               if (dialog.AlbumTitle != "" && dialog.hasChanged == true)
+               if (dialog.hasChanged == true)
                 {
-                    Album.Title = dialog.AlbumTitle;
-                    Album.Description = dialog.AlbumDescription;
-                    Album.Type = dialog.AlbumType;
-                    Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
-                    Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
+                    album = dialog.album;
+                    AlbumTitleHeadline.Text = album.Title;
+                    AlbumDescriptionParagraph.Text = album.Description;
+                    AlbumTypeIcon.Text = album.Type;
 
-                    album.Title = dialog.AlbumTitle;
-                    AlbumTitleHeadline.Text = dialog.AlbumTitle;
-
-                    album.Description = dialog.AlbumDescription;
-                    // AlbumDescriptionTextbox = dialog.AlbumDescription
-                    
-                    
-
-                    mc.updateAlbumInfo(Album);
+                    mc.updateAlbumInfo(album);
                 }
             }catch
             {

@@ -10,16 +10,15 @@
 
     <Grid Background="{StaticResource Background}" Padding="16,16,16,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
             <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
-        <Image x:ConnectionId='1' Grid.Row="0" x:Name="DisplayPhoto" />
-        <Button x:ConnectionId='2' Grid.Row="1" HorizontalAlignment="Stretch" Height="80" Name="deletePhoto" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}"                           />
-        
+
+        <Button x:ConnectionId='1' HorizontalAlignment="Stretch" Grid.Row="0" Height="80" Name="deletePhoto" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}"                           />
+        <Image x:ConnectionId='2' Grid.Row="1" x:Name="DisplayPhoto" />
 
     </Grid>
 </Page>

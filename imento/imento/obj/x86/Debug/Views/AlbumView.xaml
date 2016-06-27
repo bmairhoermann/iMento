@@ -42,22 +42,14 @@
                     <RowDefinition Height="150" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
-                <!--
-                <Grid Grid.Row="0" Height="284" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <TextBlock Name="AlbumTypeIcon"  Text="a" FontSize="220" Foreground="#ffe7d9" Padding="20,90,0,0" Height="300" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont" />
+                <Grid Grid.Row="0" Height="284" Width="200" VerticalAlignment="Top">
+                    <TextBlock x:ConnectionId='14' Name="AlbumTypeIcon"  Text="a" FontSize="220" Foreground="#ffe7d9" Padding="20,90,0,0" Height="300" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont" />
                 </Grid>
-                <Border Grid.Row="0" BorderBrush="{StaticResource Orange}" BorderThickness="2" Width="200" Height="284" Padding="8,8,8,8" VerticalAlignment="Top" HorizontalAlignment="Left">
-                    <TextBlock Name="AlbumDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}" TextWrapping="Wrap">[ALBUM DESCRIPTION]</TextBlock>
+                <Border Grid.Row="0" BorderBrush="{StaticResource Orange}" BorderThickness="2" Width="200" Height="284" Padding="8,8,8,8" VerticalAlignment="Top">
+                    <TextBlock x:ConnectionId='13' Name="AlbumDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ALBUM DESCRIPTION]</TextBlock>
                 </Border>
-                -->
-
-                <Grid Grid.Row="0" Height="284" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#ffe7d9">
-                    <TextBlock x:ConnectionId='14' Name="AlbumTypeIcon"  Text="a" FontSize="220" Foreground="{StaticResource LightOrange}" Padding="20,90,0,0" Height="300" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont" />
-                </Grid>
-                <TextBlock x:ConnectionId='11' Grid.Row="0" Width="200" Name="AlbumDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}" TextWrapping="Wrap" Padding="8,8,8,8" HorizontalAlignment="Left">[ALBUM DESCRIPTION]</TextBlock>
-
-                <Button x:ConnectionId='12' Grid.Row="1" Width="200" Content="+" Background="{StaticResource Orange}" Foreground="White" FontSize="100"                        Margin="0,0,0,16" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
-                <Button x:ConnectionId='13' Grid.Row="2" Height="50"  Width="200" Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}"                           />
+                <Button x:ConnectionId='11' Grid.Row="1" Width="200" Content="+" Background="{StaticResource Orange}" Foreground="White" FontSize="100"                        Margin="0,0,0,16" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
+                <Button x:ConnectionId='12' Grid.Row="2" Height="50"  Width="200" Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}"                           />
             </Grid>
 
             <GridView x:ConnectionId='6' Grid.Row="1" Grid.Column="1"                               IsItemClickEnabled="True"                                Padding="8,0,0,0">

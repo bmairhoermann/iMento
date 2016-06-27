@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Navigation;
 namespace imento.Views
 {
     public sealed partial class ContentDialogMap : ContentDialog {
+        public Album album { get; set; }
         public string AlbumId { get; set; }
         public string AlbumTitle { get; set; }
         public string AlbumDescription { get; set; }
@@ -30,44 +31,45 @@ namespace imento.Views
         public bool hasChanged { get; set; }
 
         public ObservableCollection<string> TypeList = new ObservableCollection<string> { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
-
-        // private bool IsNewAlbum = true;
+        
 
         public ContentDialogMap(String location) {
             this.InitializeComponent();
 
+            album = new Album();
             textBlockLocation1.Text = location;
-            //  comboBox.PlaceholderText = "a";
             comboBox.ItemsSource = TypeList;
             comboBox.SelectedIndex = 0;
         }
-        public ContentDialogMap(String AlbumId, String AlbumTitle, String AlbumDescription, String albumType, DateTime AlbumDate_Start, DateTime AlbumDate_Ende) {
+        public ContentDialogMap(Album album) {
             this.InitializeComponent();
-
-            textBoxName.Text = AlbumTitle;
-            textBoxDescription.Text = AlbumDescription;
-            AlbumType = albumType;
-
-
-            // IsNewAlbum = false;
-            this.AlbumId = AlbumId;
+            this.album = album;
+            try {
+                textBoxName.Text = album.Title;
+                textBoxDescription.Text = album.Description;
+                comboBox.PlaceholderText = album.Type;
+            } catch { }
         }
 
 
         // Ok 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
-            AlbumTitle = textBoxName.Text;
-            AlbumDescription = textBoxDescription.Text;
+            album.Title = textBoxName.Text;
+            album.Description = textBoxDescription.Text;
+
+
+            if (comboBox.SelectedIndex < 0){
+                album.Type = (String)comboBox.PlaceholderText;
+            } else {
+                album.Type = (String)comboBox.SelectedItem;
+            }
             
-            AlbumType = (String)comboBox.SelectedItem;
-            
-            System.Diagnostics.Debug.WriteLine("Speichern" + textBoxName.Text + textBoxDescription.Text + AlbumType);
+           
             hasChanged = true;
         }
 
         // Cancel 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
-            System.Diagnostics.Debug.WriteLine("Abbrechen");
             hasChanged = false;
 
         }

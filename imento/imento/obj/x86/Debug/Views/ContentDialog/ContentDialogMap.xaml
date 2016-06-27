@@ -25,7 +25,7 @@
 
         <TextBlock x:ConnectionId='8' x:Name="textBlockType" HorizontalAlignment="Left" Margin="0,124,0,0" TextWrapping="Wrap" Text="Art:" VerticalAlignment="Top"/>
         <ComboBox x:ConnectionId='9' x:Name="comboBox" 
-                                                 
+                                                                
                   HorizontalAlignment="Left" Margin="122,116,0,0" VerticalAlignment="Top" Width="20" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont">
             <ComboBox.ItemTemplate>
                 <DataTemplate                           >

@@ -31,7 +31,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
@@ -40,23 +40,11 @@
 
             <Button x:ConnectionId='6' Grid.Row="1" Grid.Column="0" Width="200" Content="+" Background="{StaticResource Orange}" Foreground="White" FontSize="100"                        Margin="0,0,0,0" VerticalAlignment="Top" />
             <Button x:ConnectionId='7' Grid.Row="1" Grid.Column="0" Height="50" Name="deleteEntry" Width="200" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}"                           VerticalAlignment="Bottom" />
-<!--
+
             <Border Grid.Row="1" Grid.Column="1" BorderBrush="{StaticResource Orange}" BorderThickness="2" Height="216" Width="800" Padding="8,8,8,8" Margin="16,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-                <TextBlock Name="EntryDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ENTRY DESCRIPTION]</TextBlock>
-            </Border>
--->
-            <Grid Grid.Row="1" Grid.Column="1" Margin="16,0,16,0" Padding="8" Height="216" VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="#ffe7d9">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
                 <TextBlock x:ConnectionId='11' Name="EntryDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ENTRY DESCRIPTION]</TextBlock>
-            </Grid>
-            
-            
-            
+            </Border>
+
             <GridView x:ConnectionId='8' Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"                                            IsItemClickEnabled="True"                                Margin="0,16,16,16">
                 <GridView.ItemTemplate>
                     <DataTemplate                                   >
