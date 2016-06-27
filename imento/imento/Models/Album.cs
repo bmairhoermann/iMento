@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace imento.Models {
-    class Album {
+    public class Album {
         /*
         public int AlbumId { get; set; }
         public string AlbumTitle { get; set; }

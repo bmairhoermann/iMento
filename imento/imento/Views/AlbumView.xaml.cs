@@ -90,16 +90,14 @@ namespace imento.Views {
 
         // Open a new dialog to create a new entry an save them to the databse according to the album id
         private async void NewEntry_Click(object sender, RoutedEventArgs e) {
-            AddEntry dialog = new AddEntry();
+            Entry entry = new Entry();
+            AddEntry dialog = new AddEntry(entry);
             var dialogResult = await dialog.ShowAsync();
             try {
-                if (dialog.Title != "" && dialog.hasChanged == true) {
-                    var Entry = new Entry();
+                if (dialog.hasChanged == true) {
+                    
 
-                    Entry.Title = dialog.Title;
-                    Entry.Description = dialog.Desc;
-
-                    mc.saveNewEntry(Entry, album.AlbumId);
+                    mc.saveNewEntry(entry, album.AlbumId);
 
                     var dbEntry = mc.getEntriesOverview(album.AlbumId).Last();
 

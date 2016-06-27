@@ -114,22 +114,16 @@ namespace imento.Views {
         }
 
         private async void editEntry_Click(object sender, RoutedEventArgs e) {
-            AddEntry dialog = new AddEntry(EntryTitle, EntryDescription, EntryId);
+            AddEntry dialog = new AddEntry(currentEntry);
             var dialogResult = await dialog.ShowAsync();
-
-            // Create Entry
-            var Entry = new Entry();
-
-            Entry.EntryId = dialog.Id;
-
+            
             try {
-                if (dialog.Title != "" && dialog.hasChanged == true) {
-                    Entry.Title = dialog.Title;
-                    Entry.Description = dialog.Desc;
+                if (dialog.hasChanged == true) {
+                    currentEntry = dialog.entry;
+                    EntryTitleHeadline.Text = currentEntry.Title;
+                    EntryDescriptionParagraph.Text = currentEntry.Description;
 
-                    EntryTitleHeadline.Text = dialog.Title;
-
-                    mc.updateEntry(Entry);
+                    mc.updateEntry(currentEntry);
                 }
             } catch {
                 System.Diagnostics.Debug.WriteLine("ALBUMVIEW: edit_Album_Click(): Not able to update Album!");

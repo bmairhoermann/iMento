@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace imento.Models {
-    class Photo {
+    public class Photo {
         public int PhotoId { get; set; }
 
         // ForeignKey for Entrys

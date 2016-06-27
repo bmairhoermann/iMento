@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace imento.Models
 {
-    class Location
+    public class Location
     {
         public int LocationId { get; set; }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using imento.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,27 +19,30 @@ using Windows.UI.Xaml.Navigation;
 namespace imento.Views {
     public sealed partial class AddEntry : ContentDialog {
 
-        public string Title { get; set; }
-        public string Desc { get; set; }
-        public int Id { get; set; }
+        public Entry entry { get; set; }
 
         public bool hasChanged { get; set; }
 
         public AddEntry() {
             this.InitializeComponent();
         }
-        public AddEntry(string Title, string Desc, int Id) {
+        public AddEntry(Entry entry) {
             this.InitializeComponent();
-            this.Title = Title;
-            this.Desc = Desc;
-            this.Id = Id;
+            this.entry = entry;
+
+            if(entry.Title != null) {
+                textBoxTitle.Text = entry.Title;
+            }
+            if(entry.Description != null) {
+                textBoxDescription.Text = entry.Description;
+            }
         }
 
 
         // Ok 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
-            Title = textBoxTitle.Text;
-            Desc = textBoxDescription.Text;
+            entry.Title = textBoxTitle.Text;
+            entry.Description = textBoxDescription.Text;
 
             hasChanged = true;
         }
