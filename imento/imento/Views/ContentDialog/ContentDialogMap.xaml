@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:system="using:System"
     mc:Ignorable="d"
-    Title="Neues Album erstellen"
+    Title="Album Details"
     PrimaryButtonText="Speichern"
     SecondaryButtonText="Abbrechen"
     PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
