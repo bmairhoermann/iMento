@@ -13,12 +13,21 @@ using System.IO;
 
 namespace imento.Models {
     class ModelController {
-        // Method for creating a TimeStamp
+
+        /// <summary>
+        /// Method for creating a TimeStamp
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static String GetTimeStamp(DateTime value) {
             return value.ToString("yyyyMMddHHmmssffff");
         }
 
-        // Method for Parsing a byte-Array to a BitmapImage
+        /// <summary>
+        /// Method for Parsing a byte-Array to a BitmapImage
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
         public async Task<BitmapImage> ToBitmapImage(byte[] array) {
             using (var ms = new MemoryStream(array)) {
                 var bitmapImage = new BitmapImage();
@@ -31,7 +40,11 @@ namespace imento.Models {
         //###########################################################GET_METHODS##########################################################
         //################################################################################################################################
 
-        // Get all Albums -> Returns an Album incuding Location
+
+        /// <summary>
+        /// Get all Albums -> Returns an Album incuding Location
+        /// </summary>
+        /// <returns>List<Album></returns>
         public List<Album> getAlbums() {
             // Create empty AlbumList
             List<Album> albums = new List<Album>();
@@ -58,10 +71,15 @@ namespace imento.Models {
             return albums;
         }
 
-        //Get Album with AlbumId -> Returns a Album including Location and excluding Entries
+
+        /// <summary>
+        /// Get Album with AlbumId -> Returns a Album including Location and excluding Entries
+        /// </summary>
+        /// <param name="AlbumId"></param>
+        /// <returns>Album</returns>
         public Album getAlbum(String AlbumId) {
             Album Album = new Album();
-         
+
             using (var db = new DataBaseContext()) {
                 try {
                     Album = db.Albums.First(a => a.AlbumId == AlbumId);
@@ -77,7 +95,11 @@ namespace imento.Models {
             return Album;
         }
 
-        // Get Entries with one Photo using the current AlbumId -> Returns all Entries associated with the AlbumId but holds no photos
+        /// <summary>
+        /// Get Entries with one Photo using the current AlbumId -> Returns all Entries associated with the AlbumId but holds no photos
+        /// </summary>
+        /// <param name="AlbumId"></param>
+        /// <returns>List<Entry></returns>
         public List<Entry> getEntriesOverview(string AlbumId) {
             // Create empty EntryList
             List<Entry> entries = new List<Entry>();
@@ -110,7 +132,11 @@ namespace imento.Models {
             return entries;
         }
 
-        // Get one Entry with Photos using EntryID -> Returns a single Entry including the Photos it holds
+        /// <summary>
+        /// Get one Entry with Photos using EntryID -> Returns a single Entry including the Photos it holds
+        /// </summary>
+        /// <param name="EntryID"></param>
+        /// <returns>Entry</returns>
         public Entry getEntryDetails(int EntryID) {
             // Create empty Entry-Oject
             Entry entry = new Entry();
@@ -140,7 +166,11 @@ namespace imento.Models {
             return entry;
         }
 
-        // Get Photo with PhotoId
+        /// <summary>
+        /// Get Photo with PhotoId
+        /// </summary>
+        /// <param name="PhotoId"></param>
+        /// <returns>Photo</returns>
         public Photo getPhoto(int PhotoId) {
             Photo photo = new Photo();
 
@@ -154,11 +184,30 @@ namespace imento.Models {
             return photo;
         }
 
+        /// <summary>
+        /// Get List of Photos that are marked as favourites
+        /// </summary>
+        /// <returns>List<Photo></returns>
+        public List<Photo> getFavouritePhotos() {
+            List<Photo> photoList = new List<Photo>();
+            using (var db = new DataBaseContext()) {
+                try {
+                    photoList = db.Photos.Where(p => p.isFavourite == true).ToList();
+                } catch {
+                    Debug.WriteLine("MODELCONTROLLER: getFavouritePhotos: Not able to find Photos in Database!");
+                }
+            }
+            return photoList;
+        }
+
         //################################################################################################################################
         //###########################################################ADD_METHODS##########################################################
         //################################################################################################################################
 
-        // Add Album to Database
+        /// <summary>
+        /// Add Album to Database
+        /// </summary>
+        /// <param name="Album"></param>
         public void saveNewAlbum(Album Album) {
             using (var db = new DataBaseContext()) {
                 try {
@@ -171,7 +220,11 @@ namespace imento.Models {
 
         }
 
-        // Add Entry with AlbumId to Database
+        /// <summary>
+        /// Add Entry with AlbumId to Database
+        /// </summary>
+        /// <param name="Entry"></param>
+        /// <param name="AlbumId"></param>
         public void saveNewEntry(Entry Entry, string AlbumId) {
             using (var db = new DataBaseContext()) {
                 try {
@@ -184,7 +237,11 @@ namespace imento.Models {
             }
         }
 
-        // Add Photo with EntryId to Database
+        /// <summary>
+        /// Add Photo with EntryId to Database
+        /// </summary>
+        /// <param name="Photo"></param>
+        /// <param name="EntryId"></param>
         public void saveNewPhoto(Photo Photo, int EntryId) {
             using (var db = new DataBaseContext()) {
                 try {
@@ -201,7 +258,10 @@ namespace imento.Models {
         //###########################################################UPDATE_METHODS#######################################################
         //################################################################################################################################
 
-        // Update Album in Database
+        /// <summary>
+        /// Update Album in Database
+        /// </summary>
+        /// <param name="Album"></param>
         public void updateAlbumInfo(Album Album) {
             using (var db = new DataBaseContext()) {
                 try {
@@ -227,7 +287,10 @@ namespace imento.Models {
             }
         }
 
-        // Update Entry in Database
+        /// <summary>
+        /// Update Entry in Database
+        /// </summary>
+        /// <param name="Entry"></param>
         public void updateEntry(Entry Entry) {
             using (var db = new DataBaseContext()) {
                 try {
@@ -239,7 +302,10 @@ namespace imento.Models {
             }
         }
 
-        // Update Location in Database
+        /// <summary>
+        /// Update Location in Database
+        /// </summary>
+        /// <param name="Location"></param>
         public void updateLocation(Location Location) {
             using (var db = new DataBaseContext()) {
                 try {
@@ -251,11 +317,33 @@ namespace imento.Models {
             }
         }
 
+        /// <summary>
+        /// Update Photo in Database
+        /// </summary>
+        /// <param name="photoId"></param>
+        /// <param name="isFavourite"></param>
+        public void updatePhoto(int photoId, bool isFavourite) {
+            using (var db = new DataBaseContext()) {
+                try {
+                    Photo photo = db.Photos.First(p => p.PhotoId == photoId);
+                    photo.isFavourite = isFavourite;
+                    db.Photos.Update(photo);
+                    db.SaveChanges();
+                } catch {
+                    Debug.WriteLine("MODELCONTROLLER: updatePhoto(): Not able to update Photo in Database!");
+                }
+            }
+        }
+
+
         //################################################################################################################################
         //###########################################################DELETE_METHODS#######################################################
         //################################################################################################################################
 
-        // Delete Album with AlbumId in Database
+        /// <summary>
+        /// Delete Album with AlbumId in Database
+        /// </summary>
+        /// <param name="AlbumId"></param>
         public void deleteAlbum(string AlbumId) {
             Album Album = new Album();
             using (var db = new DataBaseContext()) {
@@ -287,13 +375,16 @@ namespace imento.Models {
             }
         }
 
-        // Delete Entry in Database
+        /// <summary>
+        /// Delete Entry in Database
+        /// </summary>
+        /// <param name="EntryId"></param>
         public void deleteEntry(int EntryId) {
             using (var db = new DataBaseContext()) {
                 Entry Entry = new Entry();
                 try {
                     Entry = db.Entries.First(e => e.EntryId == EntryId);
-                }catch {
+                } catch {
                     Debug.WriteLine("MODELCONTROLLER: deleteEntry(): Not able to find Entry in Database!");
                 }
                 try {
@@ -310,7 +401,10 @@ namespace imento.Models {
             }
         }
 
-        // Delete Photo in Database
+        /// <summary>
+        /// Delete Photo in Database
+        /// </summary>
+        /// <param name="PhotoId"></param>
         public void deletePhoto(int PhotoId) {
             var Photo = new Photo();
             using (var db = new DataBaseContext()) {
@@ -326,119 +420,6 @@ namespace imento.Models {
                     Debug.WriteLine("MODELCONTROLLER: deletePhoto(): Not able to delete Photo in Database!");
                 }
             }
-        }
-
-
-        // +++++++++++++++++++++++++++++++++++++
-        // EXAMPLE CODE
-        // +++++++++++++++++++++++++++++++++++++
-
-        public async void dostuff() {
-            /*
-            // CREATING AN ALBUM WITH ALL SUBOBJECTS
-            
-            using (var db = new DataBaseContext())
-            {
-
-                var tmpPhotoPaths = new String[] { "pic01.jpg", "pic02.jpg", "pic03.jpg" };
-
-                //Create Photo List
-                List<Photo> Photos = new List<Photo>();
-
-                var storageFolder = Package.Current.InstalledLocation; //Installationsordner
-                storageFolder = await storageFolder.GetFolderAsync("Pictures"); //Assets-Ordner
-
-                foreach (string item in tmpPhotoPaths)
-                {
-                    var photo = new Photo();
-
-                    var picFile = await storageFolder.GetFileAsync(item); //Datei
-                    IBuffer buffer = await FileIO.ReadBufferAsync(picFile); //Einlesen
-
-                    byte[] imgArray = buffer.ToArray();
-
-                    photo.ImageByteArray = imgArray;
-
-                    Photos.Add(photo);
-
-                }
-
-
-                // Create Entry-List
-                List<Entry> EntryList = new List<Entry>();
-
-                var Entry1 = new Entry();
-
-                Entry1.Date = new DateTime(2015, 1, 8);
-                Entry1.Title = "Testeintrag 1";
-                Entry1.Description = "Lorem ipsum dolor sit amet, consequentur in argante pater sufus.";
-                Entry1.Photos = Photos;
-                EntryList.Add(Entry1);
-
-                var Entry2 = new Entry();
-                Entry2.Date = new DateTime(2015, 1, 9);
-                Entry2.Title = "Testeintrag 2";
-                Entry2.Description = "Lorem ipsum dolor sit amet, consequentur in argante pater sufus.";
-                Entry2.Photos = Photos;
-                EntryList.Add(Entry1);
-
-                // Create Loaction
-                var Location = new Location();
-                Location.Description = "Palma de Mallorca";
-                Location.Longitude = 39.5698686;
-                Location.Latitude = 2.540671;
-
-                // Create Album
-                var Album = new Album();
-
-                // IMPORTANT: SET ALBUMID WHEN CREATING NEW ALBUM
-                Album.AlbumId = GetTimeStamp(DateTime.Now);
-
-                Album.Title = "Barcelona";
-                Album.Description = "Lorem ipsum dolor.";
-                Album.Type = "Rundreise";
-                Album.Date_Start = new DateTime(2015, 1, 7);
-                Album.Date_Ende = new DateTime(2015, 1, 10);
-                Album.Location = Location;
-                Album.Entries = EntryList;
-
-
-
-                // Put Album with Entries in Table
-                db.Albums.Add(Album);
-
-                // Save Changes on Table
-                db.SaveChanges();
-            }
-            */
-
-            // PRINTING ATTRIBUTES OF ITEMS IN DATABASE
-
-            Debug.WriteLine("BEFOR OUTPUT OF TABLE");
-
-            using (var db = new DataBaseContext()) {
-                var myAlbum = from item in db.Albums select item;
-                foreach (Album item in myAlbum) {
-                    Debug.WriteLine("Album ID: " + item.AlbumId);
-                    Debug.WriteLine(item.Title);
-                    Debug.WriteLine(item.Description);
-                    Debug.WriteLine("");
-
-
-
-
-                }
-
-                var myEntries1 = from item in db.Entries select item;
-                {
-                    foreach (Entry item in myEntries1) {
-                        Debug.WriteLine(item.Title);
-                        Debug.WriteLine("Foreign Key ALBUM_ID: " + item.AlbumId);
-                    }
-                }
-            }
-
-
         }
     }
 }
