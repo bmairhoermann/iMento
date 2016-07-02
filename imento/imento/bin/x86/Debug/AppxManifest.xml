@@ -23,9 +23,17 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="imento.exe" EntryPoint="imento.App">
-      <uap:VisualElements DisplayName="imento" Square150x150Logo="assets\Medium\Medium150x150Logo.png" Square44x44Logo="assets\AppList\AppList44x44Logo.png" Description="imento" BackgroundColor="#ea5a0b">
-        <uap:DefaultTile Wide310x150Logo="assets\Wide\Wide310x150Logo.png" Square310x310Logo="assets\Large\Large310x310Logo.png" Square71x71Logo="assets\Small\Small71x71Logo.png" ShortName="im"></uap:DefaultTile>
+      <uap:VisualElements DisplayName="imento" Square150x150Logo="assets\Medium\Medium150x150Logo.png" Square44x44Logo="assets\AppList\AppList44x44Logo.png" Description="imento ist eine dugutale Sammlung von Urlaubsfotoalben. Jedes Album markiert mit einem Pin den Ort direkt auf der Weltkarte." BackgroundColor="#ea5a0b">
+        <uap:DefaultTile Wide310x150Logo="assets\Wide\Wide310x150Logo.png" Square310x310Logo="assets\Large\Large310x310Logo.png" Square71x71Logo="assets\Small\Small71x71Logo.png" ShortName="imento">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
         <uap:SplashScreen Image="assets\SplashScreen\SplashScreen.png" BackgroundColor="#ea5a0b" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
+          <uap:Rotation Preference="landscape" />
+        </uap:InitialRotationPreference>
       </uap:VisualElements>
     </Application>
   </Applications>
