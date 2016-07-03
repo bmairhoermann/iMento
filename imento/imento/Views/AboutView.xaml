@@ -7,7 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Grid Background="{StaticResource Background}" Padding="16,16,16,0">
+        <StackPanel>
+            <TextBlock Style="{StaticResource h1}" Foreground="{StaticResource Orange}">imento</TextBlock>
+            <TextBlock Style="{StaticResource h3}" Foreground="{StaticResource Orange}">A Project by</TextBlock>
+            <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">Christian Rösler</TextBlock>
+            <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">Brian Mairhörmann</TextBlock>
+            <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">Monika Wack</TextBlock>
+            <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">Philipp Winterholler</TextBlock>
+        </StackPanel>
     </Grid>
 </Page>

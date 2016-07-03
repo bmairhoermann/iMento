@@ -30,23 +30,35 @@ namespace imento.Views {
         public PhotoView() {
             this.InitializeComponent();
         }
-        
 
 
         protected override async void OnNavigatedTo(NavigationEventArgs e) {
             base.OnNavigatedTo(e);
 
             PhotoParams result = (PhotoParams)e.Parameter;
-
             photo = mc.getPhoto(result.PhotoId);
-
             PhotoId = result.PhotoId;
 
             ImageSource imageSource = await photo.ToBitmapImage();
             DisplayPhoto.Source = imageSource;
 
+            if (photo.isFavourite) {
+                makeFavorite.Content =  "Von den Favoriten entfernen";
+            }
         }
 
+        // Makes a photo a favorite or removes the favorite state if it already has it 
+        private void makePhotoFavorite_Click(object sender, RoutedEventArgs e) {
+            if (photo.isFavourite) {
+                makeFavorite.Content = "Zu Favoriten hinzufügen";
+                mc.updatePhoto(PhotoId, false);
+            } else {
+                makeFavorite.Content = "Von den Favoriten entfernen";
+                mc.updatePhoto(PhotoId, true);
+            }
+        }
+
+        // Deletes the Photo after confirming the dialog 
         private async void deletePhoto_Click(object sender, RoutedEventArgs e) {
             // MessageDialog
             var dialog = new Windows.UI.Popups.MessageDialog("Wollen Sie wirklich dieses Foto löschen?");
@@ -66,5 +78,7 @@ namespace imento.Views {
                 this.Frame.Navigate(typeof(AllAlbumsView));
             }
         }
+
+
     }
 }

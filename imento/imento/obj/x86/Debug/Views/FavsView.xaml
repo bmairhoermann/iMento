@@ -1,14 +1,37 @@
-﻿<Page
+﻿<Page x:ConnectionId='1'
     x:Class="imento.FavsView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:imento"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:imento.Models"
     mc:Ignorable="d">
 
-    <Grid Background="Red">
-
+    <Grid Background="{StaticResource Background}" Padding="16,16,16,0">
+        
+        <RelativePanel Grid.Row="0">
+            <GridView x:ConnectionId='2' 
+            RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignTopWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True"
+                                                       
+                  IsItemClickEnabled="True"                                Margin="0,16,16,16"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <GridView.ItemTemplate>
+                    <DataTemplate                                   >
+                        <Border x:ConnectionId='3' HorizontalAlignment="Center"  
+                                Height="200" Width="200" 
+                                Background="{StaticResource LightOrange}">
+                            <Image x:ConnectionId='4' Stretch="UniformToFill"                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </RelativePanel>
+        
     </Grid>
 </Page>
 

@@ -15,7 +15,6 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:Name="x">
@@ -59,9 +58,8 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Name="EntryDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ENTRY DESCRIPTION]</TextBlock>
             </Grid>
-
-
         </Grid>
+        
         <RelativePanel Grid.Row="1">
             <GridView 
             RelativePanel.AlignBottomWithPanel="True"

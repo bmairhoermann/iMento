@@ -52,20 +52,22 @@ namespace imento
                 MainFrame.Navigate(typeof(HomeView));
                 Title.Text = "Startseite";
                 // GoBack.Visibility = Visibility.Collapsed;
-                /*
-                }else if (NewAlbum.IsSelected) {
-                    MainFrame.Navigate(typeof(Views.EntryView)); // wtf...
-                    Title.Text = "Neues Album anlegen";
-                    */
+            /*
+            }else if (NewAlbum.IsSelected) {
+                MainFrame.Navigate(typeof(Views.EntryView)); // wtf...
+                Title.Text = "Neues Album anlegen";
+            */
             } else if (AllAlbums.IsSelected) {
                 MainFrame.Navigate(typeof(AllAlbumsView));
                 Title.Text = "Alle Alben";
             } else if (Favs.IsSelected) {
                 MainFrame.Navigate(typeof(FavsView));
                 Title.Text = "Meine Favoriten";
+            /*
             } else if (Settings.IsSelected) {
                 MainFrame.Navigate(typeof(SettingsView));
                 Title.Text = "Einstellungen";
+            */
             } else if (Help.IsSelected){
                 MainFrame.Navigate(typeof(HelpView));
                 Title.Text = "Hilfe und Kurzanleitung";

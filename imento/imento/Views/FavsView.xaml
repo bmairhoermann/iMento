@@ -5,9 +5,32 @@
     xmlns:local="using:imento"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:imento.Models"
     mc:Ignorable="d">
 
-    <Grid Background="Red">
-
+    <Grid Background="{StaticResource Background}" Padding="16,16,16,0">
+        
+        <RelativePanel Grid.Row="0">
+            <GridView 
+            RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignTopWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True"
+            ItemsSource="{x:Bind Photos, Mode=OneWay}" 
+                  IsItemClickEnabled="True" ItemClick="GridView_ItemClick" Margin="0,16,16,16"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="models:PhotoViewModel">
+                        <Border HorizontalAlignment="Center"  
+                                Height="200" Width="200" 
+                                Background="{StaticResource LightOrange}">
+                            <Image Stretch="UniformToFill" Source="{x:Bind Path=Photo}" HorizontalAlignment="Center"/>
+                        </Border>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </RelativePanel>
+        
     </Grid>
 </Page>

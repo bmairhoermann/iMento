@@ -68,14 +68,14 @@
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Favoriten</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-
+<!--
                     <ListBoxItem Name="Settings">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontSize="24" TextAlignment="Center" Name="SettingsButton" FontFamily="Segoe MDL2 Assets" Text="&#xE115;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Einstellungen</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-
+-->
                     <ListBoxItem Name="Help">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontSize="24" TextAlignment="Center" Name="HelpButton" FontFamily="Segoe MDL2 Assets" Text="&#xE700;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
