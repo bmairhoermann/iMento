@@ -24,6 +24,8 @@ namespace imento
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class AllAlbumsView : Page {
+
+        public String PageTitle = "Alle Alben"; 
         
         private List<Album> Albums;
         // public string ViewTitle = "Alle Alben xx";

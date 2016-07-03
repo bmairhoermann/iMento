@@ -27,8 +27,10 @@
         </Grid.RowDefinitions>
         <RelativePanel Background="Gray">
             <Button x:ConnectionId='17' Name="OpenMenu" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="24" RelativePanel.AlignLeftWithPanel="True"                      Background="{StaticResource Orange}" Foreground="White" />
-            <Button x:ConnectionId='18' Name="GoBack" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE0C4;" FontSize="24" RelativePanel.RightOf="OpenMenu"                      Background="Gray" Foreground="White" />
-            <TextBlock x:ConnectionId='19' Name="Title" Text="Startseite" Foreground="White" RelativePanel.AlignVerticalCenterWith="OpenMenu" RelativePanel.RightOf="GoBack" Margin="15,0,0,0" FontWeight="Bold" />
+            <!--
+            <Button Name="GoBack" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE0C4;" FontSize="24" RelativePanel.RightOf="OpenMenu"  Background="Gray" Foreground="White" />
+            -->
+            <TextBlock x:ConnectionId='18' Name="Title" Text="Startseite" Foreground="White" RelativePanel.AlignVerticalCenterWith="OpenMenu" RelativePanel.RightOf="OpenMenu" Margin="15,0,0,0" FontWeight="Bold" />
         </RelativePanel>
 
         <SplitView x:ConnectionId='2' Grid.Row="1" 
@@ -45,7 +47,7 @@
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Startseite</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-<!-- 
+                    <!-- 
                     <ListBoxItem Name="NewAlbum">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontSize="24" TextAlignment="Center" Name="NewAlbumButton" FontFamily="Segoe MDL2 Assets" Text="&#xEB49;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
@@ -92,9 +94,9 @@
             </SplitView.Pane>
 
             <SplitView.Content>
-                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                    <Frame x:ConnectionId='16' Name="MainFrame"></Frame>
-                </ScrollViewer>
+                <!--  <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"> -->
+                <Frame x:ConnectionId='16' Name="MainFrame"></Frame>
+                <!--  </ScrollViewer> -->
             </SplitView.Content>
         </SplitView>
 

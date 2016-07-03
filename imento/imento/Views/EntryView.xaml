@@ -10,6 +10,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource Background}" Padding="16,8,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="296" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:Name="x">
@@ -28,10 +34,9 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="80" />
                 <RowDefinition Height="216" />
-                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
@@ -40,25 +45,45 @@
 
             <Button Grid.Row="1" Grid.Column="0" Width="200" Content="+" Background="{StaticResource Orange}" Foreground="White" FontSize="100" Click="NewPhoto_Click" Margin="0,0,0,0" VerticalAlignment="Top" />
             <Button Grid.Row="1" Grid.Column="0" Height="50" Name="deleteEntry" Width="200" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" Click="deleteEntry_Click" VerticalAlignment="Bottom" />
-
+            <!--
             <Border Grid.Row="1" Grid.Column="1" BorderBrush="{StaticResource Orange}" BorderThickness="2" Height="216" Width="800" Padding="8,8,8,8" Margin="16,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <TextBlock Name="EntryDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ENTRY DESCRIPTION]</TextBlock>
             </Border>
-
-            <GridView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{x:Bind Photos, Mode=OneWay}" IsItemClickEnabled="True" ItemClick="GridView_ItemClick" Margin="0,16,16,16">
-                <GridView.ItemTemplate>
-                    <DataTemplate x:DataType="models:PhotoViewModel">
-                        <StackPanel HorizontalAlignment="Center"  Height="200" Width="200" Orientation="Vertical" Background="{StaticResource LightOrange}">
-                            <Image Width="320" Source="{x:Bind Path=Photo}" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
-
+-->
+            <Grid Grid.Row="1" Grid.Column="1" Margin="16,0,16,0" Padding="8" Height="216" VerticalAlignment="Top" Background="#ffe7d9">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="EntryDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ENTRY DESCRIPTION]</TextBlock>
+            </Grid>
 
 
         </Grid>
-
+        <RelativePanel Grid.Row="1">
+            <GridView 
+            RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignTopWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True"
+            ItemsSource="{x:Bind Photos, Mode=OneWay}" 
+                  IsItemClickEnabled="True" ItemClick="GridView_ItemClick" Margin="0,16,16,16"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="models:PhotoViewModel">
+                        <Border HorizontalAlignment="Center"  
+                                Height="200" Width="200" 
+                                Background="{StaticResource LightOrange}">
+                            <Image Stretch="UniformToFill" Source="{x:Bind Path=Photo}" HorizontalAlignment="Center"/>
+                        </Border>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </RelativePanel>
 
     </Grid>
+
 </Page>

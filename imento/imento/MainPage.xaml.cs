@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using imento.Models;
 using Windows.UI.Core;
+using imento.Views;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -31,7 +32,12 @@ namespace imento
             // Overwrite the default minimum size settings for the window
             Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize(new Size(200, 100));
             // Disable Back Button
-            GoBack.Visibility = Visibility.Collapsed;
+            // GoBack.Visibility = Visibility.Collapsed;
+
+            // Handle the GoBack Button in the Title Bar or the Button on Windows Phones 
+            var systemNavigationManager = SystemNavigationManager.GetForCurrentView();
+            systemNavigationManager.BackRequested += SystemNavigationManagerOnBackRequested;
+            systemNavigationManager.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
         }
 
         // OpenMainMenu: Opens or closes the main menu
@@ -41,11 +47,11 @@ namespace imento
 
         // ListBox_SelectionChanged: Changes view according to the pressed button 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            GoBack.Visibility = Visibility.Visible;
+            // GoBack.Visibility = Visibility.Visible;
             if (Home.IsSelected) {
                 MainFrame.Navigate(typeof(HomeView));
                 Title.Text = "Startseite";
-                GoBack.Visibility = Visibility.Collapsed;
+                // GoBack.Visibility = Visibility.Collapsed;
                 /*
                 }else if (NewAlbum.IsSelected) {
                     MainFrame.Navigate(typeof(Views.EntryView)); // wtf...
@@ -68,12 +74,28 @@ namespace imento
                 Title.Text = "Über diese App";
             }
         }
+        /*
         private void GoBack_Click(object sender, RoutedEventArgs e) {
             if (MainFrame.CanGoBack) {
                 MainFrame.GoBack();
                 Title.Text = "Zurück gegangen";
             } else {
                 GoBack.Visibility = Visibility.Collapsed;
+            }
+        }
+        */
+
+        // Function for handling the GoBack Button
+        private void SystemNavigationManagerOnBackRequested(object sender, BackRequestedEventArgs backRequestedEventArgs) {
+            if (MainFrame.CanGoBack) {
+                MainFrame.GoBack();
+                backRequestedEventArgs.Handled = true;
+                try {
+                    Title.Text = "";
+                } catch (Exception e) {
+
+                }
+                
             }
         }
     }

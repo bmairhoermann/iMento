@@ -10,6 +10,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource Background}" Padding="16,8,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="296" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState x:ConnectionId='2' x:Name="x">
@@ -28,38 +34,57 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="80" />
                 <RowDefinition Height="216" />
-                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button x:ConnectionId='4' Name="editEntry" Height="44" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}"                         />
-            <TextBlock x:ConnectionId='5' Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="EntryTitleHeadline" Style="{StaticResource h1}" Margin="55,0,0,0" Foreground="{StaticResource Orange}">[ENTRY TITLE]</TextBlock>
+            <Button x:ConnectionId='7' Name="editEntry" Height="44" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}"                         />
+            <TextBlock x:ConnectionId='8' Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="EntryTitleHeadline" Style="{StaticResource h1}" Margin="55,0,0,0" Foreground="{StaticResource Orange}">[ENTRY TITLE]</TextBlock>
 
-            <Button x:ConnectionId='6' Grid.Row="1" Grid.Column="0" Width="200" Content="+" Background="{StaticResource Orange}" Foreground="White" FontSize="100"                        Margin="0,0,0,0" VerticalAlignment="Top" />
-            <Button x:ConnectionId='7' Grid.Row="1" Grid.Column="0" Height="50" Name="deleteEntry" Width="200" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}"                           VerticalAlignment="Bottom" />
-
+            <Button x:ConnectionId='9' Grid.Row="1" Grid.Column="0" Width="200" Content="+" Background="{StaticResource Orange}" Foreground="White" FontSize="100"                        Margin="0,0,0,0" VerticalAlignment="Top" />
+            <Button x:ConnectionId='10' Grid.Row="1" Grid.Column="0" Height="50" Name="deleteEntry" Width="200" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}"                           VerticalAlignment="Bottom" />
+            <!--
             <Border Grid.Row="1" Grid.Column="1" BorderBrush="{StaticResource Orange}" BorderThickness="2" Height="216" Width="800" Padding="8,8,8,8" Margin="16,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-                <TextBlock x:ConnectionId='11' Name="EntryDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ENTRY DESCRIPTION]</TextBlock>
+                <TextBlock Name="EntryDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ENTRY DESCRIPTION]</TextBlock>
             </Border>
-
-            <GridView x:ConnectionId='8' Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"                                            IsItemClickEnabled="True"                                Margin="0,16,16,16">
-                <GridView.ItemTemplate>
-                    <DataTemplate                                   >
-                        <StackPanel x:ConnectionId='9' HorizontalAlignment="Center"  Height="200" Width="200" Orientation="Vertical" Background="{StaticResource LightOrange}">
-                            <Image x:ConnectionId='10' Width="320"                              HorizontalAlignment="Center"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-            </GridView>
-
+-->
+            <Grid Grid.Row="1" Grid.Column="1" Margin="16,0,16,0" Padding="8" Height="216" VerticalAlignment="Top" Background="#ffe7d9">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:ConnectionId='11' Name="EntryDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ENTRY DESCRIPTION]</TextBlock>
+            </Grid>
 
 
         </Grid>
-
+        <RelativePanel Grid.Row="1">
+            <GridView x:ConnectionId='4' 
+            RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignTopWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True"
+                                                       
+                  IsItemClickEnabled="True"                                Margin="0,16,16,16"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                  ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <GridView.ItemTemplate>
+                    <DataTemplate                                   >
+                        <Border x:ConnectionId='5' HorizontalAlignment="Center"  
+                                Height="200" Width="200" 
+                                Background="{StaticResource LightOrange}">
+                            <Image x:ConnectionId='6' Stretch="UniformToFill"                              HorizontalAlignment="Center"/>
+                        </Border>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </RelativePanel>
 
     </Grid>
+
 </Page>
 

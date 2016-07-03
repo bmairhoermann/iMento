@@ -1409,3 +1409,5 @@ C:\Users\moni\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\qualifiers.txt
 C:\Users\moni\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\moni\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\moni\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\resources.en-us.resfiles
+C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\resources.en-us.resfiles.intermediate

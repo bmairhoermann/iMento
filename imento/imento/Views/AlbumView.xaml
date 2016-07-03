@@ -42,12 +42,20 @@
                     <RowDefinition Height="150" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Height="284" Width="200" VerticalAlignment="Top">
+                <!--
+                <Grid Grid.Row="0" Height="284" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <TextBlock Name="AlbumTypeIcon"  Text="a" FontSize="220" Foreground="#ffe7d9" Padding="20,90,0,0" Height="300" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont" />
                 </Grid>
-                <Border Grid.Row="0" BorderBrush="{StaticResource Orange}" BorderThickness="2" Width="200" Height="284" Padding="8,8,8,8" VerticalAlignment="Top">
-                    <TextBlock Name="AlbumDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ALBUM DESCRIPTION]</TextBlock>
+                <Border Grid.Row="0" BorderBrush="{StaticResource Orange}" BorderThickness="2" Width="200" Height="284" Padding="8,8,8,8" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <TextBlock Name="AlbumDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}" TextWrapping="Wrap">[ALBUM DESCRIPTION]</TextBlock>
                 </Border>
+                -->
+
+                <Grid Grid.Row="0" Height="284" Width="200" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#ffe7d9">
+                    <TextBlock Name="AlbumTypeIcon"  Text="a" FontSize="220" Foreground="{StaticResource LightOrange}" Padding="20,90,0,0" Height="300" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont" />
+                </Grid>
+                <TextBlock Grid.Row="0" Width="200" Name="AlbumDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}" TextWrapping="Wrap" Padding="8,8,8,8" HorizontalAlignment="Left">[ALBUM DESCRIPTION]</TextBlock>
+
                 <Button Grid.Row="1" Width="200" Content="+" Background="{StaticResource Orange}" Foreground="White" FontSize="100" Click="NewEntry_Click" Margin="0,0,0,16" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" Grid.ColumnSpan="2" />
                 <Button Grid.Row="2" Height="50"  Width="200" Name="deleteAlbum" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" Click="deleteAlbum_Click" />
             </Grid>
@@ -71,7 +79,7 @@
                     </DataTemplate>
                 </GridView.ItemTemplate>
             </GridView>
-            
+
         </Grid>
     </Grid>
 </Page>

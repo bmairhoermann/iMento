@@ -18,4 +18,3 @@ TargetSize=64
 TargetSize=72
 TargetSize=80
 TargetSize=96
-Language=EN-US
