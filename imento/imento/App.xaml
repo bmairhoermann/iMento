@@ -7,11 +7,13 @@
 
     <!-- Stylesheet für all xaml files -->
     <Application.Resources>
-        
+
         <!-- Color: Orange -->
         <SolidColorBrush x:Key="Orange" Color="#FFEA5B0C" />
         <!-- Color: Light Orange -->
         <SolidColorBrush x:Key="LightOrange" Color="#fed2b9" />
+        <!-- Color: Lightest Orange -->
+        <SolidColorBrush x:Key="LightestOrange" Color="#ffe7d9" />
         <!-- Color: Dark Grey -->
         <SolidColorBrush x:Key="DarkGrey" Color="#FF2A2C2A" />
         <!-- Background-Color  -->
@@ -41,7 +43,7 @@
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Foreground" Value="#FF2A2C2A" />
         </Style>
-        
+
         <!-- form: Formulare -->
         <Style TargetType="TextBox" x:Key="form">
             <Setter Property="Background" Value="{StaticResource LightOrange}" />
@@ -49,7 +51,7 @@
             <Setter Property="Margin" Value="0,0,48,48" />
             <Setter Property="Height" Value="48" />
         </Style>
-        
+
         <!-- Button -->
         <Style TargetType="Button" x:Key="button">
             <Setter Property="Background" Value="{StaticResource Orange}" />

@@ -9,6 +9,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource Background}" Padding="0,8,0,0">
+        <Grid Name="NoAlbumsInfo" Grid.Row="0" Margin="16,8,24,8" Height="80" VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="{StaticResource LightestOrange}">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Margin="8,0,8,0" Style="{StaticResource h2}" Foreground="{StaticResource Orange}" TextTrimming="CharacterEllipsis">Es sind noch keine Alben vorhanden</TextBlock>
+                <TextBlock Margin="10,0,8,0" Style="{StaticResource p}" Foreground="{StaticResource Orange}" TextTrimming="CharacterEllipsis">Erstelle ein neues Album durch langes Klicken oder Drücken auf der Weltkarte.</TextBlock>
+            </StackPanel>
+        </Grid>
 
         <ListView Grid.Row="0" Grid.Column="0" ItemsSource="{x:Bind Albums}" IsItemClickEnabled="True" ItemClick="GridView_ItemClick" SelectionChanged="ListView_SelectionChanged">
             <ListView.ItemTemplate>
@@ -28,7 +34,7 @@
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Style="{StaticResource h2}" Foreground="#fff" Text="{x:Bind Title}" TextWrapping="Wrap" />
+                            <TextBlock Grid.Row="0" Style="{StaticResource h2}" Foreground="#fff" Text="{x:Bind Title}" TextTrimming="CharacterEllipsis" />
                             <StackPanel Grid.Row="1" Orientation="Horizontal">
                                 <TextBlock Style="{StaticResource p}" Foreground="{StaticResource LightOrange}" Text="Reisebeginn: " />
                                 <TextBlock Style="{StaticResource p}" Foreground="#fff" Text="{x:Bind Date_Start}"  />

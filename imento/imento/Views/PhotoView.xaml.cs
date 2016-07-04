@@ -26,6 +26,7 @@ namespace imento.Views {
         ModelController mc = new ModelController();
         Photo photo = new Photo();
         private int PhotoId;
+        private bool currentPhotoIsFavorite = false;
 
         public PhotoView() {
             this.InitializeComponent();
@@ -43,18 +44,21 @@ namespace imento.Views {
             DisplayPhoto.Source = imageSource;
 
             if (photo.isFavourite) {
-                makeFavorite.Content =  "Von den Favoriten entfernen";
+                currentPhotoIsFavorite = true;
+                makeFavorite.Content = "Von den Favoriten entfernen";
             }
         }
 
         // Makes a photo a favorite or removes the favorite state if it already has it 
         private void makePhotoFavorite_Click(object sender, RoutedEventArgs e) {
-            if (photo.isFavourite) {
+            if (currentPhotoIsFavorite) {
                 makeFavorite.Content = "Zu Favoriten hinzufügen";
                 mc.updatePhoto(PhotoId, false);
+                currentPhotoIsFavorite = false;
             } else {
                 makeFavorite.Content = "Von den Favoriten entfernen";
                 mc.updatePhoto(PhotoId, true);
+                currentPhotoIsFavorite = true;
             }
         }
 
@@ -65,12 +69,10 @@ namespace imento.Views {
 
             dialog.Commands.Add(new Windows.UI.Popups.UICommand("Ja") { Id = 0 });
             dialog.Commands.Add(new Windows.UI.Popups.UICommand("Abbrechen") { Id = 1 });
-
             dialog.DefaultCommandIndex = 0;
             dialog.CancelCommandIndex = 1;
 
             var result = await dialog.ShowAsync();
-
             var btn = sender as Button;
 
             if ((int)result.Id == 0) {

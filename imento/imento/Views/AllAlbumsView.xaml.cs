@@ -18,15 +18,14 @@ using System.Diagnostics;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace imento
-{
+namespace imento {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class AllAlbumsView : Page {
 
-        public String PageTitle = "Alle Alben"; 
-        
+        public String PageTitle = "Alle Alben";
+
         private List<Album> Albums;
         // public string ViewTitle = "Alle Alben xx";
         private Album album;
@@ -36,6 +35,11 @@ namespace imento
         public AllAlbumsView() {
             this.InitializeComponent();
             Albums = mc.getAlbums();
+
+            // Hide "No Album" infobox if albums exist in database 
+            if (Albums.Count > 0) {
+                NoAlbumsInfo.Visibility = Visibility.Collapsed;
+            }
         }
 
         // Load EntryView an pass album data to load matching entries 
@@ -45,7 +49,7 @@ namespace imento
         }
 
         private void editAlbum_Click(object sender, RoutedEventArgs e) {
-            
+
         }
 
         private void deleteAlbum_Click(object sender, RoutedEventArgs e) {
