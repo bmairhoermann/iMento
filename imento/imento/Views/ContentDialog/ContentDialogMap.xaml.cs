@@ -31,7 +31,7 @@ namespace imento.Views
         public bool hasChanged { get; set; }
 
         public ObservableCollection<string> TypeList = new ObservableCollection<string> { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
-        
+        DateTime dt = new DateTime(2016, 07, 04, 10, 00, 0);
 
         public ContentDialogMap(String location) {
             this.InitializeComponent();
@@ -40,26 +40,38 @@ namespace imento.Views
             textBlockLocation1.Text = location;
             comboBox.ItemsSource = TypeList;
             comboBox.SelectedIndex = 0;
+            startDate.Date = dt;
+            endDate.Date = dt;
         }
+
         public ContentDialogMap(Album album) {
             this.InitializeComponent();
             this.album = album;
             try {
                 textBoxName.Text = album.Title;
                 textBoxDescription.Text = album.Description;
+                textBlockLocation1.Text = "kann nicht geändert werden";
                 comboBox.PlaceholderText = album.Type;
+                startDate.Date = album.Date_Start;
+                endDate.Date = album.Date_Ende;
+
             } catch { }
         }
 
-
-        // Ok 
+        
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             
             album.Title = textBoxName.Text;
             album.Description = textBoxDescription.Text;
-            album.Date_Start = startDate.Date.Value.Date;
+           if(startDate.Date.Value.Date + startTime.Time != dt)
+            {
+                album.Date_Start = startDate.Date.Value.Date + startTime.Time;
+            }
+            if (endDate.Date.Value.Date + endTime.Time != dt)
+            {
+                album.Date_Ende = endDate.Date.Value.Date + endTime.Time;
+            }
             
-            album.Date_Ende = endDate.Date.Value.Date;
 
             if (comboBox.SelectedIndex < 0){
                 album.Type = (String)comboBox.PlaceholderText;

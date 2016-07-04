@@ -14,7 +14,7 @@
     SecondaryButtonClick="ContentDialog_SecondaryButtonClick" Height="517.333"
     >
 
-    <Grid Height="301" Width="291">
+    <Grid Height="333" Width="291">
         <TextBlock x:Name="textBlockName" Margin="0,5,0,0" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Top" HorizontalAlignment="Left" Width="43"/>
         <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Margin="122,0,0,0" TextWrapping="Wrap" PlaceholderText="Name des Albums" VerticalAlignment="Top" Height="32" Width="169"/>
         <TextBox x:Name="textBoxDescription" HorizontalAlignment="Left" Margin="122,37,0,0" TextWrapping="Wrap" PlaceholderText="Beschreibung des Albums" VerticalAlignment="Top" Width="169"/>
@@ -33,7 +33,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <CalendarDatePicker x:Name="startDate" HorizontalAlignment="Left" Margin="122,153,0,0" VerticalAlignment="Top"/>
+        <CalendarDatePicker x:Name="startDate" HorizontalAlignment="Left" Margin="122,153,0,0" VerticalAlignment="Top" Width="169"/>
         <TextBlock x:Name="textBlockType_Copy" HorizontalAlignment="Left" Margin="0,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
         	<Run Text="Reisebeginn"/>
         	<Run Text=":"/>
@@ -42,8 +42,9 @@
         	<Run Text="Reiseende"/>
         	<Run Text=":"/>
         </TextBlock>
-        <CalendarDatePicker x:Name="endDate" HorizontalAlignment="Left" Margin="122,242,0,0" VerticalAlignment="Top"/>
-        
+        <CalendarDatePicker x:Name="endDate" HorizontalAlignment="Left" Margin="122,242,0,0" VerticalAlignment="Top" Width="169"/>
+        <TimePicker x:Name="startTime" HorizontalAlignment="Left" Margin="49,190,0,0" VerticalAlignment="Top"/>
+        <TimePicker x:Name="endTime" HorizontalAlignment="Left" Margin="49,291,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>

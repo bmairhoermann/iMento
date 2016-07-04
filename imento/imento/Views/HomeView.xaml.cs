@@ -53,13 +53,13 @@ namespace imento
         }
 
 
-        private async void add(double latitude, double longitude, string title, MapIcon x, string type) {
-            x.Location = new Geopoint(new BasicGeoposition() {
+        private async void add(double latitude, double longitude, string title, MapIcon tempMapicon, string type) {
+            tempMapicon.Location = new Geopoint(new BasicGeoposition() {
                 Latitude = latitude,
                 Longitude = longitude
             });
-            x.NormalizedAnchorPoint = new Point(0.5, 1.0);
-            x.Title = title;
+            tempMapicon.NormalizedAnchorPoint = new Point(0.5, 1.0);
+            tempMapicon.Title = title;
             
 
             BasicGeoposition location = new BasicGeoposition();
@@ -69,22 +69,11 @@ namespace imento
 
             // Reverse geocode the specified geographic location.
             
-            MapLocationFinderResult result =
-                await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
+           MapLocationFinderResult result = await MapLocationFinder.FindLocationsAtAsync(pointToReverseGeocode);
 
-            // If the query returns results, display the name of the town
-       /*
-            // contained in the address of the first result.
-            if (result.Status == MapLocationFinderStatus.Success)
-            {
-                //  tbOutputText.Text = "Stadt = " + result.Locations[0].Address.Town;
-                x.Title = title + " aus " + result.Locations[0].Address.Town;
-            }
-            */
-            System.Diagnostics.Debug.WriteLine("Mapicon LOADING " + type);
-            x.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_"+ type +".png"));
+            tempMapicon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_"+ type +".png"));
            
-            Map.MapElements.Add(x);
+            Map.MapElements.Add(tempMapicon);
         }
 
 
@@ -129,14 +118,7 @@ namespace imento
 
                         if (dialogResult == ContentDialogResult.Primary)
                         {
-
-                            
-                            
-
-
                             // Create new Album and Location and save in the database
-
-
                             // Create Loaction
                             var Location = new Location();
                             Location.Description = result.Locations[0].Address.Town;
@@ -152,13 +134,12 @@ namespace imento
                             Album.Title = dialog.album.Title;
                             Album.Description = dialog.album.Description;
                             Album.Type = dialog.album.Type;
-                            Album.Date_Start = dialog.album.Date_Start; // ??? 
-                            Album.Date_Ende = dialog.album.Date_Ende; // ??? 
+                            Album.Date_Start = dialog.album.Date_Start; 
+                            Album.Date_Ende = dialog.album.Date_Ende; 
                             Album.Location = Location;
-                            // Album.Entries = EntryList;
-
                             mc.saveNewAlbum(Album);
 
+                            //Update current Map
                             tempMapIcon.Title = dialog.album.Title;
 
                             tempMapIcon.Image = RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/icons/icon_" + dialog.album.Type + ".png"));
@@ -181,7 +162,6 @@ namespace imento
         {
             const ToastTemplateType toastTemplate = ToastTemplateType.ToastText01;
             var toastXml = ToastNotificationManager.GetTemplateContent(toastTemplate);
-
             var toastTextElements = toastXml.GetElementsByTagName("text");
             toastTextElements[0].AppendChild(toastXml.CreateTextNode(message));
             var toast = new ToastNotification(toastXml);
@@ -190,8 +170,6 @@ namespace imento
 
 private void Map_MapElementClick(MapControl sender, MapElementClickEventArgs args) {
             string albumID;
-            
-            
             foreach (var e in args.MapElements)
             {
                 if (e is MapIcon)
@@ -202,8 +180,6 @@ private void Map_MapElementClick(MapControl sender, MapElementClickEventArgs arg
                     {
                         if (mapIconDictionary.TryGetValue(icon, out albumID))
                         {
-                            
-                            System.Diagnostics.Debug.WriteLine("Mapicon wurde gedrückt " + albumID);
                             this.Frame.Navigate(typeof(Views.AlbumView), new AlbumParams() { AlbumId = albumID, AlbumTitle = icon.Title });
                         }
                     }
