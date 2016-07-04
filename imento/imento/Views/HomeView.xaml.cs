@@ -152,8 +152,8 @@ namespace imento
                             Album.Title = dialog.album.Title;
                             Album.Description = dialog.album.Description;
                             Album.Type = dialog.album.Type;
-                            Album.Date_Start = new DateTime(2015, 1, 7); // ??? 
-                            Album.Date_Ende = new DateTime(2015, 1, 10); // ??? 
+                            Album.Date_Start = dialog.album.Date_Start; // ??? 
+                            Album.Date_Ende = dialog.album.Date_Ende; // ??? 
                             Album.Location = Location;
                             // Album.Entries = EntryList;
 

@@ -353,7 +353,6 @@ C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\System.Xml.ReaderWri
 C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\System.Xml.XDocument.dll
 C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\System.Xml.XmlDocument.dll
 C:\Users\Philipp\Desktop\iMento\imento\imento\bin\x86\Debug\System.Xml.XmlSerializer.dll
-C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\imento.csprojResolveAssemblyReference.cache
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\App.g.i.cs
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\App.g.cs
 C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\Views\AboutView.g.i.cs
@@ -1411,3 +1410,6 @@ C:\Users\moni\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\MultipleQualif
 C:\Users\moni\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\resources.en-us.resfiles
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\resources.en-us.resfiles.intermediate
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\resources.en-us.resfiles
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\resources.en-us.resfiles.intermediate
+C:\Users\Philipp\Desktop\iMento\imento\imento\obj\x86\Debug\imento.csprojResolveAssemblyReference.cache

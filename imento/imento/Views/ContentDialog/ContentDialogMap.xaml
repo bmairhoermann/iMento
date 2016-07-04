@@ -11,16 +11,16 @@
     PrimaryButtonText="Speichern"
     SecondaryButtonText="Abbrechen"
     PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
-    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick" Height="517.333"
     >
 
-    <Grid Height="158" Width="291">
+    <Grid Height="301" Width="291">
         <TextBlock x:Name="textBlockName" Margin="0,5,0,0" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Top" HorizontalAlignment="Left" Width="43"/>
         <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Margin="122,0,0,0" TextWrapping="Wrap" PlaceholderText="Name des Albums" VerticalAlignment="Top" Height="32" Width="169"/>
         <TextBox x:Name="textBoxDescription" HorizontalAlignment="Left" Margin="122,37,0,0" TextWrapping="Wrap" PlaceholderText="Beschreibung des Albums" VerticalAlignment="Top" Width="169"/>
         <TextBlock x:Name="textBlockDescription" HorizontalAlignment="Left" Margin="0,43,0,0" TextWrapping="Wrap" Text="Beschreibung:" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlockLocation" HorizontalAlignment="Left" Margin="0,84,0,0" TextWrapping="Wrap" Text="Ort:" VerticalAlignment="Top" Width="93"/>
-        
+
         <TextBlock x:Name="textBlockLocation1" HorizontalAlignment="Left" Margin="122,84,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="169"/>
 
         <TextBlock x:Name="textBlockType" HorizontalAlignment="Left" Margin="0,124,0,0" TextWrapping="Wrap" Text="Art:" VerticalAlignment="Top"/>
@@ -33,5 +33,18 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        <CalendarDatePicker x:Name="startDate" HorizontalAlignment="Left" Margin="122,153,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlockType_Copy" HorizontalAlignment="Left" Margin="0,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        	<Run Text="Reisebeginn"/>
+        	<Run Text=":"/>
+        </TextBlock>
+        <TextBlock x:Name="textBlockType_Copy1" HorizontalAlignment="Left" Margin="0,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        	<Run Text="Reiseende"/>
+        	<Run Text=":"/>
+        </TextBlock>
+        <CalendarDatePicker x:Name="endDate" HorizontalAlignment="Left" Margin="122,242,0,0" VerticalAlignment="Top"/>
+        
+
+
     </Grid>
 </ContentDialog>

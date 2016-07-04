@@ -54,9 +54,12 @@ namespace imento.Views
 
         // Ok 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
+            
             album.Title = textBoxName.Text;
             album.Description = textBoxDescription.Text;
-
+            album.Date_Start = startDate.Date.Value.Date;
+            
+            album.Date_Ende = endDate.Date.Value.Date;
 
             if (comboBox.SelectedIndex < 0){
                 album.Type = (String)comboBox.PlaceholderText;
