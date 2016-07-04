@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using imento.Models;
 using System.Collections.ObjectModel;
+using static imento.Views.EntryView;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -48,9 +49,6 @@ namespace imento
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
             var photo = (PhotoViewModel)e.ClickedItem;
             this.Frame.Navigate(typeof(Views.PhotoView), new PhotoParams() { PhotoId = photo.PhotoId });
-        }
-        public class PhotoParams {
-            public int PhotoId { get; set; }
         }
     }
 }
