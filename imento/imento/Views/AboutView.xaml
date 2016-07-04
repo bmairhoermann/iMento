@@ -10,11 +10,16 @@
     <Grid Background="{StaticResource Background}" Padding="16,16,16,0">
         <StackPanel>
             <TextBlock Style="{StaticResource h1}" Foreground="{StaticResource Orange}">imento</TextBlock>
-            <TextBlock Style="{StaticResource h3}" Foreground="{StaticResource Orange}">A Project by</TextBlock>
+            <TextBlock Style="{StaticResource h3}" Foreground="{StaticResource Orange}">Impressum</TextBlock>
             <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">Christian Rösler</TextBlock>
             <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">Brian Mairhörmann</TextBlock>
             <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">Monika Wack</TextBlock>
             <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">Philipp Winterholler</TextBlock>
+            <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}"></TextBlock>
+            <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">E-Mail: Monika.Wack@hof-university.de</TextBlock>
+            <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">E-Mail: Philipp.Winterholler@hof-university.de</TextBlock>
+            <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">E-Mail: Brian.Mairhoermann@hof-university.de</TextBlock>
+            <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}">E-Mail: Christian.Rösler@hof-university.de</TextBlock>
         </StackPanel>
     </Grid>
 </Page>
