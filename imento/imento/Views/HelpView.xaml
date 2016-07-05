@@ -8,6 +8,23 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource Background}" Padding="16,16,16,0">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Style="{StaticResource h1}" Foreground="{StaticResource Orange}" TextWrapping="Wrap">Du brauchst Hilfe?</TextBlock>
+                <TextBlock Style="{StaticResource h3}" Foreground="{StaticResource Orange}" TextWrapping="Wrap" Margin="0,8,0,24">Hier findest du nachfolgend alle Funktionen von imento erklärt.</TextBlock>
 
+                <TextBlock Style="{StaticResource h3}" Foreground="{StaticResource Orange}" TextWrapping="Wrap" Margin="0,8,0,8">Ein Album erstellen</TextBlock>
+                <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}" TextWrapping="Wrap" Margin="0,8,0,24">Auf der Weltkarte kannst du durch gedrückthalten der linken Maustaste auf eine Position auf der Weltkarte für diesen Ort ein Album erstellen.</TextBlock>
+
+                <TextBlock Style="{StaticResource h3}" Foreground="{StaticResource Orange}" TextWrapping="Wrap" Margin="0,8,0,8">Einen Eintrag in einem Album erstellen</TextBlock>
+                <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}" TextWrapping="Wrap" Margin="0,8,0,24">Über das Album-Icon auf der Karte oder die Albenübersicht gelangst du zum Album. Um einen neuen Eintrag zu erstellen, klickst du auf das große Plus. Dann kannst du einen Titel und eine Beschreibung von deinen Erlebnissen eintragen.</TextBlock>
+
+                <TextBlock Style="{StaticResource h3}" Foreground="{StaticResource Orange}" TextWrapping="Wrap" Margin="0,8,0,8">Einem Eintrag Fotos hinzufügen</TextBlock>
+                <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}" TextWrapping="Wrap" Margin="0,8,0,24">Wenn du einen Eintrag anklickst, kannst du diesem über den Button mit dem Plus ein Foto hinzufügen. Ziehe dein Foto einfach in das weiße Fenster und klicke auf speichern. Du kannst dem Eintrag beliebig viele Fotos hinzufügen.</TextBlock>
+
+                <TextBlock Style="{StaticResource h3}" Foreground="{StaticResource Orange}" TextWrapping="Wrap" Margin="0,8,0,8">Favoriten</TextBlock>
+                <TextBlock  Style="{StaticResource p}" Foreground="{StaticResource Orange}" TextWrapping="Wrap" Margin="0,8,0,24">Sammle alle deine Lieblingsbilder an einem Ort. Klicke dafür auf ein Foto, um es in großer Ansicht zu sehen und klicke dann auf den Button "Zu Favoriten hinzufügen". Über den Stern in der Menüleiste erreichst du dann deine Favoritenbilder.</TextBlock>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

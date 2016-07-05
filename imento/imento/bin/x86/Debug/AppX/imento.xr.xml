@@ -40,8 +40,6 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Name" />
-      <RootProperty Name="Style" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="Background" />
@@ -96,8 +94,6 @@
       <RootMethod Name="SetColumn" />
       <RootMethod Name="GetColumnSpan" />
       <RootMethod Name="SetColumnSpan" />
-      <RootMethod Name="GetRowSpan" />
-      <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="HorizontalScrollBarVisibility" />
@@ -118,7 +114,6 @@
       <RootProperty Name="PrimaryButtonText" />
       <RootProperty Name="SecondaryButtonText" />
       <RootProperty Name="Content" />
-      <RootProperty Name="Height" />
       <RootEvent Name="PrimaryButtonClick" />
       <RootEvent Name="SecondaryButtonClick" />
     </RootType>
@@ -260,8 +255,6 @@
       <RootProperty Name="Name" />
     </RootType>
     <RootType FullName="imento.MainPage" />
-    <RootType FullName="imento.NewAlbumView" />
     <RootType FullName="imento.Views.PhotoView" />
-    <RootType FullName="imento.SettingsView" />
   </Roots.RootTypes>
 </Roots>

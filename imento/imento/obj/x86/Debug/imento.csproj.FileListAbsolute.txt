@@ -801,9 +801,7 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Views\FavsView.x
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Views\HelpView.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Views\HomeView.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\MainPage.xbf
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Views\NewAlbumView.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Views\PhotoView.xbf
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Views\SettingsView.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\imento.xr.xml
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\imento.exe
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\imento.pdb
@@ -963,12 +961,8 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\HomeView.g
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\HomeView.g.cs
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\MainPage.g.i.cs
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\MainPage.g.cs
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\NewAlbumView.g.i.cs
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\NewAlbumView.g.cs
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\PhotoView.g.i.cs
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\PhotoView.g.cs
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\SettingsView.g.i.cs
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\SettingsView.g.cs
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\XamlTypeInfo.g.cs
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\App.xaml
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\AboutView.xaml
@@ -981,9 +975,7 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\FavsView.x
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\HelpView.xaml
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\HomeView.xaml
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\MainPage.xaml
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\NewAlbumView.xaml
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\PhotoView.xaml
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\SettingsView.xaml
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\AlbumView.xaml
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\App.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\AboutView.xbf
@@ -996,9 +988,7 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\FavsView.x
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\HelpView.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\HomeView.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\MainPage.xbf
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\NewAlbumView.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\PhotoView.xbf
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\SettingsView.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Views\AlbumView.xbf
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\imento.exe
