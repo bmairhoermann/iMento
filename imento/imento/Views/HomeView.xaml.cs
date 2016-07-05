@@ -32,7 +32,6 @@ namespace imento
 
         public HomeView() {
 
-          //  mc.getAlbums();
             foreach (var e in mc.getAlbums())
             {
                 MapIcon startIcons = new MapIcon();

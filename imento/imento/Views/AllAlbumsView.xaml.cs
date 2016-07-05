@@ -27,7 +27,6 @@ namespace imento {
         public String PageTitle = "Alle Alben";
 
         private List<Album> Albums;
-        // public string ViewTitle = "Alle Alben xx";
         private Album album;
 
         ModelController mc = new ModelController();

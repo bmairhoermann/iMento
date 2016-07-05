@@ -41,7 +41,6 @@
                                 <TextBlock Style="{StaticResource p}" Foreground="{StaticResource LightOrange}" Text=" – Reiseende: " />
                                 <TextBlock Style="{StaticResource p}" Foreground="#fff" Text="{x:Bind Date_Ende}"  />
                             </StackPanel>
-                            <!-- <TextBlock Grid.Row="2" FontSize="18" Foreground="#fff" Text="{x:Bind Description}" TextWrapping="Wrap" /> -->
                         </Grid>
                     </Grid>
                 </DataTemplate>

@@ -86,7 +86,6 @@ namespace imento.Views
         // Cancel 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             hasChanged = false;
-
         }
 
     }

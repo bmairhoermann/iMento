@@ -27,9 +27,7 @@
         </Grid.RowDefinitions>
         <RelativePanel Background="Gray">
             <Button Name="OpenMenu" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="24" RelativePanel.AlignLeftWithPanel="True" Click="OpenMainMenu" Background="{StaticResource Orange}" Foreground="White" />
-            <!--
-            <Button Name="GoBack" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE0C4;" FontSize="24" RelativePanel.RightOf="OpenMenu"  Background="Gray" Foreground="White" />
-            -->
+
             <TextBlock Name="Title" Text="Startseite" Foreground="White" RelativePanel.AlignVerticalCenterWith="OpenMenu" RelativePanel.RightOf="OpenMenu" Margin="15,0,0,0" FontWeight="Bold" />
         </RelativePanel>
 
@@ -47,14 +45,7 @@
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Startseite</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-                    <!-- 
-                    <ListBoxItem Name="NewAlbum">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontSize="24" TextAlignment="Center" Name="NewAlbumButton" FontFamily="Segoe MDL2 Assets" Text="&#xEB49;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
-                            <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Neues Album</TextBlock>
-                        </StackPanel>
-                    </ListBoxItem>
--->
+
                     <ListBoxItem Name="AllAlbums">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontSize="24" TextAlignment="Center" Name="AllAlbumsButton" FontFamily="Segoe MDL2 Assets" Text="&#xE81E;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
@@ -68,14 +59,7 @@
                             <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Favoriten</TextBlock>
                         </StackPanel>
                     </ListBoxItem>
-<!--
-                    <ListBoxItem Name="Settings">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock FontSize="24" TextAlignment="Center" Name="SettingsButton" FontFamily="Segoe MDL2 Assets" Text="&#xE115;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
-                            <TextBlock FontSize="18" Margin="20,0,0,0" Foreground="White" SelectionHighlightColor="#FFEA5B0C">Einstellungen</TextBlock>
-                        </StackPanel>
-                    </ListBoxItem>
--->
+
                     <ListBoxItem Name="Help">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontSize="24" TextAlignment="Center" Name="HelpButton" FontFamily="Segoe MDL2 Assets" Text="&#xE700;" Foreground="White" SelectionHighlightColor="#FFEA5B0C" />
@@ -94,15 +78,9 @@
             </SplitView.Pane>
 
             <SplitView.Content>
-                <!--  <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"> -->
                 <Frame Name="MainFrame"></Frame>
-                <!--  </ScrollViewer> -->
             </SplitView.Content>
         </SplitView>
 
     </Grid>
-
-
-
-
 </Page>

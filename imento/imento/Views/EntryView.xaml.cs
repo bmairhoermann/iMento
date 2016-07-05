@@ -29,8 +29,6 @@ namespace imento.Views {
         private ObservableCollection<PhotoViewModel> Photos;
         private Entry currentEntry = new Entry();
 
-        //private List<ImageSource> PicSource;
-
         public string albumId;
         public int EntryId;
         public string EntryTitle;
@@ -40,7 +38,6 @@ namespace imento.Views {
 
         public EntryView() {
             this.InitializeComponent();
-            // mc.dostuff();
         }
 
         // If AlbumId is passed, it will be set to the String albumId
