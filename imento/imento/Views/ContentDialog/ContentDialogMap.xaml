@@ -11,7 +11,7 @@
     PrimaryButtonText="Speichern"
     SecondaryButtonText="Abbrechen"
     PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
-    SecondaryButtonClick="ContentDialog_SecondaryButtonClick" Height="517.333"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
     >
 
     <Grid Height="333" Width="291">
