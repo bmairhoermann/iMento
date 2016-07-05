@@ -32,14 +32,16 @@ namespace imento.Views {
             this.InitializeComponent();
         }
 
-
+        /// <summary>
+        /// Receives information from the item clicked in the previous view (entry view) and sets the favorite button according to the photo
+        /// </summary>
+        /// <param name="e"></param>
         protected override async void OnNavigatedTo(NavigationEventArgs e) {
             base.OnNavigatedTo(e);
 
             PhotoParams result = (PhotoParams)e.Parameter;
             photo = mc.getPhoto(result.PhotoId);
             PhotoId = result.PhotoId;
-
             ImageSource imageSource = await photo.ToBitmapImage();
             DisplayPhoto.Source = imageSource;
 
@@ -49,7 +51,11 @@ namespace imento.Views {
             }
         }
 
-        // Makes a photo a favorite or removes the favorite state if it already has it 
+        /// <summary>
+        /// Makes a photo a favorite or removes the favorite state if it already has it 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void makePhotoFavorite_Click(object sender, RoutedEventArgs e) {
             if (currentPhotoIsFavorite) {
                 makeFavorite.Content = "Zu Favoriten hinzufügen";
@@ -62,9 +68,12 @@ namespace imento.Views {
             }
         }
 
-        // Deletes the Photo after confirming the dialog 
+        /// <summary>
+        /// Deletes the Photo after confirming the message dialog 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void deletePhoto_Click(object sender, RoutedEventArgs e) {
-            // MessageDialog
             var dialog = new Windows.UI.Popups.MessageDialog("Wollen Sie wirklich dieses Foto löschen?");
 
             dialog.Commands.Add(new Windows.UI.Popups.UICommand("Ja") { Id = 0 });
@@ -80,7 +89,5 @@ namespace imento.Views {
                 this.Frame.Navigate(typeof(AllAlbumsView));
             }
         }
-
-
     }
 }

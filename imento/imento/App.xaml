@@ -5,7 +5,7 @@
     xmlns:local="using:imento"
     RequestedTheme="Light">
 
-    <!-- Stylesheet für all xaml files -->
+    <!-- Stylesheet for all xaml files -->
     <Application.Resources>
 
         <!-- Color: Orange -->
@@ -44,7 +44,7 @@
             <Setter Property="Foreground" Value="#FF2A2C2A" />
         </Style>
 
-        <!-- form: Formulare -->
+        <!-- form: Forms -->
         <Style TargetType="TextBox" x:Key="form">
             <Setter Property="Background" Value="{StaticResource LightOrange}" />
             <Setter Property="Foreground" Value="#FF2A2C2A" />
@@ -52,7 +52,7 @@
             <Setter Property="Height" Value="48" />
         </Style>
 
-        <!-- Button -->
+        <!-- Buttons -->
         <Style TargetType="Button" x:Key="button">
             <Setter Property="Background" Value="{StaticResource Orange}" />
             <Setter Property="Foreground" Value="White" />

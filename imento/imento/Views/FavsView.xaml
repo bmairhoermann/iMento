@@ -9,7 +9,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource Background}" Padding="16,16,16,0">
-        
         <RelativePanel Grid.Row="0">
             <GridView 
             RelativePanel.AlignBottomWithPanel="True"
@@ -31,6 +30,5 @@
                 </GridView.ItemTemplate>
             </GridView>
         </RelativePanel>
-        
     </Grid>
 </Page>

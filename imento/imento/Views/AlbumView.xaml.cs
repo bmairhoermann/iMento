@@ -37,14 +37,18 @@ namespace imento.Views {
             this.InitializeComponent();
         }
 
-        // If AlbumId is passed, it will be set to the String albumId
+        /// <summary>
+        /// Receives information from the item clicked in the previous view (all albums view)  nd uses it to set strings, text boxes and filling the view with entries
+        /// </summary>
+        /// <param name="e">
+        /// Receives data about the clicked item 
+        /// </param>
         protected async override void OnNavigatedTo(NavigationEventArgs e) {
             AlbumParams result = (AlbumParams)e.Parameter;
-
             album = mc.getAlbum(result.AlbumId);
             AlbumTitleHeadline.Text = result.AlbumTitle;
-            try
-            {
+
+            try {
                 AlbumDescriptionParagraph.Text = result.AlbumDescription;
                 AlbumTypeIcon.Text = result.AlbumType;
             }
@@ -53,7 +57,6 @@ namespace imento.Views {
             base.OnNavigatedTo(e);
 
             var dbEntries = mc.getEntriesOverview(album.AlbumId);
-            
             Entrys = new ObservableCollection<EntryViewModel>();
             foreach (Entry item in dbEntries) {
                 EntryViewModel entryViewModel = new EntryViewModel();
@@ -65,17 +68,24 @@ namespace imento.Views {
                 }
                 Entrys.Add(entryViewModel);
             }
-
-            
         }
 
-        // Click on an entry opens it in a new view
+        /// <summary>
+        /// Click on an entry opens it in the entry view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">
+        /// Gives information about the clicked item 
+        /// </param>
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
             var entry = (EntryViewModel)e.ClickedItem;
             this.Frame.Navigate(typeof(Views.EntryView), new EntryParams() { EntryId = entry.EntryId, EntryTitle = entry.Title, EntryDescription = entry.Description });
         }
-        public class EntryParams {
 
+        /// <summary>
+        /// Params for the clicked entry used to pass to the entry view 
+        /// </summary>
+        public class EntryParams {
             public int EntryId { get; set; }
             public string EntryTitle { get; set; }
             public string EntryDescription { get; set; }
@@ -83,18 +93,18 @@ namespace imento.Views {
             public DateTime Date { get; set; }
         }
 
-
-        // Open a new dialog to create a new entry an save them to the databse according to the album id
+        /// <summary>
+        /// Open a new dialog to create a new entry an save them to the database according to the album id
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void NewEntry_Click(object sender, RoutedEventArgs e) {
             Entry entry = new Entry();
             AddEntry dialog = new AddEntry(entry);
             var dialogResult = await dialog.ShowAsync();
             try {
                 if (dialog.hasChanged == true) {
-                    
-
                     mc.saveNewEntry(entry, album.AlbumId);
-
                     var dbEntry = mc.getEntriesOverview(album.AlbumId).Last();
 
                     EntryViewModel entryViewModel = new EntryViewModel();
@@ -106,51 +116,50 @@ namespace imento.Views {
             } catch {
                 System.Diagnostics.Debug.WriteLine("ALBUMVIEW: edit_Album_Click(): Not able to update Album!");
             }
-
         }
 
-        // Deletes an album by id and changes view to AllAlbumsView
+        /// <summary>
+        /// After confirming the message dialog it deletes an album by id and changes view to AllAlbumsView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void deleteAlbum_Click(object sender, RoutedEventArgs e) {
-            // MessageDialog
             var dialog = new Windows.UI.Popups.MessageDialog("Wollen Sie wirklich dieses Album löschen?");
 
             dialog.Commands.Add(new Windows.UI.Popups.UICommand("Ja") { Id = 0 });
             dialog.Commands.Add(new Windows.UI.Popups.UICommand("Abbrechen") { Id = 1 });
-
             dialog.DefaultCommandIndex = 0;
             dialog.CancelCommandIndex = 1;
 
             var result = await dialog.ShowAsync();
-
             var btn = sender as Button;
 
             if ((int)result.Id == 0) {
                 mc.deleteAlbum(album.AlbumId);
                 this.Frame.Navigate(typeof(AllAlbumsView));
             } 
- 
         }
-        // Edit the album
+
+        /// <summary>
+        /// Open the content dialog to edit the album
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void editAlbum_Click(object sender, RoutedEventArgs e) {
             ContentDialogMap dialog = new ContentDialogMap(album);
             var dialogResult = await dialog.ShowAsync();
 
-            try
-            {
-               if (dialog.hasChanged == true)
-                {
+            try {
+               if (dialog.hasChanged == true) {
                     album = dialog.album;
                     AlbumTitleHeadline.Text = album.Title;
                     AlbumDescriptionParagraph.Text = album.Description;
                     AlbumTypeIcon.Text = album.Type;
-
                     mc.updateAlbumInfo(album);
                 }
-            }catch
-            {
+            } catch {
                 System.Diagnostics.Debug.WriteLine("ALBUMVIEW: edit_Album_Click(): Not able to update Album!");
             }
-            
         }
     }
 }

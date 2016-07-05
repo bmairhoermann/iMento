@@ -18,8 +18,7 @@ using static imento.Views.EntryView;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace imento
-{
+namespace imento{
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -30,14 +29,15 @@ namespace imento
 
         public FavsView() {
             this.InitializeComponent();
-
             fillObservableListWithPhotos();
         }
 
+        /// <summary>
+        /// Fills the photolist with the photos that are tagged as favorite photos
+        /// </summary>
         private async void fillObservableListWithPhotos() {
             List<Photo> FavoritePhotos = mc.getFavouritePhotos();
             Photos = new ObservableCollection<PhotoViewModel>();
-
             foreach (Photo photo in FavoritePhotos) {
                 var photoViewModel = new PhotoViewModel();
                 photoViewModel.Photo = await photo.ToBitmapImage();
@@ -46,6 +46,11 @@ namespace imento
             }
         }
 
+        /// <summary>
+        /// Load photo view an pass photo data to load matching photo 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
             var photo = (PhotoViewModel)e.ClickedItem;
             this.Frame.Navigate(typeof(Views.PhotoView), new PhotoParams() { PhotoId = photo.PhotoId });

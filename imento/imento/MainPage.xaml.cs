@@ -38,12 +38,20 @@ namespace imento
             systemNavigationManager.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
         }
 
-        // OpenMainMenu: Opens or closes the main menu
+        /// <summary>
+        /// Opens or closes the main menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpenMainMenu(object sender, RoutedEventArgs e) {
             MainSV.IsPaneOpen = !MainSV.IsPaneOpen;
         }
 
-        // ListBox_SelectionChanged: Changes view according to the pressed button 
+        /// <summary>
+        /// Changes view according to the pressed button 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             if (Home.IsSelected) {
                 MainFrame.Navigate(typeof(HomeView));
@@ -63,7 +71,11 @@ namespace imento
             }
         }
 
-        // Function for handling the GoBack Button
+        /// <summary>
+        /// Function for handling the GoBack Button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="backRequestedEventArgs"></param>
         private void SystemNavigationManagerOnBackRequested(object sender, BackRequestedEventArgs backRequestedEventArgs) {
             if (MainFrame.CanGoBack) {
                 var lastPageName = MainFrame.BackStack.Last().SourcePageType.Name;

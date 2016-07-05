@@ -25,7 +25,7 @@ namespace imento.Views {
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class EntryView : Page {
-
+        ModelController mc = new ModelController();
         private ObservableCollection<PhotoViewModel> Photos;
         private Entry currentEntry = new Entry();
 
@@ -34,13 +34,16 @@ namespace imento.Views {
         public string EntryTitle;
         public string EntryDescription;
 
-        ModelController mc = new ModelController();
-
         public EntryView() {
             this.InitializeComponent();
         }
 
-        // If AlbumId is passed, it will be set to the String albumId
+        /// <summary>
+        /// Receives information from the item clicked in the previous view (album view) and uses it to set strings and text boxes
+        /// </summary>
+        /// <param name="e">
+        ///  Gives information about the clicked item 
+        /// </param>
         protected override async void OnNavigatedTo(NavigationEventArgs e) {
             base.OnNavigatedTo(e);
 
@@ -55,19 +58,32 @@ namespace imento.Views {
             fillObservableListWithPhotos();
         }
 
+        /// <summary>
+        /// Load photo view an pass photo data to load matching photo 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
             var photo = (PhotoViewModel)e.ClickedItem; 
             this.Frame.Navigate(typeof(Views.PhotoView), new PhotoParams() { PhotoId = photo.PhotoId });
         }
+
+        /// <summary>
+        /// Params for the clicked photo used to pass to the photo view 
+        /// </summary>
         public class PhotoParams {
             public int PhotoId { get; set; }
         }
 
+        /// <summary>
+        /// Opens the content dialog to add a new photo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void NewPhoto_Click(object sender, RoutedEventArgs e) {
             AddPhoto dialog = new AddPhoto(EntryId);
             var dialogResult = await dialog.ShowAsync();
-            if (dialog.photoWasAdded)
-            {
+            if (dialog.photoWasAdded) {
                 currentEntry = mc.getEntryDetails(EntryId);
                 PhotoViewModel newPhotoViewModel = new PhotoViewModel();
                 newPhotoViewModel.Photo = await currentEntry.Photos.Last().ToBitmapImage();
@@ -76,13 +92,13 @@ namespace imento.Views {
             }
         }
 
-        private async void fillObservableListWithPhotos()
-        {
+        /// <summary>
+        /// Fills the photolist with the photos from the entry
+        /// </summary>
+        private async void fillObservableListWithPhotos() {
             currentEntry = mc.getEntryDetails(EntryId);
             Photos = new ObservableCollection<PhotoViewModel>();
-
-            foreach (Photo photo in currentEntry.Photos)
-            {
+            foreach (Photo photo in currentEntry.Photos) {
                 var photoViewModel = new PhotoViewModel();
                 photoViewModel.Photo = await photo.ToBitmapImage();
                 photoViewModel.PhotoId = photo.PhotoId;
@@ -90,18 +106,20 @@ namespace imento.Views {
             }
         }
 
+        /// <summary>
+        /// After confirming the message dialog it deletes an entry by id and changes view to AllAlbumsView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void deleteEntry_Click(object sender, RoutedEventArgs e) {
-            // MessageDialog
             var dialog = new Windows.UI.Popups.MessageDialog("Wollen Sie wirklich diesen Eintrag löschen?");
 
             dialog.Commands.Add(new Windows.UI.Popups.UICommand("Ja") { Id = 0 });
             dialog.Commands.Add(new Windows.UI.Popups.UICommand("Abbrechen") { Id = 1 });
-
             dialog.DefaultCommandIndex = 0;
             dialog.CancelCommandIndex = 1;
 
             var result = await dialog.ShowAsync();
-
             var btn = sender as Button;
 
             if ((int)result.Id == 0) {
@@ -110,10 +128,14 @@ namespace imento.Views {
             }
         }
 
+        /// <summary>
+        /// Open the content dialog to edit the entry
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void editEntry_Click(object sender, RoutedEventArgs e) {
             AddEntry dialog = new AddEntry(currentEntry);
             var dialogResult = await dialog.ShowAsync();
-            
             try {
                 if (dialog.hasChanged == true) {
                     currentEntry = dialog.entry;

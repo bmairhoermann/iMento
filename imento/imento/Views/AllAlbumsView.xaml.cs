@@ -25,10 +25,8 @@ namespace imento {
     public sealed partial class AllAlbumsView : Page {
 
         public String PageTitle = "Alle Alben";
-
         private List<Album> Albums;
         private Album album;
-
         ModelController mc = new ModelController();
 
         public AllAlbumsView() {
@@ -41,33 +39,28 @@ namespace imento {
             }
         }
 
-        // Load EntryView an pass album data to load matching entries 
+        /// <summary>
+        /// Load AlbumView an pass album data to load matching entries 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">
+        /// Gives information about the clicked item 
+        /// </param>
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
             album = (Album)e.ClickedItem;
             this.Frame.Navigate(typeof(Views.AlbumView), new AlbumParams() { AlbumId = album.AlbumId, AlbumTitle = album.Title, AlbumDescription = album.Description, AlbumType = album.Type, AlbumDate_Ende = album.Date_Ende, AlbumDate_Start = album.Date_Start });
         }
-
-        private void editAlbum_Click(object sender, RoutedEventArgs e) {
-
-        }
-
-        private void deleteAlbum_Click(object sender, RoutedEventArgs e) {
-            Debug.WriteLine("-------------------");
-            //mc.deleteAlbum();
-        }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-
-        }
     }
+
+    /// <summary>
+    /// Params for the clicked album used to pass to the album view 
+    /// </summary>
     public class AlbumParams {
         public String AlbumId { get; set; }
         public String AlbumTitle { get; set; }
         public String AlbumDescription { get; set; }
         public String AlbumType { get; set; }
-
         public DateTime AlbumDate_Start { get; set; }
         public DateTime AlbumDate_Ende { get; set; }
-
     }
 }

@@ -9,21 +9,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource Background}" Padding="16,8,0,0">
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState x:Name="x">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="800" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <!-- <Setter Target="GridB.Grid.Row" Value="1" /> -->
 
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-
-        <Grid Name="MyGrid">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="80" />
                 <RowDefinition Height="*" />

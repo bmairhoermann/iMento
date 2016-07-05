@@ -15,11 +15,9 @@
                 <TextBlock Margin="10,0,8,0" Style="{StaticResource p}" Foreground="{StaticResource Orange}" TextTrimming="CharacterEllipsis">Erstelle ein neues Album durch langes Klicken oder Drücken auf der Weltkarte.</TextBlock>
             </StackPanel>
         </Grid>
-
-        <ListView Grid.Row="0" Grid.Column="0" ItemsSource="{x:Bind Albums}" IsItemClickEnabled="True" ItemClick="GridView_ItemClick" SelectionChanged="ListView_SelectionChanged">
+        <ListView Grid.Row="0" Grid.Column="0" ItemsSource="{x:Bind Albums}" IsItemClickEnabled="True" ItemClick="GridView_ItemClick">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Album">
-
                     <Grid Margin="4,8,8,8" Background="{StaticResource Orange}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />

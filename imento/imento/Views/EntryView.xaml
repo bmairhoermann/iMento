@@ -14,22 +14,7 @@
             <RowDefinition Height="296" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-
-        <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState x:Name="x">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="800" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <!-- <Setter Target="GridB.Grid.Row" Value="1" /> -->
-
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-
-        <Grid Name="MyGrid">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="80" />
                 <RowDefinition Height="216" />
@@ -38,17 +23,10 @@
                 <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-
             <Button Name="editEntry" Height="44" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}" Click="editEntry_Click" />
             <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="EntryTitleHeadline" Style="{StaticResource h1}" Margin="55,0,0,0" Foreground="{StaticResource Orange}">[ENTRY TITLE]</TextBlock>
-
             <Button Grid.Row="1" Grid.Column="0" Width="200" Content="+" Background="{StaticResource Orange}" Foreground="White" FontSize="100" Click="NewPhoto_Click" Margin="0,0,0,0" VerticalAlignment="Top" />
             <Button Grid.Row="1" Grid.Column="0" Height="50" Name="deleteEntry" Width="200" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" Click="deleteEntry_Click" VerticalAlignment="Bottom" />
-            <!--
-            <Border Grid.Row="1" Grid.Column="1" BorderBrush="{StaticResource Orange}" BorderThickness="2" Height="216" Width="800" Padding="8,8,8,8" Margin="16,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
-                <TextBlock Name="EntryDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ENTRY DESCRIPTION]</TextBlock>
-            </Border>
--->
             <Grid Grid.Row="1" Grid.Column="1" Margin="16,0,16,0" Padding="8" Height="216" VerticalAlignment="Top" Background="#ffe7d9">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -59,7 +37,6 @@
                 <TextBlock Name="EntryDescriptionParagraph" Style="{StaticResource p}" Foreground="{StaticResource Orange}">[ENTRY DESCRIPTION]</TextBlock>
             </Grid>
         </Grid>
-        
         <RelativePanel Grid.Row="1">
             <GridView 
             RelativePanel.AlignBottomWithPanel="True"
@@ -81,7 +58,5 @@
                 </GridView.ItemTemplate>
             </GridView>
         </RelativePanel>
-
     </Grid>
-
 </Page>
