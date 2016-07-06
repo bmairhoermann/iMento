@@ -16,7 +16,9 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // Die Elementvorlage "Inhaltsdialog" ist unter http://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
-
+/// <summary>
+/// ContentDialog to set Data for a new Album
+/// </summary>
 namespace imento.Views
 {
     public sealed partial class ContentDialogMap : ContentDialog {
@@ -32,7 +34,10 @@ namespace imento.Views
 
         public ObservableCollection<string> TypeList = new ObservableCollection<string> { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
         DateTime dt = new DateTime(2016, 07, 04, 10, 00, 0);
-
+        /// <summary>
+        /// Add location to Dialog in Textfield
+        /// </summary>
+        /// <param name="location"></param>
         public ContentDialogMap(String location) {
             this.InitializeComponent();
 
@@ -43,7 +48,10 @@ namespace imento.Views
             startDate.Date = dt;
             endDate.Date = dt;
         }
-
+        /// <summary>
+        /// Make Changes on Selected Album
+        /// </summary>
+        /// <param name="album"></param>
         public ContentDialogMap(Album album) {
             this.InitializeComponent();
             this.album = album;
@@ -57,7 +65,11 @@ namespace imento.Views
 
             } catch { }
         }
-
+        /// <summary>
+        /// Save Changes in Dialog
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             
@@ -82,8 +94,11 @@ namespace imento.Views
            
             hasChanged = true;
         }
-
-        // Cancel 
+        /// <summary>
+        /// Cancel Button pressed, save no changes or new Album
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             hasChanged = false;
         }

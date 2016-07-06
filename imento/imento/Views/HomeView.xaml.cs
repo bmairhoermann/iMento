@@ -29,7 +29,9 @@ namespace imento
         ModelController mc = new ModelController();
         Dictionary<MapIcon, string> mapIconDictionary = new Dictionary<MapIcon, string>();
 
-
+        /// <summary>
+        /// Creat for each Album a MapIcon
+        /// </summary>
         public HomeView() {
 
             foreach (var e in mc.getAlbums())
@@ -51,7 +53,14 @@ namespace imento
            
         }
 
-
+        /// <summary>
+        /// Set current Icon from Database with Parameter
+        /// </summary>
+        /// <param name="latitude"></param>
+        /// <param name="longitude"></param>
+        /// <param name="title"></param>
+        /// <param name="tempMapicon"></param>
+        /// <param name="type"></param>
         private async void add(double latitude, double longitude, string title, MapIcon tempMapicon, string type) {
             tempMapicon.Location = new Geopoint(new BasicGeoposition() {
                 Latitude = latitude,
@@ -76,7 +85,11 @@ namespace imento
         }
 
 
-
+        /// <summary>
+        /// Create new Album and Set MapIcon to Location, where User pressed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void Map_MapHolding(MapControl sender, MapInputEventArgs e)
         {
             MapIcon tempMapIcon = new MapIcon();
