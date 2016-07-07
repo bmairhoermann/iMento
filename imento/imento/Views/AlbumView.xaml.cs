@@ -46,28 +46,38 @@ namespace imento.Views {
         protected async override void OnNavigatedTo(NavigationEventArgs e) {
             AlbumParams result = (AlbumParams)e.Parameter;
             album = mc.getAlbum(result.AlbumId);
-            AlbumTitleHeadline.Text = result.AlbumTitle;
 
-            try {
-                AlbumDescriptionParagraph.Text = result.AlbumDescription;
-                AlbumTypeIcon.Text = result.AlbumType;
-            }
-            catch {  }
-            
-            base.OnNavigatedTo(e);
+            // Check if Album is not null
+            if(album.AlbumId != null) {
+                AlbumTitleHeadline.Text = result.AlbumTitle;
 
-            var dbEntries = mc.getEntriesOverview(album.AlbumId);
-            Entrys = new ObservableCollection<EntryViewModel>();
-            foreach (Entry item in dbEntries) {
-                EntryViewModel entryViewModel = new EntryViewModel();
-                entryViewModel.EntryId = item.EntryId;
-                entryViewModel.Title = item.Title;
-                entryViewModel.Description = item.Description;
-                if (item.Photos != null) {
-                    entryViewModel.Photo = await item.Photos[0].ToBitmapImage();
+                try {
+                    AlbumDescriptionParagraph.Text = result.AlbumDescription;
+                    AlbumTypeIcon.Text = result.AlbumType;
+                } catch { }
+
+                base.OnNavigatedTo(e);
+
+                var dbEntries = mc.getEntriesOverview(album.AlbumId);
+                Entrys = new ObservableCollection<EntryViewModel>();
+                foreach (Entry item in dbEntries) {
+                    EntryViewModel entryViewModel = new EntryViewModel();
+                    entryViewModel.EntryId = item.EntryId;
+                    entryViewModel.Title = item.Title;
+                    entryViewModel.Description = item.Description;
+                    if (item.Photos != null) {
+                        entryViewModel.Photo = await item.Photos[0].ToBitmapImage();
+                    }
+                    Entrys.Add(entryViewModel);
                 }
-                Entrys.Add(entryViewModel);
+            } else {
+                AlbumTitleHeadline.Text = "Gelöschtes Album";
+                AlbumDescriptionParagraph.Text = "Gelöschtes Album";
+                editAlbum.IsEnabled = false;
+                deleteAlbum.IsEnabled = false;
+                newEntryButton.IsEnabled = false;
             }
+            
         }
 
         /// <summary>
