@@ -78,30 +78,41 @@ namespace imento
         /// <param name="backRequestedEventArgs"></param>
         private void SystemNavigationManagerOnBackRequested(object sender, BackRequestedEventArgs backRequestedEventArgs) {
             if (MainFrame.CanGoBack) {
-                var lastPageName = MainFrame.BackStack.Last().SourcePageType.Name;
-                if (lastPageName == "HomeView") {
-                    MainFrame.GoBack();
-                    Title.Text = "Startseite";
-                } else if (lastPageName == "AllAlbumsView") {
-                    MainFrame.GoBack();
-                    Title.Text = "Alle Alben";
-                } else if (lastPageName == "FavsView") {
-                    MainFrame.GoBack();
-                    Title.Text = "Meine Favoriten";
-                } else if (lastPageName == "HelpView") {
-                    MainFrame.GoBack();
-                    Title.Text = "Hilfe und Kurzanleitung";
-                } else if (lastPageName == "AboutView") {
-                    MainFrame.GoBack();
-                    Title.Text = "Über diese App";
-                } else if (lastPageName == "AlbumView") {
-                    MainFrame.GoBack();
-                    Title.Text = "Album";
-                } else if (lastPageName == "EntryView") {
-                    MainFrame.GoBack();
-                    Title.Text = "Eintrag";
+                try {
+                    var lastPageName = MainFrame.BackStack.Last().SourcePageType.Name;
+                    if (lastPageName == "HomeView") {
+                        MainFrame.GoBack();
+                        Title.Text = "Startseite";
+                    } else if (lastPageName == "AllAlbumsView") {
+                        MainFrame.GoBack();
+                        Title.Text = "Alle Alben";
+                    } else if (lastPageName == "FavsView") {
+                        MainFrame.GoBack();
+                        Title.Text = "Meine Favoriten";
+                    } else if (lastPageName == "HelpView") {
+                        MainFrame.GoBack();
+                        Title.Text = "Hilfe und Kurzanleitung";
+                    } else if (lastPageName == "AboutView") {
+                        MainFrame.GoBack();
+                        Title.Text = "Über diese App";
+                    } else if (lastPageName == "AlbumView") {
+                        MainFrame.GoBack();
+                        Title.Text = "Album";
+                    } else if (lastPageName == "EntryView") {
+                        MainFrame.GoBack();
+                        Title.Text = "Eintrag";
+                    }
+                    backRequestedEventArgs.Handled = true;
+                } catch {
+                    System.Diagnostics.Debug.WriteLine("MainPage: SysteNavigationManagerOnBackRequest: Failed to go one Page back!");
+                    try {
+                        MainFrame.BackStack.RemoveAt(MainFrame.BackStackDepth - 1);
+                        MainFrame.GoBack();
+                    } catch {
+                        System.Diagnostics.Debug.WriteLine("MainPage: SysteNavigationManagerOnBackRequest: Failed to go two Pages back!");
+                    }
                 }
-                backRequestedEventArgs.Handled = true;                
+                               
             }
         }
     }

@@ -98,12 +98,24 @@ namespace imento.Views {
         private async void fillObservableListWithPhotos() {
             currentEntry = mc.getEntryDetails(EntryId);
             Photos = new ObservableCollection<PhotoViewModel>();
-            foreach (Photo photo in currentEntry.Photos) {
-                var photoViewModel = new PhotoViewModel();
-                photoViewModel.Photo = await photo.ToBitmapImage();
-                photoViewModel.PhotoId = photo.PhotoId;
-                Photos.Add(photoViewModel);
+
+            //Check if Entry still exists
+            if(currentEntry.EntryId != 0) {
+                foreach (Photo photo in currentEntry.Photos) {
+                    var photoViewModel = new PhotoViewModel();
+                    photoViewModel.Photo = await photo.ToBitmapImage();
+                    photoViewModel.PhotoId = photo.PhotoId;
+                    Photos.Add(photoViewModel);
+                }
+            } else {
+                EntryTitleHeadline.Text = "Eintrag wurde gelöscht.";
+                EntryDescriptionParagraph.Text = "Eintrag wurde gelöscht";
+                editEntry.IsEnabled = false;
+                addPhotoButton.IsEnabled = false;
+                deleteEntry.IsEnabled = false;
+
             }
+            
         }
 
         /// <summary>
