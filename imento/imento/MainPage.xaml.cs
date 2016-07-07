@@ -101,6 +101,9 @@ namespace imento
                     } else if (lastPageName == "EntryView") {
                         MainFrame.GoBack();
                         Title.Text = "Eintrag";
+                    } else if (lastPageName == "PhotoView") {
+                        MainFrame.BackStack.RemoveAt(MainFrame.BackStackDepth - 1);
+                        MainFrame.GoBack();
                     }
                     backRequestedEventArgs.Handled = true;
                 } catch {

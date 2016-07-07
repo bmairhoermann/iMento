@@ -170,6 +170,10 @@ namespace imento
             }
 
         }
+        /// <summary>
+        /// Error message if no location was found
+        /// </summary>
+        /// <param name="message"></param>
  private void error(String message)
         {
             const ToastTemplateType toastTemplate = ToastTemplateType.ToastText01;
@@ -179,7 +183,11 @@ namespace imento
             var toast = new ToastNotification(toastXml);
             ToastNotificationManager.CreateToastNotifier().Show(toast);
         }
-
+/// <summary>
+/// Forward clicked mapicon to AlbumView
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="args"></param>
 private void Map_MapElementClick(MapControl sender, MapElementClickEventArgs args) {
             string albumID;
             foreach (var e in args.MapElements)
