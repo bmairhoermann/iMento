@@ -21,9 +21,9 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Name" />
       <RootProperty Name="Padding" />
+      <RootProperty Name="TextTrimming" />
       <RootProperty Name="Height" />
       <RootProperty Name="FontFamily" />
-      <RootProperty Name="TextTrimming" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="SelectionHighlightColor" />
       <RootProperty Name="FontWeight" />

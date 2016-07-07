@@ -49,7 +49,7 @@
                             <Grid Grid.Row="0" Width="200" Height="150">
                                 <Image Width="260" x:Name="DisplayPhoto" Source="{x:Bind Photo}" HorizontalAlignment="Center"/>
                             </Grid>
-                            <TextBlock Grid.Row="1" Style="{StaticResource h2}" Foreground="#fff" Text="{x:Bind Title}" Padding="8,8,8,8" TextWrapping="Wrap" />
+                            <TextBlock Grid.Row="1" Style="{StaticResource h2}" Foreground="#fff" Text="{x:Bind Title}" Padding="8,8,8,8" TextTrimming="CharacterEllipsis" />
                             <TextBlock Grid.Row="2" Style="{StaticResource p}" Foreground="#fff" Text="{x:Bind Description}" Padding="8,8,8,8" TextWrapping="Wrap" />
                         </Grid>
                     </DataTemplate>

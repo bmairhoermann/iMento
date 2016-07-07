@@ -43,6 +43,7 @@
         	<Run Text=":"/>
         </TextBlock>
         <CalendarDatePicker x:Name="endDate" HorizontalAlignment="Left" Margin="122,242,0,0" VerticalAlignment="Top" Width="169"/>
+        
         <TimePicker x:Name="startTime" HorizontalAlignment="Left" Margin="49,190,0,0" VerticalAlignment="Top"/>
         <TimePicker x:Name="endTime" HorizontalAlignment="Left" Margin="49,291,0,0" VerticalAlignment="Top"/>
 
