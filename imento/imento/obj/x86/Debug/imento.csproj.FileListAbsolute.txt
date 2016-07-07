@@ -799,10 +799,7 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.CSharp
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.Data.Sqlite.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.EntityFrameworkCore.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.EntityFrameworkCore.Relational.Design.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.EntityFrameworkCore.Sqlite.dll
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.EntityFrameworkCore.Tools.dll
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.EntityFrameworkCore.Tools.Core.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.Extensions.DependencyInjection.dll
@@ -810,7 +807,6 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.Extens
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.Extensions.Logging.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.Extensions.Options.dll
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.Extensions.PlatformAbstractions.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.Extensions.Primitives.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\System.ComponentModel.DataAnnotations.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\System.Core.dll
@@ -827,7 +823,6 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\System.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.VisualBasic.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Microsoft.Win32.Primitives.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\Remotion.Linq.dll
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\System.AppContext.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\System.Collections.dll
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\bin\x86\Debug\System.Collections.Concurrent.dll
@@ -977,7 +972,6 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\imento.pdb
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\ResourceHandlingTask.state
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\FxResources.Microsoft.CSharp.SR.resw
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\FxResources.Microsoft.VisualBasic.SR.resw
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\FxResources.System.Runtime.InteropServices.RuntimeInformation.SR.resw
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\FxResources.System.AppContext.SR.resw
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\FxResources.System.Collections.SR.resw
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\FxResources.System.Collections.Concurrent.SR.resw
@@ -1032,10 +1026,7 @@ C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\FxResources.Syst
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.Data.Sqlite\en-US\Microsoft.Data.Sqlite.Strings.resw
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.EntityFrameworkCore\en-US\Microsoft.EntityFrameworkCore.Properties.CoreStrings.resw
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.EntityFrameworkCore.Relational\en-US\Microsoft.EntityFrameworkCore.Relational.Properties.RelationalStrings.resw
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.EntityFrameworkCore.Relational.Design\en-US\Microsoft.EntityFrameworkCore.Relational.Design.Properties.RelationalDesignStrings.resw
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.EntityFrameworkCore.Sqlite\en-US\Microsoft.EntityFrameworkCore.Sqlite.Properties.SqliteStrings.resw
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.EntityFrameworkCore.Tools\en-US\Microsoft.EntityFrameworkCore.Tools.Properties.ToolsStrings.resw
-C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.EntityFrameworkCore.Tools.Core\en-US\Microsoft.EntityFrameworkCore.Tools.Core.Properties.ToolsCoreStrings.resw
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.Extensions.DependencyInjection\en-us\Microsoft.Extensions.DependencyInjection.Resources.resw
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.Extensions.DependencyInjection.Abstractions\en-us\Microsoft.Extensions.DependencyInjection.Abstractions.Resources.resw
 C:\Users\CB\Documents\GitHub\iMento\imento\imento\obj\x86\Debug\Microsoft.Extensions.Options\en-us\Microsoft.Extensions.Options.Resources.resw
