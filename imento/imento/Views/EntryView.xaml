@@ -11,23 +11,27 @@
 
     <Grid Background="{StaticResource Background}" Padding="16,8,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="296" />
+            <RowDefinition Height="330" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid>
+        <Grid Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="80" />
-                <RowDefinition Height="216" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="50" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Name="editEntry" Height="44" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}" Click="editEntry_Click" />
+            <Button Name="editEntry" Grid.Row="0" Grid.Column="0" Height="44" FontFamily="Segoe MDL2 Assets" Content="&#xE70F;" Style="{StaticResource button}" Click="editEntry_Click" />
             <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="EntryTitleHeadline" Style="{StaticResource h1}" Margin="55,0,0,0" Foreground="{StaticResource Orange}">[ENTRY TITLE]</TextBlock>
-            <Button Name="addPhotoButton" Grid.Row="1" Grid.Column="0" Width="200" Content="+" Background="{StaticResource Orange}" Foreground="White" FontSize="100" Click="NewPhoto_Click" Margin="0,0,0,0" VerticalAlignment="Top" />
-            <Button Grid.Row="1" Grid.Column="0" Height="50" Name="deleteEntry" Width="200" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" Click="deleteEntry_Click" VerticalAlignment="Bottom" />
-            <Grid Grid.Row="1" Grid.Column="1" Margin="16,0,16,0" Padding="8" Height="216" VerticalAlignment="Top" Background="#ffe7d9">
+
+            <Button Name="openPresentation" Grid.Row="1" Grid.Column="0" Height="46" Width="200" FontFamily="Segoe MDL2 Assets" Content="&#xE7C5;" Style="{StaticResource button}" Click="OpenPresentation_Click" VerticalAlignment="Top" />
+            <Button Name="addPhotoButton" Grid.Row="2" Grid.Column="0" Height="146" Width="200" Content="+" Background="{StaticResource Orange}" Foreground="White" FontSize="90" Click="NewPhoto_Click" VerticalAlignment="Top" />
+            <Button Name="deleteEntry" Grid.Row="3" Grid.Column="0" Height="46" Width="200" FontFamily="Segoe MDL2 Assets" Content="&#xE74D;" Style="{StaticResource button}" Click="deleteEntry_Click" VerticalAlignment="Top" />
+            <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Margin="16,0,16,0" Padding="8" Height="246" VerticalAlignment="Top" Background="#ffe7d9">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
@@ -58,5 +62,19 @@
                 </GridView.ItemTemplate>
             </GridView>
         </RelativePanel>
+
+        <Grid Name="PresentationView" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,16,16" >
+            <FlipView ItemsSource="{x:Bind Photos, Mode=OneWay}" >
+                <FlipView.ItemTemplate>
+                    <DataTemplate x:DataType="models:PhotoViewModel">
+                        <Grid>
+                            <Image Stretch="UniformToFill" Source="{x:Bind Path=Photo}"/>
+                        </Grid>
+                    </DataTemplate>
+                </FlipView.ItemTemplate>
+            </FlipView>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" Background="{StaticResource Orange}" Foreground="White" Click="ClosePresentation_Click" />
+        </Grid>
+        
     </Grid>
 </Page>

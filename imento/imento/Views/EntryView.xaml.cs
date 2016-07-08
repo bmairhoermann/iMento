@@ -47,6 +47,9 @@ namespace imento.Views {
         protected override async void OnNavigatedTo(NavigationEventArgs e) {
             base.OnNavigatedTo(e);
 
+            // Hide the praesentation mpde by default
+            PresentationView.Visibility = Visibility.Collapsed;
+
             EntryParams result = (EntryParams)e.Parameter;
             EntryId = result.EntryId;
             EntryTitle = result.EntryTitle;
@@ -160,7 +163,26 @@ namespace imento.Views {
                 System.Diagnostics.Debug.WriteLine("ALBUMVIEW: edit_Album_Click(): Not able to update Album!");
             }
         }
+
+        /// <summary>
+        /// Displays the presentation mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OpenPresentation_Click(object sender, RoutedEventArgs e) {
+            PresentationView.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// Hides the presentation mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClosePresentation_Click(object sender, RoutedEventArgs e) {
+            PresentationView.Visibility = Visibility.Collapsed;
+        }
     }
+
 }
 
 
