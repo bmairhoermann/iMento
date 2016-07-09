@@ -24,8 +24,9 @@ namespace imento.Views {
     public sealed partial class AddPhoto : ContentDialog {
 
         public bool photoWasAdded { get; set; }
+        public int addCount = 0;
 
-        private byte[] byteArray;
+        private List<byte[]> byteArrayList = new List<byte[]>();
 
         ModelController mc = new ModelController();
 
@@ -39,29 +40,27 @@ namespace imento.Views {
 
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
 
-            if (byteArray != null && byteArray.Length > 0)
-            {
-                // Save new Photo to Database
-                Entry oldEntry = mc.getEntryDetails(entryId);
+            if (byteArrayList.Count > 0) {
+                foreach(byte[] item in byteArrayList) {
+                    if (item != null && item.Length > 0) {
+                        // Save new Photo to Database
+                        Entry oldEntry = mc.getEntryDetails(entryId);
 
-                Photo newPhoto = new Photo();
-                newPhoto.EntryId = oldEntry.EntryId;
-                newPhoto.ImageByteArray = byteArray;
+                        Photo newPhoto = new Photo();
+                        newPhoto.EntryId = oldEntry.EntryId;
+                        newPhoto.ImageByteArray = item;
 
-                oldEntry.Photos.Add(newPhoto);
+                        oldEntry.Photos.Add(newPhoto);
 
-                mc.updateEntry(oldEntry);
+                        mc.updateEntry(oldEntry);
 
-                photoWasAdded = true;
-
-            }
-            else
-            {
+                        addCount += 1;
+                        photoWasAdded = true;
+                    }
+                }
+            } else {
                 photoWasAdded = false;
             }
-
-            
-            
         }
 
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
@@ -77,24 +76,33 @@ namespace imento.Views {
             // Routine for getting the stuff dropped into the grid
             if (e.DataView.Contains(StandardDataFormats.StorageItems)) {
                 var items = await e.DataView.GetStorageItemsAsync();
-
+                byteArrayList = new List<byte[]>();
                 if (items.Any()) {
-                    var storageFile = items[0] as StorageFile;
+                    foreach(StorageFile item in items) {
+                        var storageFile = item as StorageFile;
 
-                    // Check if given data is valide
-                    if (storageFile.ContentType == "image/jpeg" || storageFile.ContentType == "image/bmp" || storageFile.ContentType == "image/gif" || storageFile.ContentType == "image/png") {
-                        // Write Inputstream to buffer and write buffer to byte-Array
-                        var buffer = await FileIO.ReadBufferAsync(storageFile);
-                        byteArray = buffer.ToArray(); // 
-
+                        // Check if given data is valide
+                        if (storageFile.ContentType == "image/jpeg" || storageFile.ContentType == "image/bmp" || storageFile.ContentType == "image/gif" || storageFile.ContentType == "image/png") {
+                            // Write Inputstream to buffer and write buffer to byte-Array
+                            var buffer = await FileIO.ReadBufferAsync(storageFile);
+                            var byteArray = buffer.ToArray();
+                            byteArrayList.Add(byteArray);
+                        }
+                    }
+                    if (byteArrayList.Count > 0) {
                         // BELOW: FOR FURTHER USAGE:
                         // parse byte[] in Bitmap
-                        var mypicture = await ToBitmapImage(byteArray);
+                        var mypicture = await ToBitmapImage(byteArrayList[0]);
 
                         // Set Bitmap as Picture Source for Image in View
                         ImageSource imageSource = mypicture; // put the bitmapImage into a ImageSource
                         DroppedImage.Source = imageSource; // Set source of windows.UI.xaml.Control.Image to this imageSource
 
+                        countItemsText.Text = "";
+
+                        if (byteArrayList.Count > 1) {
+                            countItemsText.Text = "+" + (byteArrayList.Count - 1);
+                        }
                     }
                 }
             }

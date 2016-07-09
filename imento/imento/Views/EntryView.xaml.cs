@@ -88,10 +88,15 @@ namespace imento.Views {
             var dialogResult = await dialog.ShowAsync();
             if (dialog.photoWasAdded) {
                 currentEntry = mc.getEntryDetails(EntryId);
-                PhotoViewModel newPhotoViewModel = new PhotoViewModel();
-                newPhotoViewModel.Photo = await currentEntry.Photos.Last().ToBitmapImage();
-                newPhotoViewModel.PhotoId = currentEntry.Photos.Last().PhotoId;
-                Photos.Add(newPhotoViewModel);
+                currentEntry.Photos.Reverse();
+                for(var i = 0; i < dialog.addCount; i++) {
+                    PhotoViewModel newPhotoViewModel = new PhotoViewModel();
+                    newPhotoViewModel.Photo = await currentEntry.Photos[i].ToBitmapImage();
+                    newPhotoViewModel.PhotoId = currentEntry.Photos[i].PhotoId;
+                    Photos.Add(newPhotoViewModel);
+                }
+
+                
             }
         }
 
