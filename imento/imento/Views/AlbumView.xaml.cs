@@ -50,10 +50,10 @@ namespace imento.Views {
             // Check if Album is not null
             if(album.AlbumId != null) {
                 AlbumTitleHeadline.Text = result.AlbumTitle;
-
+                
                 try {
-                    AlbumDescriptionParagraph.Text = result.AlbumDescription;
-                    AlbumTypeIcon.Text = result.AlbumType;
+                    AlbumDescriptionParagraph.Text = mc.getAlbum(result.AlbumId).Description;
+                    AlbumTypeIcon.Text = mc.getAlbum(result.AlbumId).Type;
                 } catch { }
 
                 base.OnNavigatedTo(e);
