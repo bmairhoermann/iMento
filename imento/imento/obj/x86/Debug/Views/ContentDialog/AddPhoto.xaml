@@ -16,7 +16,8 @@
     <Grid x:ConnectionId='2' Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" AllowDrop="True"                                           Width="200" Height="200" >
         <TextBlock x:ConnectionId='3' x:Name="textBlockName" Margin="0,5,0,0" TextWrapping="Wrap" Text="Foto hier rein ziehen" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Image x:ConnectionId='4' x:Name="DroppedImage" />
+        <TextBlock x:ConnectionId='5' x:Name="countItemsText" Margin="0,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
     </Grid>
-    
+
 </ContentDialog>
 

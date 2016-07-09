@@ -33,7 +33,7 @@ namespace imento.Views
         public bool hasChanged { get; set; }
 
         public ObservableCollection<string> TypeList = new ObservableCollection<string> { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
-        DateTime dt = new DateTime(2016, 07, 04, 10, 00, 0);
+        DateTime dt = DateTime.Now;
         /// <summary>
         /// Add location to Dialog in Textfield
         /// </summary>
@@ -75,13 +75,20 @@ namespace imento.Views
             
             album.Title = textBoxName.Text;
             album.Description = textBoxDescription.Text;
-           if(startDate.Date.Value.Date + startTime.Time != dt)
+            album.Date_Start = startDate.Date.Value.Date + startTime.Time;
+            album.Date_Ende = endDate.Date.Value.Date + endTime.Time;
+            /*
+            if (startDate.Date.Value.Date + startTime.Time != dt)
             {
-                album.Date_Start = startDate.Date.Value.Date + startTime.Time;
+                
             }
             if (endDate.Date.Value.Date + endTime.Time != dt)
             {
                 album.Date_Ende = endDate.Date.Value.Date + endTime.Time;
+            }
+            */
+            if (album.Date_Ende < album.Date_Start) {
+                album.Date_Ende = album.Date_Start;
             }
             
 
