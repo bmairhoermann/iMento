@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace imento.Models
 {
+    /// <summary>
+    /// Class that defines the Databasecontext
+    /// </summary>
     class DataBaseContext : DbContext
     {
         public DbSet<Album> Albums { get; set; }
@@ -16,6 +19,7 @@ namespace imento.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            // Filename for the database file is set here
             optionsBuilder.UseSqlite("Filename=Imento.db");
         }
     }

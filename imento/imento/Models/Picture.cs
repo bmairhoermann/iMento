@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace imento.Models {
+    /// <summary>
+    /// Deprecated class for testing
+    /// </summary>
     public class Picture {
         public int PictureId { get; set; }
         public string PicturePath { get; set; }

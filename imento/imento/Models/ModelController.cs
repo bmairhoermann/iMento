@@ -12,6 +12,9 @@ using Windows.UI.Xaml.Media.Imaging;
 using System.IO;
 
 namespace imento.Models {
+    /// <summary>
+    /// Implements Methods for Databaseinteraction
+    /// </summary>
     class ModelController {
 
         /// <summary>
@@ -21,19 +24,6 @@ namespace imento.Models {
         /// <returns></returns>
         public static String GetTimeStamp(DateTime value) {
             return value.ToString("yyyyMMddHHmmssffff");
-        }
-
-        /// <summary>
-        /// Method for Parsing a byte-Array to a BitmapImage
-        /// </summary>
-        /// <param name="array"></param>
-        /// <returns></returns>
-        public async Task<BitmapImage> ToBitmapImage(byte[] array) {
-            using (var ms = new MemoryStream(array)) {
-                var bitmapImage = new BitmapImage();
-                await bitmapImage.SetSourceAsync(ms.AsRandomAccessStream());
-                return bitmapImage;
-            }
         }
 
         //################################################################################################################################

@@ -10,7 +10,9 @@ using Windows.UI.Xaml.Media.Imaging;
 
 namespace imento.Models {
 
-
+    /// <summary>
+    /// Class that defines the model structure of a Photo shown in the View
+    /// </summary>
     class PhotoViewModel : INotifyPropertyChanged {
 
         private BitmapImage photo;
