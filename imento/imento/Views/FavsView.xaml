@@ -9,7 +9,14 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource Background}" Padding="16,16,16,0">
-        <RelativePanel Grid.Row="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Height="80" FontFamily="Segoe MDL2 Assets" Content="&#xE7C5;" Style="{StaticResource button}" Click="OpenPresentation_Click" VerticalAlignment="Top" />
+        <RelativePanel Grid.Row="1">
             <GridView 
             RelativePanel.AlignBottomWithPanel="True"
             RelativePanel.AlignTopWithPanel="True"
@@ -30,5 +37,19 @@
                 </GridView.ItemTemplate>
             </GridView>
         </RelativePanel>
+        
+        <Grid Name="PresentationView" Grid.Row="0" Grid.RowSpan="2" Margin="0,0,0,16" >
+            <FlipView ItemsSource="{x:Bind Photos, Mode=OneWay}" >
+                <FlipView.ItemTemplate>
+                    <DataTemplate x:DataType="models:PhotoViewModel">
+                        <Grid>
+                            <Image Stretch="UniformToFill" Source="{x:Bind Path=Photo}"/>
+                        </Grid>
+                    </DataTemplate>
+                </FlipView.ItemTemplate>
+            </FlipView>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Segoe MDL2 Assets" Content="&#xE894;" Background="{StaticResource Orange}" Foreground="White" Click="ClosePresentation_Click" />
+        </Grid>
+        
     </Grid>
 </Page>

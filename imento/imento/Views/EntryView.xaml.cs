@@ -47,7 +47,7 @@ namespace imento.Views {
         protected override async void OnNavigatedTo(NavigationEventArgs e) {
             base.OnNavigatedTo(e);
 
-            // Hide the praesentation mpde by default
+            // Hide the praesentation mode by default
             PresentationView.Visibility = Visibility.Collapsed;
 
             EntryParams result = (EntryParams)e.Parameter;

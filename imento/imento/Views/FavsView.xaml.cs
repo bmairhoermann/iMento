@@ -30,6 +30,9 @@ namespace imento{
         public FavsView() {
             this.InitializeComponent();
             fillObservableListWithPhotos();
+
+            // Hide the praesentation mode by default
+            PresentationView.Visibility = Visibility.Collapsed;
         }
 
         /// <summary>
@@ -54,6 +57,24 @@ namespace imento{
         private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
             var photo = (PhotoViewModel)e.ClickedItem;
             this.Frame.Navigate(typeof(Views.PhotoView), new PhotoParams() { PhotoId = photo.PhotoId });
+        }
+
+        /// <summary>
+        /// Displays the presentation mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OpenPresentation_Click(object sender, RoutedEventArgs e) {
+            PresentationView.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// Hides the presentation mode
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ClosePresentation_Click(object sender, RoutedEventArgs e) {
+            PresentationView.Visibility = Visibility.Collapsed;
         }
     }
 }
