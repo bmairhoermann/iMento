@@ -37,7 +37,11 @@ namespace imento.Views {
             this.InitializeComponent();
         }
 
-
+        /// <summary>
+        /// Saves the given Photos to the database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
 
             if (byteArrayList.Count > 0) {
@@ -63,15 +67,30 @@ namespace imento.Views {
             }
         }
 
+        /// <summary>
+        /// Abborts adding photos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private void ContentDialog_SecondaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
             photoWasAdded = false;
         }
 
+        /// <summary>
+        /// Prepares a Grid for filedropping
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Grid_DragOver(object sender, DragEventArgs e) {
             // Prepare for Drop
             e.AcceptedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
         }
 
+        /// <summary>
+        /// Handles the userinput and decides what to do with it
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void Grid_Drop(object sender, DragEventArgs e) {
             // Routine for getting the stuff dropped into the grid
             if (e.DataView.Contains(StandardDataFormats.StorageItems)) {
