@@ -6,15 +6,15 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Title="Neues Foto einfügen"
+    Title="Neue Fotos hinzufügen"
     PrimaryButtonText="Speichern"
     SecondaryButtonText="Abbrechen"
                                                          
                                                              >
 
-    <!-- You have to allow the Drop, Drop="Grid_Drop" sets the methodname, DragOver="Grid_DragOver" sets the Methodname -->
+
     <Grid x:ConnectionId='2' Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" AllowDrop="True"                                           Width="200" Height="200" >
-        <TextBlock x:ConnectionId='3' x:Name="textBlockName" Margin="0,5,0,0" TextWrapping="Wrap" Text="Foto hier rein ziehen" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBlock x:ConnectionId='3' x:Name="textBlockName" Margin="0,5,0,0" TextWrapping="Wrap" Text="Ein oder mehrere Foto(s) hier rein ziehen" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Image x:ConnectionId='4' x:Name="DroppedImage" />
         <TextBlock x:ConnectionId='5' x:Name="countItemsText" Margin="0,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
     </Grid>
