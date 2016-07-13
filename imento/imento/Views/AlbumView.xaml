@@ -43,7 +43,7 @@
                         <Grid Margin="8,0,8,0" Height="500" Width="200" Background="{StaticResource Orange}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="150" />
-                                <RowDefinition Height="50" />
+                                <RowDefinition Height="55" />
                                 <RowDefinition Height="300" />
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0" Width="200" Height="150">
