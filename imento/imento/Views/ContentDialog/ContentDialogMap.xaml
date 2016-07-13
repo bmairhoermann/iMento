@@ -14,7 +14,7 @@
     SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
     >
 
-    <Grid Height="333" Width="291">
+    <Grid Height="400" Width="291">
         <TextBlock x:Name="textBlockName" Margin="0,5,0,0" TextWrapping="Wrap" Text="Name: " VerticalAlignment="Top" HorizontalAlignment="Left" Width="43"/>
         <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Margin="122,0,0,0" TextWrapping="Wrap" PlaceholderText="Name des Albums" VerticalAlignment="Top" Height="32" Width="169"/>
         <TextBox x:Name="textBoxDescription" HorizontalAlignment="Left" Margin="122,37,0,0" TextWrapping="Wrap" PlaceholderText="Beschreibung des Albums" VerticalAlignment="Top" Width="169"/>
@@ -26,26 +26,26 @@
         <TextBlock x:Name="textBlockType" HorizontalAlignment="Left" Margin="0,124,0,0" TextWrapping="Wrap" Text="Art:" VerticalAlignment="Top"/>
         <ComboBox x:Name="comboBox" 
                   ItemsSource="{x:Bind TypeList , Mode=OneWay}" 
-                  HorizontalAlignment="Left" Margin="122,116,0,0" VerticalAlignment="Top" Width="20" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont">
+                  HorizontalAlignment="Left" Margin="122,116,0,0" VerticalAlignment="Top" Width="83" FontSize="35" FontFamily="ms-appx:///Assets/fonts/imentofont.ttf#imentofont">
             <ComboBox.ItemTemplate>
                 <DataTemplate x:DataType="system:String">
                     <TextBlock Text="{x:Bind }"></TextBlock>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <CalendarDatePicker x:Name="startDate" HorizontalAlignment="Left" Margin="122,153,0,0" VerticalAlignment="Top" Width="169"/>
-        <TextBlock x:Name="textBlockType_Copy" HorizontalAlignment="Left" Margin="0,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        <CalendarDatePicker x:Name="startDate" HorizontalAlignment="Left" Margin="122,177,0,0" VerticalAlignment="Top" Width="169"/>
+        <TextBlock x:Name="textBlockType_Copy" HorizontalAlignment="Left" Margin="0,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
         	<Run Text="Reisebeginn"/>
         	<Run Text=":"/>
         </TextBlock>
-        <TextBlock x:Name="textBlockType_Copy1" HorizontalAlignment="Left" Margin="0,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        <TextBlock x:Name="textBlockType_Copy1" HorizontalAlignment="Left" Margin="0,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
         	<Run Text="Reiseende"/>
         	<Run Text=":"/>
         </TextBlock>
-        <CalendarDatePicker x:Name="endDate" HorizontalAlignment="Left" Margin="122,242,0,0" VerticalAlignment="Top" Width="169"/>
-        
-        <TimePicker x:Name="startTime" HorizontalAlignment="Left" Margin="49,190,0,0" VerticalAlignment="Top" MinuteIncrement="15"/>
-        <TimePicker x:Name="endTime" HorizontalAlignment="Left" Margin="49,291,0,0" VerticalAlignment="Top" MinuteIncrement="15"/>
+        <CalendarDatePicker x:Name="endDate" HorizontalAlignment="Left" Margin="122,266,0,0" VerticalAlignment="Top" Width="169"/>
+
+        <TimePicker x:Name="startTime" HorizontalAlignment="Left" Margin="49,214,0,0" VerticalAlignment="Top" MinuteIncrement="15"/>
+        <TimePicker x:Name="endTime" HorizontalAlignment="Left" Margin="49,315,0,-14" VerticalAlignment="Top" MinuteIncrement="15"/>
 
 
     </Grid>
