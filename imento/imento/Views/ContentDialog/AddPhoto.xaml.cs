@@ -9,6 +9,7 @@ using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
+using Windows.Storage.Pickers;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -45,7 +46,7 @@ namespace imento.Views {
         private void ContentDialog_PrimaryButtonClick(ContentDialog sender, ContentDialogButtonClickEventArgs args) {
 
             if (byteArrayList.Count > 0) {
-                foreach(byte[] item in byteArrayList) {
+                foreach (byte[] item in byteArrayList) {
                     if (item != null && item.Length > 0) {
                         // Save new Photo to Database
                         Entry oldEntry = mc.getEntryDetails(entryId);
@@ -97,7 +98,7 @@ namespace imento.Views {
                 var items = await e.DataView.GetStorageItemsAsync();
                 byteArrayList = new List<byte[]>();
                 if (items.Any()) {
-                    foreach(StorageFile item in items) {
+                    foreach (StorageFile item in items) {
                         var storageFile = item as StorageFile;
 
                         // Check if given data is valide
@@ -133,6 +134,57 @@ namespace imento.Views {
                 var bitmapImage = new BitmapImage();
                 await bitmapImage.SetSourceAsync(ms.AsRandomAccessStream());
                 return bitmapImage;
+            }
+        }
+
+        /// <summary>
+        /// Handles Click in FileOpenButton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void openFileDialogClick(object sender, RoutedEventArgs e) {
+
+            try {
+                FileOpenPicker openPicker = new FileOpenPicker();
+                openPicker.ViewMode = PickerViewMode.Thumbnail;
+                openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+                openPicker.FileTypeFilter.Add(".jpg");
+                openPicker.FileTypeFilter.Add(".jpeg");
+                openPicker.FileTypeFilter.Add(".png");
+                openPicker.FileTypeFilter.Add(".gif");
+                openPicker.FileTypeFilter.Add(".bmp");
+                IReadOnlyList<StorageFile> items = await openPicker.PickMultipleFilesAsync();
+
+                byteArrayList = new List<byte[]>();
+                foreach (StorageFile item in items) {
+                    var storageFile = item as StorageFile;
+
+                    // Check if given data is valide
+                    if (storageFile.ContentType == "image/jpeg" || storageFile.ContentType == "image/bmp" || storageFile.ContentType == "image/gif" || storageFile.ContentType == "image/png") {
+                        // Write Inputstream to buffer and write buffer to byte-Array
+                        var buffer = await FileIO.ReadBufferAsync(storageFile);
+                        var byteArray = buffer.ToArray();
+                        byteArrayList.Add(byteArray);
+                    }
+                }
+                if (byteArrayList.Count > 0) {
+                    textBlockName.Text = "";
+                    // BELOW: FOR FURTHER USAGE:
+                    // parse byte[] in Bitmap
+                    var mypicture = await ToBitmapImage(byteArrayList[0]);
+
+                    // Set Bitmap as Picture Source for Image in View
+                    ImageSource imageSource = mypicture; // put the bitmapImage into a ImageSource
+                    DroppedImage.Source = imageSource; // Set source of windows.UI.xaml.Control.Image to this imageSource
+
+                    countItemsText.Text = "";
+
+                    if (byteArrayList.Count > 1) {
+                        countItemsText.Text = "+" + (byteArrayList.Count - 1);
+                    }
+                }
+            } catch {
+                System.Diagnostics.Debug.WriteLine("AddPhoto: openFileDialogClick: ERROR while addong Photo/s.!");
             }
         }
     }

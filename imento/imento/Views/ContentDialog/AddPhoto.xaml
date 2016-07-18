@@ -11,12 +11,22 @@
     SecondaryButtonText="Abbrechen"
     PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
     SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
-
-    <!-- You have to allow the Drop, Drop="Grid_Drop" sets the methodname, DragOver="Grid_DragOver" sets the Methodname -->
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" AllowDrop="True" Drop="Grid_Drop" DragOver="Grid_DragOver" Width="200" Height="200" >
-        <TextBlock x:Name="textBlockName" Margin="0,5,0,0" TextWrapping="Wrap" Text="Ein oder mehrere Foto(s) hier reinziehen" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Image x:Name="DroppedImage" />
-        <TextBlock x:Name="countItemsText" Margin="0,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+    
+    <Grid Width="200" Height="300">
+        <!-- You have to allow the Drop, Drop="Grid_Drop" sets the methodname, DragOver="Grid_DragOver" sets the Methodname -->
+        <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" AllowDrop="True" Drop="Grid_Drop" DragOver="Grid_DragOver" Width="200" Height="200" VerticalAlignment="Top">
+            <TextBlock x:Name="textBlockName" Margin="0,5,0,0" TextWrapping="Wrap" Text="Ein oder mehrere Foto(s) hier reinziehen" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Image x:Name="DroppedImage" />
+            <TextBlock x:Name="countItemsText" Margin="0,5,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+        </Grid>
+        <Grid Width="200" Height="100" VerticalAlignment="Bottom">
+            <TextBlock Text="oder" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="18"></TextBlock>
+            <Button x:Name="openFileDialogButton" Content="Durchsuchen"
+                 Height="30" Width="120" Margin="10"
+                 HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                 Click="openFileDialogClick" />
+        </Grid>
+        
     </Grid>
-
+    
 </ContentDialog>
